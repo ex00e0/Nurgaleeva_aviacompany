@@ -99,7 +99,41 @@
                                       #modalEnter {width:80%;
                                                    height:33%;}    
                                       #modalReg {width:80%;
-                                                 height:40%;}         }
+                                                 height:40%;}     
+                                      #navMobile {grid-template-columns: 10% auto 16% 12%;
+                                                    grid-template-rows: 2.5% 3.5% auto;}  
+                                      #headline2 {width:85%;}  }
+
+            @media (min-width:481px) and (max-width:1199px) {nav {height:8vh;
+                                                    grid-template-columns:5% 10vw 1.5vw 15vw 1fr 0.9fr 2% 0.9fr 2% 5% 5%;} 
+                                               #navigation {display: none;}
+                                               #menuMobile {grid-column:10;
+                                                            width:100%;
+                                                            align-self:center;} 
+                                               #reg, #enter {height:45%;} 
+                                               #modalEnter {width:60%;
+                                                            height:33%;}    
+                                               #modalReg {width:60%;
+                                                          height:40%;}       
+                                                #navMobile {grid-template-columns: 10% auto 16% 12%;
+                                                            grid-template-rows: 2.5% 3.5% auto;}  
+                                                #headline2 {width:40%;}  }
+                                                
+                @media (min-width:481px) and (max-width:1199px) and (orientation: landscape) {nav {height:18vh;
+                                                            grid-template-columns:5% 6w 1.5vw 15vw 1fr 0.9fr 2% 0.9fr 2% 5% 5%;} 
+                                                       #navigation {display: none;}
+                                                       #menuMobile {grid-column:10;
+                                                                    width:100%;
+                                                                    align-self:center;} 
+                                                       #reg, #enter {height:45%;} 
+                                                       #modalEnter {width:60%;
+                                                                    height:65%;}    
+                                                       #modalReg {width:60%;
+                                                                  height:85%;}       
+                                                        #navMobile {grid-template-columns: 10% auto 15% 12%;
+                                                                    grid-template-rows: 4% 10% auto;}  
+                                                        #headline2 {width:40%;} }
+
             @media (max-width:1720px) and (min-width:1200px) {nav {height:12vh;
                                                                     grid-template-columns:5% 5vw 1vw 10vw 1fr 0.2fr 2% 0.2fr 5%;} 
                                                               #navigation {display: flex;}
@@ -108,7 +142,11 @@
                                                               #modalEnter {width:40%;
                                                                             height:55%;}
                                                               #modalReg {width:40%;
-                                                                        height:70%;} }
+                                                                        height:70%;} 
+                                                              #navMobile {grid-template-columns: 10% auto 16% 12%;
+                                                                          grid-template-rows: 2.5% 3.5% auto;} 
+                                                                #headline2 {width:40%;} }
+
             @media (min-width:1721px) {nav {height:14vh;
                                             grid-template-columns:5% 5vw 1vw 10vw 1fr 0.2fr 2% 0.2fr 5%;}
                                         #navigation {display: flex;}
@@ -117,8 +155,11 @@
                                         #modalEnter {width:40%;
                                                     height:55%;} 
                                         #modalReg {width:40%;
-                                                   height:70%;}}
-            nav {width:100%;
+                                                   height:70%;}
+                                        #navMobile {grid-template-columns: 10% auto 16% 12%;
+                                                    grid-template-rows: 2.5% 3.5% auto;} 
+                                        #headline2 {width:40%;} }
+            nav {width:100%; 
                  display:grid;
                  grid-template-rows:100%;}
             #logo {max-width: 100%;
@@ -174,9 +215,7 @@
                         height:100%;
                         position:absolute;
                         top:0;
-                        right:0;
-                        grid-template-columns: 10% auto 16% 12%;
-                        grid-template-rows: 2.5% 3.5% auto;}
+                        right:0;}
             #navMobileText {align-self:center;
                             color:white;
                             height:40%;
@@ -205,13 +244,26 @@
             #labelEnterPass, #labelRegEmailTel, #enterPass, #regEmailTel {grid-row:2;}
             #buttonEnter, #labelRegPass, #regPass {grid-row:3;}
 
-            #searchBlock {}
+            #searchBlock {width:100%;
+                                  height:50vmax;
+                                  display:grid;
+                                  grid-template-columns:3% auto 3%;
+                                  grid-template-rows: 7% 5% 5% 5% auto;;}
+            .headline {font-size: 2.3vmax;
+                       font-family: "Mariupol";
+                       grid-column:2;}
+            #headline1 {grid-row:2;}
+            #headline2 {grid-row:4;
+                        justify-self: center;
+                        display:flex;
+                        justify-content: space-evenly;}
+            #today {color:#2D4EFF;}
         </style>
     </head>
     <body>
             <nav>
                 <img src="images/a11.png" id="logo" alt="логотип">
-                <div id="logoText">Мягкие Авиалинии</div>
+                <div id="logoText">Мягкие <br> Авиалинии</div>
                 <div id="navigation">
                     <div><a href="avi.html" class="navBlue">Главная</a></div>
                     <div id="curPage">
@@ -225,7 +277,7 @@
                 <button id="reg" class="blueButton">Регистрация</button>
                 <img src="menu.png" id="menuMobile" alt="меню навигации">
             </nav>
-            <div id="searchBlock"></div>
+            
             <div id="navMobileShadow"></div>
             <div id="navMobile">
                     <svg id="close" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -272,8 +324,15 @@
                     <button class="blueButton buttonEnterReg">Зарегистрироваться</button>
                 </form>
             </div>
+            <div id="searchBlock">
+                <div class="headline" id="headline1">Табло рейсов</div>
+                <div class="headline" id="headline2">
+                    <div id="yesterday">29 октября</div>
+                    <div id="today">30 октября</div>
+                    <div id="tomorrow">31 октября</div>
+                </div>
+            </div>
             <div style="height: 400vh; width: 100%;"></div>
-
         <script>
                 let navBlue = document.getElementsByClassName("navBlue");
                 for(let i=0; i<navBlue.length;i++) {navBlue[i].addEventListener("mouseover", function () {document.getElementById("curHover").style.color="black";}   );
