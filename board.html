@@ -4,15 +4,68 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Главная</title>
         <style>
+            .modal1 {font-family: "Mariupol";                     
+                     font-size:3vmax;
+                     grid-row:3;
+                     grid-column:1/3;}
+            #formEnter {grid-row:5/8;
+                        grid-column:1/3;
+                        width:60%;
+                        height:100%;
+                        display:grid;
+                        grid-template-columns: 100%;
+                        grid-template-rows:repeat(3,1fr);
+                        row-gap:15%;}
+            #formReg {grid-row:5/8;
+                        grid-column:1/3;
+                        width:60%;
+                        height:100%;
+                        display:grid;
+                        grid-template-columns: 100%;
+                        grid-template-rows:repeat(4,1fr);
+                        row-gap:12%;}
+            input {width:95%;
+                   height:100%;
+                   padding-left: 5%;
+                   font-size: 1.1vmax;
+                   font-family: "Inter";
+                   color: #6c6c6c;
+                   border-radius: 1vmax;
+                   border: 0.1vmax solid #6c6c6c;} 
+            input:focus {outline: none;}
+            .closeEnterReg {grid-row:2;
+                         grid-column:1;
+                         justify-self: end;}
+            .buttonEnterReg {height:100%;
+                             width:70%;
+                             justify-self: center;}
+            #modalShadow {width:100%;
+                          position:absolute;
+                          display:none;
+                          top:0;
+                          left:0;
+                          background-color: rgba(0,0,0,0.5);}
+            #modalEnter {grid-template-rows: 5% 5% 15% 10% 1fr 5% 10% 13%;}
+            .modalRegEnter {border-radius:1.5vmax;
+                        position:fixed;
+                        top:-50%;
+                        left:50%;
+                        transform: translate(-50%, -50%);
+                        transition: all .6s ease-in;
+                        background-color: #f9f9f9;
+                        border: 0.15vmax solid #2D4EFF;
+                        display:grid;
+                        grid-template-columns: auto 4%;
+                        justify-items: center;}
+            #modalReg {grid-template-rows: 5% 5% 12% 10% 1fr 20% 10% 13%;}
+            
             * {margin:0;
               padding:0;
               border: 0;
               font-size: 100%;}
-            
-            html, body {background-color: #f9f9f9;
-                       width:100%;
-                       height:100%;}
-            a {text-decoration: none;}
+            html, body {background-color: #f9f9f9;}
+            a {text-decoration: none;
+               color:inherit;}
             @font-face { font-family: "Inter";
                     src: url("fonts/Inter-Regular.woff"); 
                    font-weight: normal;
@@ -27,56 +80,217 @@
                    font-style: normal; }
             .blueButton {background-color: #2D4EFF;
                          border: none;
-                         border-radius: 10px;}
+                         border-radius: 0.75vmax;
+                         color:white;
+                         font-size: 1.2vmax;
+                         font-family: "Inter";}
 
             @media (max-width:480px) {nav {height:8vh;
-                                           grid-template-columns:5% 10vw 1.5vw 15vw 1fr 5%;} }
+                                           grid-template-columns:5% 10vw 1.5vw 15vw 1fr 0.9fr 2% 0.9fr 2% 5% 5%;} 
+                                      #navigation {display: none;}
+                                      #menuMobile {grid-column:10;
+                                                   width:100%;
+                                                   align-self:center;} 
+                                      #reg, #enter {height:45%;} 
+                                      #modalEnter {width:80%;
+                                                   height:33%;}    
+                                      #modalReg {width:80%;
+                                                 height:40%;}         }
             @media (max-width:1720px) and (min-width:1200px) {nav {height:12vh;
-                                                                    grid-template-columns:5% 5vw 1vw 10vw auto 5%;} }
+                                                                    grid-template-columns:5% 5vw 1vw 10vw 1fr 0.2fr 2% 0.2fr 5%;} 
+                                                              #navigation {display: flex;}
+                                                              #menuMobile {display:none;}
+                                                              #reg, #enter {height:55%;} 
+                                                              #modalEnter {width:40%;
+                                                                            height:55%;}
+                                                              #modalReg {width:40%;
+                                                                        height:70%;} }
             @media (min-width:1721px) {nav {height:14vh;
-                                            grid-template-columns:5% 5vw 1vw 10vw 1fr 5%;} }
-            
-            header {height:150vh;
-                   display: grid;
-                   grid-template-rows: auto;
-                   grid-template-columns: 100%;}
+                                            grid-template-columns:5% 5vw 1vw 10vw 1fr 0.2fr 2% 0.2fr 5%;}
+                                        #navigation {display: flex;}
+                                        #menuMobile {display:none;} 
+                                        #reg, #enter {height:55%;} 
+                                        #modalEnter {width:40%;
+                                                    height:55%;} 
+                                        #modalReg {width:40%;
+                                                   height:70%;}}
             nav {width:100%;
-                 background-color: aqua;
                  display:grid;
                  grid-template-rows:100%;}
-            #logo {width:100%;
-                  height:65%;
+            #logo {max-width: 100%;
+                   max-height: 75%;
+                   min-width:90%;
+                   min-height:55%;
                   align-self:center;
-                  grid-column:2;}
+                  grid-column:2;
+                  grid-row:1;}
             #logoText {grid-column:4;
                        color:#2D4EFF;
                        font-family: "Inter Light";
                        font-size: 1.4vmax;
-                       align-self: center;}
-            #navigation {grid-column:6;}
-            #navigation div {font-family: "Inter";
-                             font-size: 1.4vmax;}
-            #reg {}
-            #enter {}
+                       align-self: center;
+                       grid-row:1;}
+            #navigation {grid-column:1/span all;
+                         grid-row:1;
+                         width:30%;
+                         justify-self: center;
+                         align-items: center;
+                         justify-content: space-between;
+                         font-family: "Inter";
+                         font-size: 1.4vmax;}
+            #curPage {color:#2D4EFF;
+                      display: grid;
+                      grid-template-columns: 100%;
+                      grid-template-rows: 100%;
+                      height:100%;}
+            #curPage a {grid-row:1;
+                        grid-column:1;
+                        align-self: center;}
+            #blueLine {width:5%;
+                       height: 30%;
+                       grid-row:1;
+                       grid-column:1;
+                       background-color: #2D4EFF;
+                       justify-self: center;}
+            .navBlue:hover {color:#2D4EFF;}
+            #reg {grid-column: 8;
+                  grid-row:1;
+                  align-self:center;}
+            #enter {grid-column: 6;
+                   grid-row:1;
+                   align-self:center;}
+            #navMobileShadow {background-color: rgba(0,0,0,0.5);
+                              width:60%;
+                              height:100%;
+                              position:absolute; 
+                              top:0;
+                              left:0;}
+            #navMobile {background-color: rgba(32, 50, 152, 0.9);
+                        width:40%;
+                        height:100%;
+                        position:absolute;
+                        top:0;
+                        right:0;
+                        grid-template-columns: 10% auto 16% 12%;
+                        grid-template-rows: 2.5% 3.5% auto;}
+            #navMobileText {align-self:center;
+                            color:white;
+                            height:40%;
+                            width:5%;
+                            font-family: "Inter";
+                            font-size: 1.5vmax;
+                            grid-column:2;
+                            grid-row:1/span all;
+                            grid-template-rows: repeat(4,1fr);
+                            grid-template-columns: 100%;}
+            #navMobileShadow, #navMobile, #navMobileText {display:none;}
+            #close {grid-row:2;
+                    grid-column:3;
+                    width:100%;
+                    height:100%;}
             
+
             #searchBlock {}
         </style>
     </head>
     <body>
-        <header>
             <nav>
                 <img src="images/a11.png" id="logo" alt="логотип">
                 <div id="logoText">Мягкие Авиалинии</div>
                 <div id="navigation">
-                    <div>Главная</div>
-                    <div>Табло</div>
-                    <div>Информация</div>
-                    <div>Помощь</div>
+                    <div><a href="avi.html" class="navBlue">Главная</a></div>
+                    <div id="curPage">
+                        <div id="blueLine"></div>
+                        <a href="" id="curHover">Табло</a>
+                    </div>
+                    <div><a href=""  class="navBlue">Информация</a></div>
+                    <div><a href=""  class="navBlue">Помощь</a></div>
                 </div>
                 <button id="enter" class="blueButton">Вход</button>
                 <button id="reg" class="blueButton">Регистрация</button>
+                <img src="menu.png" id="menuMobile" alt="меню навигации">
             </nav>
             <div id="searchBlock"></div>
-        </header>
+            <div id="navMobileShadow"></div>
+            <div id="navMobile">
+                    <svg id="close" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <rect x="0.307617" y="9.50012" width="13" height="13" transform="rotate(-45 0.307617 9.50012)" fill="url(#pattern0)"/>
+                        <defs>
+                        <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image0_647_2" transform="scale(0.00195312)"/>
+                        </pattern>
+                        <image id="image0_647_2" width="512" height="512" xlink:href="data:image/png;base64,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AKAgAQAABQkAAChIAABAQQIAAAoSAABQkAAAgIIEAAAUJAAAoCABAAAFCQAAKEgAAEBBAgAAChIAAFCQAACAggQAABQkAACgIAEAAAUJAAAoSAAAQEECAAAKEgAAUJAAAICCBAAAFNR63GkOly+Ptn59xMqVEUuWRJx5ZsSyZb0PBpyczZsjLr209xSl5J13Rrvttt5jwMl57LGIJ5+MOHAg8pvfjNi1qw327p30FAseADk8/fRol14asWXL/P8oN2yw2APA0R59NHLnzohbb422Y0fkf/5nGxw+vJD3uGABkLlxY8SVV0a+/vXRnve8hXwQADBbHn884nOfi9y+Pdp//EdrmeO+h7EGQA4XL4725jdHbNsWsXr15A4UAMyqe+6J+MhHIv/mb9rgqafGdatjCYAcnnFGtKuuinjPeyKe//x+BwkAZtWDD0Z86EORH/94Gxw8OOqtjRwAma9+dcTHPhbx4hf3PjQAMPv+538ir766Df7lX0a5lZMOgByefXa0j3884vWv730oAKCem26K3Lq1DfbvP5lrn1QAZF5yScQtt3idHwB6euCByMsvb4M77zzRa57wiYBy+Ja3RHzxixZ/AOjtBS+I9vnPZ77pTSd6zRMKgMxrron2138dsXhx74cMAETMr8mf/GTm+953Itc6rpcAMluLuOGGiHe+s/fDBACezUc/GrFt2/GcN+D4dgDyAx+w+APAqe5d74q49trjueTP3AHIfPvb5z/mBwBMh23bWrvhhue6xHMGQOZv/mbE5z4XMfCtgQAwNYbDiN/6rdb+6Z+e7RLPGgA5vOiiiJ07nccfAKbRI49EbtjQBt/61rF+e8y/7HO4aFG0v/97iz8ATKtzzol2002Zp512rN8ee2u/XX11xK/+au/RAYBRvPKVEW9/+7F+81MvAWSef37Erl0RZ5/de2wAYFT790esX9/agw8e/dNj7ABcf73FHwBmxVlnRVx33TN/+hM7AJnr10fcdZd3/QPALBkOI172stbuvvuHP3nGQv/Hf2zxB4BZMxhE/MEfHP2TH+0AZK5aFTE3F3HsdwsCANPs8OGINWtau+++iKN3APJ3fsfiDwCzatGiiB9/a2CLiMgcDCLuvz/iF36h93gAwEJ54IGIlStbGw6f3gHYvNniDwCz7gUvmD83wI9eAvjt3+49EgAwATm/5j8dAFu29J4HAJiE+TW/5XD58mh79kS0n/nVwADAtMuMXL58EG3TJos/AFTRWrRNmwYR69f3HgUAmKR16wYRa9f2HgMAmKBcu3YQsWZN7zkAgAlqa9cOIpcv7z0HADBJ5503iLZkSe8xAIBJWrp0ELF0ae8xAIAJyrPOapnDoY8BAkAlmS0zs/cYAMBkDUa/CQBg2ggAAChIAABAQQIAAAoSAABQkAAAgIIEAAAUJAAAoCABAAAFCQAAKEgAAEBBAgAAChIAAFCQAACAggQAABQkAACgIAEAAAUJAAAoSAAAQEECAAAKEgAAUNAgIrP3EADAJGUOIr7//d5jAAATlN/73iDiiSd6zwEATFDbv38QeeBA7zkAgEl64olBtL17e48BAEzSQw8NInbv7j0GADBBOTc3iJib6z0HADBBbW5uEPGNb/SeAwCYpF27Wg7POy/a//1fRGu9xwEAFtpwGLlixaANHnoo4q67eo8DAExAfu1rbfDww0+fCnjHjt7zAACTML/mPx0An/1s73EAgEmYX/NbRERmaxH33hvxwhf2HgsAWCgPPBBx8cWtZQ4iIlrLjPj0p3uPBQAspO3b59f8p3cAIiIyV66cPyfAokW9xwMAxu3w4YgXvai1+++P+NF7ACJau/feiFtu6T0eALAQbr75h4t/xFE7ABERmevXz38kcDA44dsFAE5Rw2HEy17W2t13//AnP7HQt/aNb0T83d/1HhMAGKcbbzx68Y94xg5ARETm+efPnx542bLe4wIAo9q/P2Lduta++92jf/pTW/2t7dkT8b739R4XABiH9773mYt/xDF2ACIiMk87LeLWWyNe+creYwMAJylvuy3aZZe1duTIM3/1rF8AlHnhhRE7d0acd17v+QGAE7V3b8SGDa09+OCxfvus7/Zv7X//N+LKK+ffOQgATI8jRyKvuOLZFv+I5wiAiIjW/vmfI7Zu7f0wAIATkNu2tcG//utzXeRnft6/tU98IuLaa3s/FgDgeLz//W3w53/+sy7VjuemIiJyeP310d797t4PCwB4Fnn99W3we793PBc97jP+tcG2bRHvelfE/JcIAACnisz5v/yPb/GPOIEdgB/fxRvfGPGXfxnxcz/X++ECAD/4QeRb39oGN954Itc64QCIiMjcsGH+i4Ne9KLeDxsA6tq9O+Lyy1v76ldP9Jon9aU/re3cGfnyl0ds3+4lAQCYtMyIT30q8uUvP5nFP+IkdwB+YoThq14V7WMfi3jpS3sfDgCYfbt3R27d2gb//u+j3MrIX/vbBrffHnnJJRHveEfEd77T+7AAwGz69rcjr7468qUvHXXxjxjDDsDRcnjGGRFveEO097wnYs2afgcJAGbF3Fzkhz8csX17Gxw8OK5bHWsAHC3zV34l4oorIi6/POKccyZzkABgFuzbN/9m+5tuau1LX1qIe1iwAPihHC5aFLFxY7QtWyI3b452ySUR55670PcLANNj377Ir3wl2o4dkTt2RPuv/zrWN/iN04IHwLFknntuxLp1katWRVuyJGLp0ohlyyJal3lgNJs3R1x6ae8pSsk774x22229x4ATlxnx2GMRTzwReeBAtHvuiZiba23fvt6TAScohx/6UDJZww9+sPfzDtNu5E8BAADTRwAAQEECAAAKEgAAUJAAAICCBAAAFCQAAKAgAQAABQkAAChIAABAQQIAAAoSAABQkAAAgIIEAAAUJAAAoCABAAAFCQAAKEgAAEBBAgAAChIAAFCQAACAggQAABQkAACgIAEAAAUJAAAoSAAAQEECAAAKEgAAUJAAAICCBAAAFCQAAKAgAQAABQkAAChIAABAQQIAAAoSAABQkAAAgIIEAAAUJAAAoCABAAAFCQAAKEgAAEBBAgAAChIAAFCQAACAggQAABQkAACgIAEAAAUJAAAoSAAAQEECAAAKEgAAUJAAAICCBAAAFCQAAKAgAQAABQkAAChIAABAQQIAAAoSAABQkAAAgIIEAAAUJAAAoCABAAAFCQAAKEgAAEBBAgAAChIAAFCQAACAggQAABQkAACgIAEAAAUJAAAoSAAAQEECAAAKEgAAUJAAAICCBAAAFCQAAKAgAQAABQkAAChIAABAQQIAAAoSAABQkAAAgIIEAAAUJAAAoCABAAAFCQAAKEgAAEBBAgAAChIAAFCQAACAggQAABQkAACgIAEAAAUJAAAoSAAAQEECAAAKEgAAUJAAAICCBAAAFCQAAKAgAQAABQkAAChIAABAQQIAAAoSAABQkAAAgIIEAAAUJAAAoCABAAAFCQAAKEgAAEBBAgAAChIAAFCQAACAggQAABQkAACgIAEAAAUJAAAoSAAAQEECAAAKEgAAUJAAAICCBAAAFCQAAKAgAQAABQkAAChIAABAQQIAAAoSAABQkAAAgIIEAAAUJAAAoCABAAAFCQAAKEgAAEBBAgAAChIAAFCQAACAggQAABQkAACgIAEAAAUJAAAoSAAAQEECAAAKEgAAUJAAAICCBAAAFCQAAKAgAQAABQkAAChIAABAQQIAAAoSAABQkAAAgIIEAAAUJAAAoCABAAAFCQAAKEgAAEBBAgAAChIAAFCQAACAggQAABQkAACgIAEAAAUJAAAoSAAAQEECAAAKEgAAUJAAAICCBACM7NCh3hOU0xxzGJUAgFG1Awd6j1DP/v29J4BpJwBgVCkAJu+JJ3pPANNOAMCo2uOP9x6hnLQDAKMSADCqvO++3iOU0+69t/cIMO0EAIxsbq73BPU45jCq1nsAmAWZjzwS8fM/33uOEvLhh9vgvPN6jwHTzg4AjEPu3Nl7hDocaxgHAQBjceutvScoo+3Y0XsEmAUCAMahCYCJSQEA4+A9ADAGOTz99Gh790YsW9Z7ltm2b1/EihWtHTnSexKYdnYAYAza4NChiM98pvccs++WWyz+MB4CAMYlb7yx9wizzzGGcfESAIxJZmsRu3dHrF7de5bZNDfX2rp1vaeAWWEHAMaktcyIj3yk9xwzKz/84d4jwCyxAwBjlMPFi6N985sRF17Ye5bZ8u1vR65e3QYHD/aeBGaFHQAYozZ46qkIf6mOXX7wgxZ/GC87ADBmOTzjjGhf/WrE+vW9Z5kNd98duWHD/CctgHGxAwBj1gYHD0a+7W0Rmb1nmX6ZEVdfbfGH8RMAsADa4PbbI26+ufcc0+9v/7Y5yyIsCC8BwALJ4ZIl0b785Yi1a3vPMp3uuSdy48Y22L+/9yQwi+wAwAJpgwMHIl/3uojvf7/3LNPnBz+IeN3rLP6wcAQALKA2+PrXI7Zu9X6AE5EZ+da3tuZrfwGYcpl/9EfJ8Rn+/u/3fr4AYGwyb7ih99p6yhs6kyIAMyjzmmt6r7Gnruuu6/38AMCCydy6NfPIkd7L7anj8OHM3/3d3s8LACy4zNe8JvO73+299Pa3d2/mr/967+cDACYm88ILM2+/vfcS3M9tt2VecEHv5wEAJi5zMMjhlVdmPvxw7+V4ch59NPOd78w87bTexx8Auso8//zM7dtn+70BR45kfupTOVyxovfxBoBTSuaqVZl/9VeZhw71Xq7HuvAPP/OZTN+OCADPKfPiizOvvTbz/vt7L98n7777Mv/0TzNf+MLexxP4ab4MCE5hma1FvOpVka99bbQtWyJ+8RcjBqfoKbyHw8ivfz1ix46Iz3422he+0JpTIMOpSgDAFMnh854XbdOmiPXrI9esibZ2bcSKFRFLlvz430I6cODH//bsidy9O9rcXMSuXRF33NHavn29jxFwfP4f/kAIjCe+IZMAAAAASUVORK5CYII="/>
+                        </defs>
+                    </svg>
+                    <div id="navMobileText">
+                        <div><a href="avi.html">Главная</a></div>
+                        <div>
+                            <a href="" id="curHover">Табло</a>
+                        </div>
+                        <div><a href="">Информация</a></div>
+                        <div><a href="">Помощь</a></div>
+                    </div>
+            </div>
+            
+            <div id="modalShadow"></div>
+            <div id="modalEnter" class="modalRegEnter">
+                <img src="images/plus 2.png" id="closeEnter" class="closeEnterReg" alt="крестик">     
+                <div class="modal1">Вход</div>
+                <form id="formEnter">
+                    <input type="text" placeholder="Email или номер телефона" id="enterEmailTel">
+                    <input type="text" placeholder="Пароль" id="enterPass">
+                    <button class="blueButton buttonEnterReg">Войти</button>
+                </form>
+            </div>
+            <div id="modalReg" class="modalRegEnter">
+                <img src="images/plus 2.png" id="closeReg" class="closeEnterReg" alt="крестик">     
+                <div class="modal1">Регистрация</div>
+                <form id="formReg">
+                    <input type="text" placeholder="Имя" id="regName">
+                    <input type="text" placeholder="Email или номер телефона" id="regEmailTel">
+                    <input type="text" placeholder="Придумайте пароль" id="regPass">
+                    <button class="blueButton buttonEnterReg">Зарегистрироваться</button>
+                </form>
+            </div>
+            <div style="height: 400vh; width: 100%;"></div>
+
+        <script>
+                let navBlue = document.getElementsByClassName("navBlue");
+                for(let i=0; i<navBlue.length;i++) {navBlue[i].addEventListener("mouseover", function () {document.getElementById("curHover").style.color="black";}   );
+                                                    navBlue[i].addEventListener("mouseout", function () {document.getElementById("curHover").style.color="#2D4EFF";}  );}
+
+                let menuMobile=document.getElementById("menuMobile");
+                menuMobile.addEventListener("click", function () {document.getElementById("navMobileShadow").style.display="block";
+                                                                  document.getElementById("navMobile").style.display="grid";
+                                                                  document.getElementById("navMobileText").style.display="grid";  
+                                                                  document.body.style.overflow="hidden";  
+                                                                  document.body.style.height="100vh";  } );
+                let close=document.getElementById("close");
+                close.addEventListener("click", function () {document.getElementById("navMobileShadow").style.display="none";
+                                                                  document.getElementById("navMobile").style.display="none";
+                                                                  document.getElementById("navMobileText").style.display="none";   
+                                                             document.body.style.overflow="auto"; 
+                                                             document.body.style.height="auto";  } );   
+                                                             
+                let scrollHeight = document.body.scrollHeight;
+                document.getElementById("modalShadow").style.height=`${scrollHeight}px`;                                             
+                let enter=document.getElementById("enter");
+                enter.addEventListener("click", function () {document.getElementById("modalEnter").style.top="50%";
+                                                            document.getElementById("modalShadow").style.display="block";
+                                                            } );
+                let closeEnter = document.getElementById("closeEnter");
+                closeEnter.addEventListener("click", function () {document.getElementById("modalEnter").style.top="-50%";
+                                                                  document.getElementById("modalShadow").style.display="none";} );
+                let reg=document.getElementById("reg");
+                reg.addEventListener("click", function () {document.getElementById("modalReg").style.top="50%";
+                                                            document.getElementById("modalShadow").style.display="block";
+                                                            } );
+                let closeReg = document.getElementById("closeReg");
+                closeReg.addEventListener("click", function () {document.getElementById("modalReg").style.top="-50%";
+                                                                  document.getElementById("modalShadow").style.display="none";} );
+                
+                let enterEmailTel = document.getElementsById("enterEmailTel");
+                enterEmailTel.addEventListener("input", function () {} );  //как сделать перенос плейсхолдера в верхнюю часть (разделение инпута на две строки)? (не фокус, т.к. надо, чтобы оно и после осталось)
+        </script>
     </body>
 </html>
