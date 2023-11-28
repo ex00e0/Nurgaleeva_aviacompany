@@ -132,9 +132,14 @@
                                                    grid-column:3;} 
                                       .wrapTimetable {grid-template-columns: 1fr repeat(4,0.75fr);
                                                      grid-template-rows: repeat(3,1fr); 
-                                                    row-gap:10%;}     }
+                                                    row-gap:10%;}   
+                                      footer {grid-template-columns: 1fr 10% 1fr;
+                                                grid-template-rows: 65% 50%;
+                                                height:40vmax;}
+                                     #gradMobileNone {display:none;} 
+                                     #footerCol3 {padding-left: 10%;}  }
 
-            @media (min-width:481px) and (max-width:1199px) {nav {height:8vh;
+            @media (min-width:481px) and (max-width:1199px) and (orientation: portrait) {nav {height:8vh;
                                                     grid-template-columns:5% 10vw 1.5vw 15vw 1fr 0.9fr 2% 0.9fr 2% 5% 5%;} 
                                                #navigation {display: none;}
                                                #menuMobile {grid-column:10;
@@ -177,7 +182,12 @@
                                                    grid-column:3;} 
                                       .wrapTimetable {grid-template-columns: 1fr repeat(4,0.75fr);
                                                      grid-template-rows: repeat(3,1fr); 
-                                                    row-gap:10%;} }
+                                                    row-gap:10%;}
+                                       footer {grid-template-columns: 1fr 8% 1fr;
+                                                grid-template-rows: 60% 55%;
+                                                height:40vmax;}
+                                     #gradMobileNone {display:none;} 
+                                     #footerCol3, #footerCol4, #footerCol2 {padding-left: 10%;}  }
                                                 
                 @media (min-width:481px) and (max-width:1199px) and (orientation: landscape) {nav {height:18vh;
                                                             grid-template-columns:5% 6.5vw 1.5vw 15vw 1fr 0.9fr 2% 0.9fr 2% 5% 5%;} 
@@ -203,7 +213,10 @@
                                                         .code1 {grid-row:2;
                                                                 grid-column:2;}         
                                                         .code2 {grid-row:2;
-                                                                 grid-column:4;}        }
+                                                                 grid-column:4;}  
+                                                        footer {grid-template-columns: 1.2fr 5% 1fr 5% 1fr 5% 1fr;
+                                                                         grid-template-rows: 100%;
+                                                                         height:23vmax;}      }
 
             @media (max-width:1720px) and (min-width:1200px) {nav {height:13vh;
                                                                     grid-template-columns:5% 5vw 1vw 10vw 1fr 0.2fr 2% 0.2fr 5%;} 
@@ -227,7 +240,10 @@
                                                                 .code1 {grid-row:2;
                                                                          grid-column:2;}         
                                                                 .code2 {grid-row:2;
-                                                                        grid-column:4;}     }
+                                                                        grid-column:4;}    
+                                                                footer {grid-template-columns: 1.2fr 5% 1fr 5% 1fr 5% 1fr;
+                                                                         grid-template-rows: 100%;
+                                                                         height:23vmax;} }
 
             @media (min-width:1721px) {nav {height:14vh;
                                             grid-template-columns:5% 5vw 1vw 10vw 1fr 0.2fr 2% 0.2fr 5%;}
@@ -251,7 +267,10 @@
                                         .code1 {grid-row:2;
                                                 grid-column:2;}         
                                         .code2 {grid-row:2;
-                                                grid-column:4;} }
+                                                grid-column:4;} 
+                                        footer {grid-template-columns: 1.2fr 5% 1fr 5% 1fr 5% 1fr;
+                                                grid-template-rows: 100%;
+                                                height:23vmax;}}
             nav {width:100%; 
                  display:grid;
                  grid-template-rows:100%;}
@@ -385,10 +404,7 @@
                     font-family: "Inter";}
             #void {height:13vmax;
                    width:100%;}
-            footer {height:23vmax;
-                   display:grid;
-                   grid-template-columns: 1.2fr 5% 1fr 5% 1fr 5% 1fr;
-                   grid-template-rows: 100%;}
+            footer {display:grid;}
             footer img {height:100%;
                         width:100%;}
             #footerCol1 {display: grid;
@@ -668,8 +684,8 @@
                     <div class="footerPartRow5"><a href="">Лицензии</a></div>
                     <div class="footerPartRow6"><a href="">Правила</a></div>
                 </div>
-                <img src="images/Group 2.png" alt="градиент">
-                <div class="footerPart" id="footerCol2">
+                <img src="images/Group 2.png" alt="градиент" id="gradMobileNone">
+                <div class="footerPart" id="footerCol3">
                     <div class="headline headlineFooter">О рейсах</div>
                     <div class="footerPartRow4"><a href="">Табло с рейсами</a></div>
                     <div class="footerPartRow5"><a href="">Классы</a></div>
@@ -677,7 +693,7 @@
                     <div class="footerPartRow7"><a href="">Направления</a></div>
                 </div>
                 <img src="images/Group 2.png" alt="градиент">
-                <div class="footerPart" id="footerCol2">
+                <div class="footerPart" id="footerCol4">
                     <div class="headline headlineFooter">Офисы</div>
                     <div class="footerPartRow4"><a href="">Главный офис</a></div>
                     <div class="footerPartRow5"><a href="">Офис в Уфе</a></div>
@@ -686,8 +702,6 @@
                 </div>
 
             </footer>
-
-            <div style="height: 400vh; width: 100%;"></div>
         <script>
                 let navBlue = document.getElementsByClassName("navBlue");
                 for(let i=0; i<navBlue.length;i++) {navBlue[i].addEventListener("mouseover", function () {document.getElementById("curHover").style.color="black";}   );
