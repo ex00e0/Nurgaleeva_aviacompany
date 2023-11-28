@@ -3,454 +3,7 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Табло рейсов</title>
-        <style>
-            .modal1 {font-family: "Mariupol";                     
-                     font-size:3vmax;
-                     grid-row:3;
-                     grid-column:1/3;}
-           
-            #formEnter {grid-row:5/8;
-                        grid-column:1/3;
-                        width:60%;
-                        height:100%;
-                        display:grid;
-                        grid-template-columns: 100%;
-                        grid-template-rows:repeat(3,1fr);
-                        row-gap:15%;}
-            #formReg {grid-row:5/8;
-                        grid-column:1/3;
-                        width:60%;
-                        height:100%;
-                        display:grid;
-                        grid-template-columns: 100%;
-                        grid-template-rows:repeat(4,1fr);
-                        row-gap:12%;}
-            input {width:100%;
-                   height:100%;
-                   padding-left: 5%;
-                   font-size: 1.1vmax;
-                   box-sizing: border-box;
-                   font-family: "Inter";
-                   color: #6c6c6c;
-                   border-radius: 1vmax;
-                   grid-column:1;
-                   border: 0.1vmax solid #6c6c6c;} 
-            input:focus {outline: none;}
-       
-            .closeEnterReg {grid-row:2;
-                         grid-column:1;
-                         justify-self: end;}
-            .buttonEnterReg {height:100%;
-                             width:70%;
-                             justify-self: center;}
-            #modalShadow {width:100%;
-                          position:absolute;
-                          display:none;
-                          top:0;
-                          left:0;
-                          background-color: rgba(0,0,0,0.5);}
-            #modalEnter {grid-template-rows: 5% 5% 15% 10% 1fr 5% 10% 13%;}
-            .modalRegEnter {border-radius:1.5vmax;
-                        position:fixed;
-                        top:-50%;
-                        left:50%;
-                        transform: translate(-50%, -50%);
-                        transition: all .6s ease-in;
-                        background-color: #f9f9f9;
-                        border: 0.15vmax solid #2D4EFF;
-                        display:grid;
-                        grid-template-columns: auto 4%;
-                        justify-items: center;}
-            #modalReg {grid-template-rows: 5% 5% 12% 10% 1fr 20% 10% 13%;}
-            
-            * {margin:0;
-              padding:0;
-              border: 0;
-              font-size: 100%;}
-            html, body {background-color: #f9f9f9;}
-            a {text-decoration: none;
-               color:inherit;}
-            @font-face { font-family: "Inter";
-                    src: url("fonts/Inter-Regular.woff"); 
-                   font-weight: normal;
-                   font-style: normal; }
-            @font-face { font-family: "Inter Light";
-                    src: url("fonts/Inter-LightBETA.woff"); 
-                   font-weight: normal;
-                   font-style: normal; }
-            @font-face { font-family: "Mariupol";
-                    src: url("fonts/Mariupol-Regular.woff"); 
-                   font-weight: normal;
-                   font-style: normal; }
-            .blueButton {background-color: #2D4EFF;
-                         border: none;
-                         border-radius: 0.75vmax;
-                         color:white;
-                         font-size: 1.2vmax;
-                         font-family: "Inter";}
-
-            @media (max-width:480px) {nav {height:8vh;
-                                           grid-template-columns:5% 10vw 1.5vw 15vw 1fr 0.9fr 2% 0.9fr 2% 5% 5%;} 
-                                      #navigation {display: none;}
-                                      #menuMobile {grid-column:10;
-                                                   width:100%;
-                                                   align-self:center;} 
-                                      #reg, #enter {height:45%;} 
-                                      #modalEnter {width:80%;
-                                                   height:33%;}    
-                                      #modalReg {width:80%;
-                                                 height:40%;}     
-                                      #navMobile {grid-template-columns: 10% auto 16% 12%;
-                                                    grid-template-rows: 2.5% 3.5% auto;}  
-                                      #headline2 {width:85%;}  
-                                      #timetableBlock {height:70vmax;
-                                                      grid-template-rows: 5% 3% 4% 3% 4% 10% 1fr 3% 1fr 3% 1fr;}
-                                      #tableHead {grid-template-columns: 1fr repeat(4,0.75fr);
-                                                    grid-template-rows: repeat(2,1fr); 
-                                                   row-gap:15%;}
-                                      .tableText1 {grid-row:1;
-                                                       grid-column:1;} 
-                                      .tableText2 {grid-row:2;
-                                                       grid-column:1;} 
-                                      .tableText3 {grid-row:1;
-                                                       grid-column:2;} 
-                                      .tableText4 {grid-row:2;
-                                                       grid-column:2;} 
-                                      .tableText5 {grid-row:1;
-                                                       grid-column:3;}
-                                      .tableText6 {grid-row:2;
-                                                       grid-column:3;} 
-                                      .tableText7 {grid-row:1;
-                                                       grid-column:4;
-                                                    justify-self: center;} 
-                                      .tableText8 {grid-row:1;
-                                                   justify-self: center;
-                                                       grid-column:5;} 
-                                      .tableText9 {grid-row:3;
-                                                   grid-column:2;}
-                                      .tableText10 {grid-row:3;
-                                                   grid-column:3;} 
-                                      .wrapTimetable {grid-template-columns: 1fr repeat(4,0.75fr);
-                                                     grid-template-rows: repeat(3,1fr); 
-                                                    row-gap:10%;}   
-                                      footer {grid-template-columns: 1fr 10% 1fr;
-                                                grid-template-rows: 65% 50%;
-                                                height:40vmax;}
-                                     #gradMobileNone {display:none;} 
-                                     #footerCol3 {padding-left: 10%;}  }
-
-            @media (min-width:481px) and (max-width:1199px) and (orientation: portrait) {nav {height:8vh;
-                                                    grid-template-columns:5% 10vw 1.5vw 15vw 1fr 0.9fr 2% 0.9fr 2% 5% 5%;} 
-                                               #navigation {display: none;}
-                                               #menuMobile {grid-column:10;
-                                                            width:100%;
-                                                            align-self:center;} 
-                                               #reg, #enter {height:45%;} 
-                                               #modalEnter {width:60%;
-                                                            height:33%;}    
-                                               #modalReg {width:60%;
-                                                          height:40%;}       
-                                                #navMobile {grid-template-columns: 10% auto 16% 12%;
-                                                            grid-template-rows: 2.5% 3.5% auto;}  
-                                                #headline2 {width:60%;} 
-                                                #timetableBlock {height:70vmax;
-                                                      grid-template-rows: 5% 3% 3% 3% 5% 10% 1fr 3% 1fr 3% 1fr;}
-                                      #tableHead {grid-template-columns: 1fr repeat(4,0.75fr);
-                                                    grid-template-rows: repeat(2,1fr); 
-                                                   row-gap:15%;}
-                                      .tableText1 {grid-row:1;
-                                                       grid-column:1;} 
-                                      .tableText2 {grid-row:2;
-                                                       grid-column:1;} 
-                                      .tableText3 {grid-row:1;
-                                                       grid-column:2;} 
-                                      .tableText4 {grid-row:2;
-                                                       grid-column:2;} 
-                                      .tableText5 {grid-row:1;
-                                                       grid-column:3;}
-                                      .tableText6 {grid-row:2;
-                                                       grid-column:3;} 
-                                      .tableText7 {grid-row:1;
-                                                       grid-column:4;
-                                                    justify-self: center;} 
-                                      .tableText8 {grid-row:1;
-                                                   justify-self: center;
-                                                       grid-column:5;} 
-                                      .tableText9 {grid-row:3;
-                                                   grid-column:2;}
-                                      .tableText10 {grid-row:3;
-                                                   grid-column:3;} 
-                                      .wrapTimetable {grid-template-columns: 1fr repeat(4,0.75fr);
-                                                     grid-template-rows: repeat(3,1fr); 
-                                                    row-gap:10%;}
-                                       footer {grid-template-columns: 1fr 8% 1fr;
-                                                grid-template-rows: 60% 55%;
-                                                height:40vmax;}
-                                     #gradMobileNone {display:none;} 
-                                     #footerCol3, #footerCol4, #footerCol2 {padding-left: 10%;}  }
-                                                
-                @media (min-width:481px) and (max-width:1199px) and (orientation: landscape) {nav {height:18vh;
-                                                            grid-template-columns:5% 6.5vw 1.5vw 15vw 1fr 0.9fr 2% 0.9fr 2% 5% 5%;} 
-                                                       #navigation {display: none;}
-                                                       #menuMobile {grid-column:10;
-                                                                    width:100%;
-                                                                    align-self:center;} 
-                                                       #reg, #enter {height:45%;} 
-                                                       #modalEnter {width:60%;
-                                                                    height:65%;}    
-                                                       #modalReg {width:60%;
-                                                                  height:85%;}       
-                                                        #navMobile {grid-template-columns: 10% auto 15% 12%;
-                                                                    grid-template-rows: 4% 10% auto;}  
-                                                        #headline2 {width:40%;} 
-                                                        #timetableBlock {height:50vmax;
-                                                                        grid-template-rows: 7% 5% 5% 5% 5% 5% 1fr 3% 1fr 3% 1fr;}
-                                                        #tableHead {grid-template-columns: repeat(8,1fr);
-                                                                     grid-template-rows: 100%; } 
-                                                        .terminalGate {justify-self: center;}
-                                                        .wrapTimetable {grid-template-columns: repeat(8,1fr);
-                                                                        grid-template-rows: 60% auto;  }  
-                                                        .code1 {grid-row:2;
-                                                                grid-column:2;}         
-                                                        .code2 {grid-row:2;
-                                                                 grid-column:4;}  
-                                                        footer {grid-template-columns: 1.2fr 5% 1fr 5% 1fr 5% 1fr;
-                                                                         grid-template-rows: 100%;
-                                                                         height:23vmax;}      }
-
-            @media (max-width:1720px) and (min-width:1200px) {nav {height:13vh;
-                                                                    grid-template-columns:5% 5vw 1vw 10vw 1fr 0.2fr 2% 0.2fr 5%;} 
-                                                              #navigation {display: flex;}
-                                                              #menuMobile {display:none;}
-                                                              #reg, #enter {height:55%;} 
-                                                              #modalEnter {width:40%;
-                                                                            height:55%;}
-                                                              #modalReg {width:40%;
-                                                                        height:70%;} 
-                                                              #navMobile {grid-template-columns: 10% auto 16% 12%;
-                                                                          grid-template-rows: 2.5% 3.5% auto;} 
-                                                                #headline2 {width:40%;}
-                                                                #timetableBlock {height:50vmax;
-                                                                                grid-template-rows: 7% 5% 5% 5% 5% 5% 1fr 3% 1fr 3% 1fr;} 
-                                                                #tableHead {grid-template-columns: repeat(8,1fr);
-                                                                            grid-template-rows: 100%; } 
-                                                                .terminalGate {justify-self: center;}
-                                                                .wrapTimetable {grid-template-columns: repeat(8,1fr);
-                                                                                grid-template-rows: 60% auto;  }    
-                                                                .code1 {grid-row:2;
-                                                                         grid-column:2;}         
-                                                                .code2 {grid-row:2;
-                                                                        grid-column:4;}    
-                                                                footer {grid-template-columns: 1.2fr 5% 1fr 5% 1fr 5% 1fr;
-                                                                         grid-template-rows: 100%;
-                                                                         height:23vmax;} }
-
-            @media (min-width:1721px) {nav {height:14vh;
-                                            grid-template-columns:5% 5vw 1vw 10vw 1fr 0.2fr 2% 0.2fr 5%;}
-                                        #navigation {display: flex;}
-                                        #menuMobile {display:none;} 
-                                        #reg, #enter {height:55%;} 
-                                        #modalEnter {width:40%;
-                                                    height:55%;} 
-                                        #modalReg {width:40%;
-                                                   height:70%;}
-                                        #navMobile {grid-template-columns: 10% auto 16% 12%;
-                                                    grid-template-rows: 2.5% 3.5% auto;} 
-                                        #headline2 {width:40%;} 
-                                        #timetableBlock {height:50vmax;
-                                                        grid-template-rows: 7% 5% 5% 5% 5% 5% 1fr 3% 1fr 3% 1fr;} 
-                                        #tableHead {grid-template-columns: repeat(8,1fr);
-                                                    grid-template-rows: 100%; } 
-                                        .terminalGate {justify-self: center;}
-                                        .wrapTimetable {grid-template-columns: repeat(8,1fr);
-                                                        grid-template-rows: 60% auto;  }     
-                                        .code1 {grid-row:2;
-                                                grid-column:2;}         
-                                        .code2 {grid-row:2;
-                                                grid-column:4;} 
-                                        footer {grid-template-columns: 1.2fr 5% 1fr 5% 1fr 5% 1fr;
-                                                grid-template-rows: 100%;
-                                                height:23vmax;}}
-            nav {width:100%; 
-                 display:grid;
-                 grid-template-rows:100%;}
-            #logo {max-width: 100%;
-                   max-height: 75%;
-                   min-width:90%;
-                   min-height:55%;
-                  align-self:center;
-                  grid-column:2;
-                  grid-row:1;}
-            #logoText {grid-column:4;
-                       color:#2D4EFF;
-                       font-family: "Inter Light";
-                       font-size: 1.4vmax;
-                       align-self: center;
-                       grid-row:1;}
-            #navigation {grid-column:1/span all;
-                         grid-row:1;
-                         width:30%;
-                         justify-self: center;
-                         align-items: center;
-                         justify-content: space-between;
-                         font-family: "Inter";
-                         font-size: 1.4vmax;}
-            #curPage {color:#2D4EFF;
-                      display: grid;
-                      grid-template-columns: 100%;
-                      grid-template-rows: 100%;
-                      height:100%;}
-            #curPage a {grid-row:1;
-                        grid-column:1;
-                        align-self: center;}
-            #blueLine {width:5%;
-                       height: 30%;
-                       grid-row:1;
-                       grid-column:1;
-                       background-color: #2D4EFF;
-                       justify-self: center;}
-            .navBlue:hover {color:#2D4EFF;}
-            #reg {grid-column: 8;
-                  grid-row:1;
-                  align-self:center;}
-            #enter {grid-column: 6;
-                   grid-row:1;
-                   align-self:center;}
-            #navMobileShadow {background-color: rgba(0,0,0,0.5);
-                              width:60%;
-                              height:100%;
-                              position:absolute; 
-                              top:0;
-                              left:0;}
-            #navMobile {background-color: rgba(32, 50, 152, 0.9);
-                        width:40%;
-                        height:100%;
-                        position:absolute;
-                        top:0;
-                        right:0;}
-            #navMobileText {align-self:center;
-                            color:white;
-                            height:40%;
-                            width:5%;
-                            font-family: "Inter";
-                            font-size: 1.5vmax;
-                            grid-column:2;
-                            grid-row:1/span all;
-                            grid-template-rows: repeat(4,1fr);
-                            grid-template-columns: 100%;}
-            #navMobileShadow, #navMobile, #navMobileText {display:none;}
-            #close {grid-row:2;
-                    grid-column:3;
-                    width:100%;
-                    height:100%;}
-            .labels {grid-column:1;
-                margin-top: 1%;
-                margin-left: 5.1%;
-                font-family: "Inter";
-                font-size: 0.9vmax;
-                color:#6c6c6c;
-                height:10%;
-                width:100%;
-                display:none;}
-            #labelEnterEmailTel, #labelRegName, #enterEmailTel, #regName {grid-row:1;}
-            #labelEnterPass, #labelRegEmailTel, #enterPass, #regEmailTel {grid-row:2;}
-            #buttonEnter, #labelRegPass, #regPass {grid-row:3;}
-            #timetableBlock {width:100%;
-                            display:grid;
-                            grid-template-columns:3% auto 3%;}
-            .headline {font-size: 2.3vmax;
-                       font-family: "Mariupol";}
-            #headline1 {grid-row:2;     
-                        grid-column:2;}
-            #headline2 {grid-row:4;
-                        justify-self: center;
-                        display:flex;
-                       grid-column:2;
-                        justify-content: space-evenly;}
-            #today {color:#2D4EFF;}
-            #tableHead {display:grid;
-                       width:97%;
-                       justify-self: end;
-                        grid-column:2;
-                        grid-row:6;}
-            #tableHead div {color:#6c6c6c;
-                            font-size: 1.4vmax;
-                            font-family: "Inter";}
-            .timetable {grid-column:2;
-                         background-color: white;
-                         border-radius:1.5vmax;
-                         border: 0.15vmax solid #2D4EFF;}
-            #timetable1, #timetable1T, #timetable1Y {grid-row:7;}
-            #timetable2, #timetable2T, #timetable2Y {grid-row:9;}
-            #timetable3, #timetable3T, #timetable3Y {grid-row:11;}
-            #timetable1, #timetable2, #timetable3 {display: grid;}
-            #timetable1T, #timetable2T, #timetable3T {display:none;}
-            #timetable1Y, #timetable2Y, #timetable3Y {display:none;}
-            .wrapTimetable {width:97%;
-                            height:80%;
-                            align-self: end;
-                            justify-self: end;
-                            display:grid;}
-            .timetable div :not(.code1, .code2) {font-family: "Inter";
-                            font-size: 1.5vmax;}
-            .statusGreen {color:#2A7E1D;}
-            .statusRed {color:#AB2929;}
-            .statusYellow {color:#BBAC28;}
-            .code1 {color:#6c6c6c;
-                    font-size: 1.2vmax;
-                    font-family: "Inter";}
-            .code2 {color:#6c6c6c;
-                    font-size: 1.2vmax;
-                    font-family: "Inter";}
-            #void {height:13vmax;
-                   width:100%;}
-            footer {display:grid;}
-            footer img {height:100%;
-                        width:100%;}
-            #footerCol1 {display: grid;
-                         grid-template-columns: 10% 17% 5% auto;
-                         grid-template-rows: 3% 18% repeat(3, 1fr) 7%;}
-            #buttonFooterText1, #buttonFooterText2,  #buttonFooterText3 {font-family:"Inter";
-                                                                        font-size: 1.3vmax;
-                                                                        align-self: center;}
-            .headlineFooter {grid-row:2;
-                             grid-column: 2/5;}
-            .buttonFooter {border-radius: 1000vmax;
-                           background-color: #2D4EFF;
-                           align-self:center;
-                           border:none;
-                           width:4vmax;
-                           height:4vmax;}
-            #buttonF1 {grid-row:3;
-                       grid-column: 2;}
-            #buttonF2 {grid-row:4;
-                       grid-column: 2;}
-            #buttonF3 {grid-row:5;
-                       grid-column: 2;}
-            .imgButtonFooter {width:50%;
-                              height:50%;}
-            #buttonFooterText1 {grid-row:3;
-                                grid-column:4;}
-            #buttonFooterText2 {grid-row:4;
-                                grid-column:4;}
-            #buttonFooterText3 {grid-row:5;
-                                grid-column:4;}
-            .footerPart {display: grid;
-                         grid-template-columns: 10% auto;
-                         grid-template-rows: 3% 10% repeat(4, 1fr) 25%;}
-            .footerPart div:not(.headlineFooter, .headline) {font-size: 1.3vmax;
-                                                             font-family: "Inter";
-                                                             color:#6c6c6c;}
-            .footerPartRow4 {grid-row:4;
-                            grid-column:1/span all;}
-            .footerPartRow5 {grid-row:5;
-                             grid-column:1/span all;}
-            .footerPartRow6 {grid-row:6;
-                            grid-column:1/span all;}
-            .footerPartRow7 {grid-row:7;
-                            grid-column:1/span all;}
-            .so:hover {color:#2D4EFF;}
-        </style>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
             <nav>
@@ -460,7 +13,7 @@
                     <div><a href="avi.html" class="navBlue">Главная</a></div>
                     <div id="curPage">
                         <div id="blueLine"></div>
-                        <a href="" id="curHover">Табло</a>
+                        <a href="" class="curHover">Табло</a>
                     </div>
                     <div><a href=""  class="navBlue">Информация</a></div>
                     <div><a href=""  class="navBlue">Помощь</a></div>
@@ -484,7 +37,7 @@
                     <div id="navMobileText">
                         <div><a href="avi.html">Главная</a></div>
                         <div>
-                            <a href="" id="curHover">Табло</a>
+                            <a href="" class="curHover">Табло</a>
                         </div>
                         <div><a href="">Информация</a></div>
                         <div><a href="">Помощь</a></div>
@@ -493,7 +46,7 @@
             
             <div id="modalShadow"></div>
             <div id="modalEnter" class="modalRegEnter">
-                <img src="images/plus 2.png" id="closeEnter" class="closeEnterReg" alt="крестик">     
+                <img src="images/plus2.png" id="closeEnter" class="closeEnterReg" alt="крестик">     
                 <div class="modal1">Вход</div>
                 <form id="formEnter">
                     <input type="text" placeholder="Email или номер телефона" id="enterEmailTel">
@@ -504,7 +57,7 @@
                 </form>
             </div>
             <div id="modalReg" class="modalRegEnter">
-                <img src="images/plus 2.png" id="closeReg" class="closeEnterReg" alt="крестик">     
+                <img src="images/plus2.png" id="closeReg" class="closeEnterReg" alt="крестик">     
                 <div class="modal1">Регистрация</div>
                 <form id="formReg">
                     <input type="text" placeholder="Имя" id="regName">
@@ -664,27 +217,27 @@
             <footer>
                 <div id="footerCol1">
                     <div class="headlineFooter headline">Свяжитесь с нами</div>
-                    <button class="buttonFooter" id="buttonF1">
-                           <img src="images/speech-bubble 1.png" alt="сообщение" class="imgButtonFooter">                        
-                    </button>
-                    <button class="buttonFooter" id="buttonF2">
-                        <img src="images/phone-call 1.png" alt="звонок" class="imgButtonFooter">              
-                    </button>
-                    <button class="buttonFooter" id="buttonF3">
-                        <img src="images/telegram 1.png" alt="телеграм" class="imgButtonFooter">                        
-                    </button>
+                    <a class="buttonFooter" id="buttonF1"  href="help.html">
+                           <img src="images/speech-bubble1.png" alt="сообщение" class="imgButtonFooter">                        
+                    </a>
+                    <a class="buttonFooter" id="buttonF2" href="tel:+79528123641">
+                        <img src="images/phone-call1.png" alt="звонок" class="imgButtonFooter">              
+                    </a>
+                    <a class="buttonFooter" id="buttonF3" href="https://t.me/trapbed">
+                        <img src="images/telegram1.png" alt="телеграм" class="imgButtonFooter">                        
+                    </a>
                     <div id="buttonFooterText1">Служба поддержки</div>
                     <div id="buttonFooterText2">Звонок</div>
                     <div id="buttonFooterText3">Телеграм</div>
                 </div>
-                <img src="images/Group 2.png" alt="градиент">
+                <img src="images/Group2.png" alt="градиент">
                 <div class="footerPart" id="footerCol2">
                     <div class="headline headlineFooter">О компании</div>
                     <div class="footerPartRow4"><a href="">Общая информация</a></div>
                     <div class="footerPartRow5"><a href="">Лицензии</a></div>
                     <div class="footerPartRow6"><a href="">Правила</a></div>
                 </div>
-                <img src="images/Group 2.png" alt="градиент" id="gradMobileNone">
+                <img src="images/Group2.png" alt="градиент" id="gradMobileNone">
                 <div class="footerPart" id="footerCol3">
                     <div class="headline headlineFooter">О рейсах</div>
                     <div class="footerPartRow4"><a href="">Табло с рейсами</a></div>
@@ -692,7 +245,7 @@
                     <div class="footerPartRow6"><a href="">Дополнительные услуги</a></div>
                     <div class="footerPartRow7"><a href="">Направления</a></div>
                 </div>
-                <img src="images/Group 2.png" alt="градиент">
+                <img src="images/Group2.png" alt="градиент">
                 <div class="footerPart" id="footerCol4">
                     <div class="headline headlineFooter">Офисы</div>
                     <div class="footerPartRow4"><a href="">Главный офис</a></div>
@@ -704,8 +257,8 @@
             </footer>
         <script>
                 let navBlue = document.getElementsByClassName("navBlue");
-                for(let i=0; i<navBlue.length;i++) {navBlue[i].addEventListener("mouseover", function () {document.getElementById("curHover").style.color="black";}   );
-                                                    navBlue[i].addEventListener("mouseout", function () {document.getElementById("curHover").style.color="#2D4EFF";}  );}
+                for(let i=0; i<navBlue.length;i++) {navBlue[i].addEventListener("mouseover", function () {document.getElementById("curPage").style.color="black";}   );
+                                                    navBlue[i].addEventListener("mouseout", function () {document.getElementById("curPage").style.color="#2D4EFF";}  );}
 
                 let menuMobile=document.getElementById("menuMobile");
                 menuMobile.addEventListener("click", function () {document.getElementById("navMobileShadow").style.display="block";
