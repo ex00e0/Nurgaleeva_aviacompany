@@ -2,7 +2,6 @@
     font-size:3vmax;
     grid-row:3;
     grid-column:1/3;}
-
 #formEnter {grid-row:5/8;
        grid-column:1/3;
        width:60%;
@@ -19,7 +18,7 @@
        grid-template-columns: 100%;
        grid-template-rows:repeat(4,1fr);
        row-gap:12%;}
-input:not(.inputHeader) {width:100%;       
+.inputModal {width:100%;       
   height:100%;
   padding-left: 5%;
   font-size: 1.1vmax;
@@ -29,7 +28,7 @@ input:not(.inputHeader) {width:100%;
   border-radius: 1vmax;
   grid-column:1;
   border: 0.1vmax solid #6c6c6c;} 
-input:focus:not(.inputHeader) {outline: none;}
+input:focus {outline: none;}
 
 .closeEnterReg {grid-row:2;
         grid-column:1;
@@ -335,9 +334,9 @@ grid-template-rows:100%;}
 #navMobileShadow, #navMobile, #navMobileText {display:none;}
 #close {grid-row:2;
    grid-column:3;
-   width:100%;
-   height:100%;}
-.labels {grid-column:1;
+   width:4vmax;
+   height:4vmax;}
+.labelModal {grid-column:1;
 margin-top: 1%;
 margin-left: 5.1%;
 font-family: "Inter";
@@ -370,7 +369,7 @@ display:none;}
 #tableHead div {color:#6c6c6c;
            font-size: 1.4vmax;
            font-family: "Inter";}
-.timetable {grid-column:2;
+.timetable, .flightInfo {grid-column:2;
         background-color: white;
         border-radius:1.5vmax;
         border: 0.15vmax solid #2D4EFF;}
@@ -396,7 +395,7 @@ display:none;}
 .code2 {color:#6c6c6c;
    font-size: 1.2vmax;
    font-family: "Inter";}
-#void {height:13vmax;
+.void {height:13vmax;
   width:100%;}
 footer {display:grid;}
 footer img {height:100%;
@@ -447,3 +446,296 @@ footer img {height:100%;
 .footerPartRow7 {grid-row:7;
            grid-column:1/span all;}
 .so:hover {color:#2D4EFF;}
+
+
+
+@media (max-width:480px) {#headerMain {height:70vmax;}  
+#searchBlock {grid-template-columns: 5% 0.1% auto;
+               grid-template-rows: 5% 20% auto;} 
+#imgAirplane {display:none;} 
+#imgSky {display:none;}
+#headlineHeader {font-size:4vmax;} 
+.void2 {display:none;} 
+#sliderBlock {grid-template-columns: 3% 7% 2% auto 2% 7% 3%;
+           height: 17vmax;
+           grid-template-rows: 100%;}
+.slide {grid-template-rows:55% 30% 1% 3% auto;} 
+.slideHeadline{font-size:2vmax;}  
+.slideA{font-size:1vmax;} 
+} 
+@media (min-width:481px) and (max-width:1199px) and (orientation: portrait) {#headlineHeader {font-size:4.5vmax;}
+                                                   #headerMain {height:75vmax;}
+                                                   #searchBlock {grid-template-columns: 10% 0.1% auto;
+                                                                grid-template-rows: 5% 23% auto;} 
+                                                                           #imgAirplane {display:none;} 
+                                                                           #imgSky {display:none;}
+                                                   .void2 {display:none;} 
+                                                   }
+@media (min-width:481px) and (max-width:1199px) and (orientation: landscape) {#headerMain {height:70vmax;} 
+                                                    #headlineHeader {font-size:4.5vmax;} 
+                                                    #searchBlock {grid-template-columns: 55% 7% auto;
+                                                                 grid-template-rows: 10% 20% auto;}
+                                                   #sliderBlock { height: 35vmax;
+                                                                   grid-template-columns: 3% 3% 2% auto 2% 3% 3%;
+                                                                   grid-template-rows: 100%;}
+                                                   .slide {grid-template-rows:75% 12% 1% 3% auto;}
+                                                   .slideHeadline{font-size:2.9vmax;}
+                                                   .slideA{font-size:1.4vmax;}  }
+@media (min-width:1200px) {#headerMain {height:70vmax;} 
+                           #searchBlock {grid-template-columns: 55% 7% auto;
+                                           grid-template-rows: 10% 20% auto;}
+                           #headlineHeader {font-size:4.5vmax;} 
+                           #sliderBlock { height: 35vmax;
+                                           grid-template-columns: 3% 3% 2% auto 2% 3% 3%;
+                                           grid-template-rows: 100%;}
+                           .slide {grid-template-rows:75% 12% 1% 3% auto;}
+                           .slideHeadline{font-size:2.9vmax;}
+                           .slideA{font-size:1.4vmax;} }
+#headerMain {width:100%;
+display: grid;
+grid-template-columns: 48% 10% auto;
+grid-template-rows: 10% auto;}
+#navInHeader {grid-row:1;
+grid-column:1/span all;}
+
+#searchBlock {display: grid;
+grid-row:2;
+grid-column:1/span all;}
+#imgAirplane {grid-column:1/3;
+grid-row:1/3;
+align-self:center;
+width:100%;}
+#imgSky {grid-row:1/3;
+grid-column:1;
+height:100%;
+width:80%;}
+#headlineHeader {grid-row:2;
+grid-column:2/4;
+font-family: "Mariupol";}
+#formHeader {display: grid;
+grid-row:3;
+grid-column:3;
+grid-template-columns:1fr 10% 1fr 12%;
+grid-template-rows:7% 6.5% 8% 7% 6.5% 8% 7% 6.5% 8% 7.5% auto;} 
+.inputSelectHeader {border-radius:0.5vmax;
+font-weight: 500;
+color: #6c6c6c;
+padding-left: 7%;
+box-shadow:0.15vmax 0.15vmax 0.4vmax 0.1vmax rgba(0,0,0,0.08); 
+font-family: "Inter";
+font-size:1.1vmax;}
+.selectHeaderPassenger {grid-row:8;
+grid-column:1/4;
+border-radius:0.5vmax;
+font-weight: 500;
+color: #6c6c6c;
+padding-left: 3%;
+width:60%;
+box-shadow:0.15vmax 0.15vmax 0.4vmax 0.1vmax rgba(0,0,0,0.08); 
+font-family: "Inter";
+font-size:1.1vmax;}
+input[type="date"]  {padding-right: 5%;}
+input[type="date"]::-webkit-calendar-picker-indicator {background: url("images/Polygon1.png") no-repeat;
+                              margin-top: 5%;}
+.selectHeaderPassenger {background: url("images/Polygon1.png") no-repeat;
+appearance: none;
+background-color: white;
+background-size: 6.5%;
+background-position: 96.5%;}
+.selectHeader {background: url("images/Polygon1.png") no-repeat;
+appearance: none;
+background-size: 8.5%;
+background-position: 95%;
+background-color: white;}
+select:focus {outline:none;}
+.labelHeader {font-family: "Inter";
+font-weight: 600;
+font-size: 1.3vmax;}
+#labelBack {grid-row:1;
+grid-column:3;}
+#inputBack {grid-row:2;
+grid-column:3;}  
+#inputThere {grid-row:2;
+grid-column:1;}
+#labelFrom {grid-row:4;
+grid-column:1;}
+#selectFrom {grid-row:5;
+grid-column:1;}
+#labelTo {grid-row:4;
+grid-column:3;}
+#selectTo {grid-row:5;
+grid-column:3;}
+#labelPassenger {grid-row:7;
+grid-column:1/4;}
+#buttonHeader {grid-row:10;
+grid-column:1/4;
+width:100%;}
+
+.void2 {height:8vmax;
+width:100%;}
+#sliderBlock {display:grid;
+width:100%;}
+.slideButton {height:3vmax;
+width:3vmax;
+display:grid;
+align-self: center;
+background-color: #2D4EFF;
+border-radius: 1000vh;}
+#slideButtonLeft {grid-column:2;}
+.slide { background-size: 100% 100%;
+background-repeat: no-repeat;
+display:grid;
+grid-template-columns:3% auto;
+border-radius:0.5vmax;
+height:100%;}
+#slideWrap {grid-column: 4;
+grid-row:1;
+overflow:hidden;}
+#slideButtonRight {grid-column:6;}
+.slideButton svg {align-self: center;
+justify-self: center;
+width:35%;
+height:35%;}
+.slideHeadline {color:white;
+font-family:"Inter";
+font-weight:600;
+grid-row:2;
+grid-column:2;}
+.slideA {color:white;
+font-family:"Inter";
+grid-row:4;
+grid-column:2;}
+.slideA a:hover {color:#2D4EFF;}
+
+#slide1 {background-image: url("images/ca40bf3ffe3dc71fdc78f0060416a9cd1.png");
+position:relative;
+left:0%;
+top:0%; }
+#slide2 {background-image: url("images/tak-vyglyadit-obed-pri-perelete-dlitelnostyu-bolee-3-h-chasov1.png");
+position:relative;
+left:100%;
+top:-100%;}
+#slide3 {background-image: url("images/33969_1000.jpg");
+position: relative;
+left:-100%;
+top:-200%;}
+
+
+
+.noNavPage:hover {color:#2D4EFF;}
+             .headlineGrid{height:5vmax;}
+             .flightGrid {height:3vmax;}
+             .grid {width:100%;
+                    display:grid;
+                    grid-template-columns: 5% auto 5%;;
+                    grid-template-rows: 100%;}
+              .headlineCol2 {grid-column:2;}
+              .voidCatalogue {width:100%;
+                              height:5vmax;}
+               .voidCatalogueHalf {width:100%;
+                              height:3.5vmax;}
+              .flight {font-family: "Inter";
+                       font-size:2vmax;
+                       grid-column:2;
+                       justify-self: end;}
+              .flightNo {color: #6c6c6c;}
+              .flightInfoGrid {height:17vmax;}
+              .flightInfo {display:grid;
+                              grid-template-rows:8% auto 8%;
+                              grid-template-columns: 0.1% 1fr 1fr 1.2fr 1fr 2fr 0.1%;
+                              column-gap: 3%;}
+              .flightBlockDate {background-color: rgba(45,78,255,0.06);
+                               grid-row:2; 
+                               grid-column: 2;
+                               border-radius: 1vmax;
+                               display:grid;
+                               grid-template-columns: 100%;
+                               row-gap: 12%;
+                               grid-template-rows: 0.1% repeat(3,1fr) 0.1%;
+                               font-family: "Inter";
+                               justify-items: center;}
+               .flightDateRow1 {grid-row:2;
+                                font-size:1.3vmax;}
+               .flightDateRow2 {grid-row:3;
+                                font-size:2.7vmax;
+                                font-weight: 600;}
+               .flightDateRow3 {grid-row:4;
+                                font-size:1.5vmax;
+                             font-weight: 600;}
+                .flightBlockFrom, .flightBlockTo {display:grid;
+                                                grid-template-columns: 100%;
+                                                row-gap: 8%;
+                                                grid-template-rows: 0.1% repeat(2,1fr) 5% 1fr auto;
+                                                font-family: "Inter";
+                                                justify-items: center;}
+                .flightBlockTo {grid-row:2; 
+                               grid-column: 5;}
+                .flightBlockFrom {grid-row:2; 
+                               grid-column: 3;}
+                .flightGray {color:#6c6c6c;}
+                .flightFromToRow1 {grid-row:2;
+                               font-weight: 600;
+                               font-size: 2.2vmax;}
+                .flightFromToRow2 {grid-row:3/5;
+                                 font-size: 1.5vmax;
+                                justify-self: center;
+                                text-align: center;}
+                .flightFromToRow3 {grid-row:5;
+                                font-size: 1.5vmax;}
+                .flightBlockInWay {display:grid;
+                                    grid-template-columns: 100%;
+                                    row-gap: 8%;
+                                    grid-template-rows: 0.1% 37% 8% auto;
+                                    font-family: "Inter";
+                                    font-size:1.2vmax;
+                                    color:#6c6c6c;
+                                    justify-items: center;
+                                    grid-row:1/3;
+                                    grid-column:4;}
+                .flightImgInWay {grid-row:1;
+                                 width:110%;}
+                .flightInWay {grid-row:3;}
+                .flightBlockClass {grid-row:2;
+                                   grid-column:6;
+                                   display:grid;
+                                    grid-template-columns: 8% 1fr 1fr 8%;
+                                    row-gap: 10%;
+                                    grid-template-rows: 0.1% repeat(3,1fr) 0.1%;
+                                    font-family: "Inter";
+                                    background-color: rgba(45,78,255,0.06);
+                                    border-radius: 1vmax;
+                                    font-size:1.4vmax;
+                                    align-items: center;}
+                .flightClassMinimum {grid-row:2;
+                                     grid-column:2;}
+                .flightClassEconom {grid-row:3;
+                                     grid-column:2;}
+                .flightClassBusiness {grid-row:4;
+                                     grid-column:2;}
+                .flightClassBusiness, .flightClassEconom, .flightClassMinimum {color:#6c6c6c;}
+                .buttonMinimum {grid-row:2;
+                                grid-column:3;
+                               height:100%;}
+                .buttonEconom {grid-row:3;
+                                grid-column:3;
+                               height:100%;}
+                .buttonBusiness {grid-row:4;
+                                grid-column:3;
+                               height:100%;}
+                .disabledButton {background-color: #6c6c6c;
+                                 color:white;
+                                 border: none;
+                                 border-radius: 0.75vmax;}
+                .backToSearchA {grid-column:2;
+                                display: grid;
+                                max-width: 40%;
+                                min-width: 20%;
+                               grid-template-columns: 7% auto;
+                               grid-template-rows: 100%;
+                               align-items: center;}
+                .backToSearch {color:#6c6c6c;
+                               font-family: "Inter";
+                               font-size: 1.4vmax;}
+                .backGrid {height:3vmax;}
+                .backToSearchA svg {width:1.2vmax;
+                                    height:1.2vmax;}
