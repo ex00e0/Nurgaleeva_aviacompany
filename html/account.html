@@ -3,7 +3,7 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../css/style.css">
-        <title>Выбор дополнительных услуг</title>
+        <title>Аккаунт</title>
         <style>
         .servGrid {height:8vmax;}
         .headlineServ {grid-row:2;
@@ -49,6 +49,13 @@
             align-self: center;
             justify-self: end;
             font-size: 1.6vmax;}
+        .gridAccount {display:grid;
+                     height:23vmax;
+                     grid-template-rows:100%;
+                     grid-template-columns: 5% auto 30%;}
+        .imgBackgroundAccount {grid-column:3;
+                              width:100%;
+                              height:100%;}
         </style>
     </head>
     <body>
@@ -80,85 +87,10 @@
                <button id="reg" class="blueButton">Регистрация</button>
                <img src="../images/menu.png" id="menuMobile" alt="меню навигации">
         </nav>
-        <main>
         <div class="voidCatalogue"></div>
-        <div class="headlineGrid grid"> 
-            <div class="headline headlineCol2">Выберите дополнительные услуги для комфортной поездки</div>
-        </div>
-       <div class="grid servGrid">
-           <div class="servBlock">
-                <div class="servWrap">
-                    <div class="headlineServ">Дополнительное питание</div>
-                    <div class="descriptionServ">Подберите блюда, исходя из Ваших предпочтений.</div>
-                    <div class="switcher">
-                        <div class="switcherCircle"></div>
-                    </div>
-                    <div class="selection">
-                        <img src="../images/selection.png" alt="стрелка раскрытия" class="imgSelect">
-                        <div class="select">Показать</div>
-                    </div>
-                </div>
-           </div>
+       <div class="gridAccount">
+             <img src="../images/foncrug1.png" alt="небо сбоку" class="imgBackgroundAccount">
        </div>
-       <div class="voidCatalogueHalf"></div>
-       <div class="grid servGrid">
-        <div class="servBlock">
-             <div class="servWrap">
-                 <div class="headlineServ">Добавить питомцев</div>
-                 <div class="descriptionServ">Возьмите с собой самого верного попутчика или даже нескольких попутчиков.</div>
-                 <div class="switcher">
-                     <div class="switcherCircle"></div>
-                 </div>
-                 <div class="selection">
-                     <img src="../images/selection.png" alt="стрелка раскрытия" class="imgSelect">
-                     <div class="select">Показать</div>
-                 </div>
-             </div>
-        </div>
-    </div>
-    <div class="voidCatalogueHalf"></div>
-    <div class="grid servGrid">
-     <div class="servBlock">
-          <div class="servWrap">
-              <div class="headlineServ">Дополнительный багаж</div>
-              <div class="descriptionServ">Если Ваша сумка слишком большая и тяжелая...</div>
-              <div class="switcher">
-                  <div class="switcherCircle"></div>
-              </div>
-              <div class="selection">
-                  <img src="../images/selection.png" alt="стрелка раскрытия" class="imgSelect">
-                  <div class="select">Показать</div>
-              </div>
-          </div>
-     </div>
- </div>
- <div class="voidCatalogueHalf"></div>
- <div class="grid servGrid">
-  <div class="servBlock">
-       <div class="servWrap">
-           <div class="headlineServ">Автоматическая регистрация</div>
-           <div class="descriptionServ">И в аэропорт можно прийти попозже.</div>
-           <div class="switcher">
-               <div class="switcherCircle"></div>
-           </div>
-           <div class="servPrice">100 ₽</div>
-       </div>
-  </div>
-</div>
-<div class="voidCatalogueHalf"></div>
-<div class="grid servGrid">
- <div class="servBlock">
-      <div class="servWrap">
-          <div class="headlineServ">Посетить бизнес-зал</div>
-          <div class="descriptionServ">А в ожидании рейса можно отдохнуть в нашем зале.</div>
-          <div class="switcher">
-              <div class="switcherCircle"></div>
-          </div>
-          <div class="servPrice">2000 ₽</div>
-      </div>
- </div>
-</div>
-</main>
        <div id="modalShadow"></div>
        <div id="modalEnter" class="modalRegEnter">
         <img src="../images/plus2.png" id="closeEnter" class="closeEnterReg" alt="крестик">     
@@ -184,31 +116,6 @@
             <button class="blueButton buttonEnterReg">Зарегистрироваться</button>
         </form>
     </div>
-        <div class="voidCatalogueHalf"></div>
-        
-        <div class="grid backGrid">
-            <div class="gridForABack">
-                <a href="index.html">
-                    <svg viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 13L1 7L7 1" stroke="#6C6C6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <div class="backToSearch">Вернуться к поиску</div>
-                </a>
-                <a href="catalogue.html">
-                    <svg viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 13L1 7L7 1" stroke="#6C6C6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <div class="backToSearch">Вернуться к выбору рейса</div>
-                </a>
-                <a href="ticket.html">
-                    <svg viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 13L1 7L7 1" stroke="#6C6C6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <div class="backToSearch">Вернуться к билету</div>
-                </a>
-                <button class="blueButton continueCol4" id="buttonToFormPassengers">Продолжить</button>
-            </div>
-        </div>
          <div class="void"></div>
             <footer>
                 <div id="footerCol1">
