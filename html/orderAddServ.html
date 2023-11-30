@@ -44,6 +44,11 @@
                    row-gap:10%;
                    grid-template-rows: 12% 1.2fr 1fr 12%;
                    font-family:"Inter";}
+        .servPrice {grid-row:3;
+            grid-column:4/6;
+            align-self: center;
+            justify-self: end;
+            font-size: 1.6vmax;}
         </style>
     </head>
     <body>
@@ -94,6 +99,64 @@
                 </div>
            </div>
        </div>
+       <div class="voidCatalogueHalf"></div>
+       <div class="grid servGrid">
+        <div class="servBlock">
+             <div class="servWrap">
+                 <div class="headlineServ">Добавить питомцев</div>
+                 <div class="descriptionServ">Возьмите с собой самого верного попутчика или даже нескольких попутчиков.</div>
+                 <div class="switcher">
+                     <div class="switcherCircle"></div>
+                 </div>
+                 <div class="selection">
+                     <img src="../images/selection.png" alt="стрелка раскрытия" class="imgSelect">
+                     <div class="select">Показать</div>
+                 </div>
+             </div>
+        </div>
+    </div>
+    <div class="voidCatalogueHalf"></div>
+    <div class="grid servGrid">
+     <div class="servBlock">
+          <div class="servWrap">
+              <div class="headlineServ">Дополнительный багаж</div>
+              <div class="descriptionServ">Если Ваша сумка слишком большая и тяжелая...</div>
+              <div class="switcher">
+                  <div class="switcherCircle"></div>
+              </div>
+              <div class="selection">
+                  <img src="../images/selection.png" alt="стрелка раскрытия" class="imgSelect">
+                  <div class="select">Показать</div>
+              </div>
+          </div>
+     </div>
+ </div>
+ <div class="voidCatalogueHalf"></div>
+ <div class="grid servGrid">
+  <div class="servBlock">
+       <div class="servWrap">
+           <div class="headlineServ">Автоматическая регистрация</div>
+           <div class="descriptionServ">И в аэропорт можно прийти попозже.</div>
+           <div class="switcher">
+               <div class="switcherCircle"></div>
+           </div>
+           <div class="servPrice">100 ₽</div>
+       </div>
+  </div>
+</div>
+<div class="voidCatalogueHalf"></div>
+<div class="grid servGrid">
+ <div class="servBlock">
+      <div class="servWrap">
+          <div class="headlineServ">Посетить бизнес-зал</div>
+          <div class="descriptionServ">А в ожидании рейса можно отдохнуть в нашем зале.</div>
+          <div class="switcher">
+              <div class="switcherCircle"></div>
+          </div>
+          <div class="servPrice">2000 ₽</div>
+      </div>
+ </div>
+</div>
        <div id="modalShadow"></div>
        <div id="modalEnter" class="modalRegEnter">
         <img src="../images/plus2.png" id="closeEnter" class="closeEnterReg" alt="крестик">     
