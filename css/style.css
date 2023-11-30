@@ -64,15 +64,15 @@ html, body {background-color: #f9f9f9;}
 a {text-decoration: none;
 color:inherit;}
 @font-face { font-family: "Inter";
-   src: url("fonts/Inter-Regular.woff"); 
+   src: url("../fonts/Inter-Regular.woff"); 
   font-weight: normal;
   font-style: normal; }
 @font-face { font-family: "Inter Light";
-   src: url("fonts/Inter-LightBETA.woff"); 
+   src: url("../fonts/Inter-LightBETA.woff"); 
   font-weight: normal;
   font-style: normal; }
 @font-face { font-family: "Mariupol";
-   src: url("fonts/Mariupol-Regular.woff"); 
+   src: url("../fonts/Mariupol-Regular.woff"); 
   font-weight: normal;
   font-style: normal; }
 .blueButton {background-color: #2D4EFF;
@@ -369,7 +369,7 @@ display:none;}
 #tableHead div {color:#6c6c6c;
            font-size: 1.4vmax;
            font-family: "Inter";}
-.timetable, .flightInfo {grid-column:2;
+.timetable, .flightInfo, .servBlock {grid-column:2;
         background-color: white;
         border-radius:1.5vmax;
         border: 0.15vmax solid #2D4EFF;}
@@ -535,14 +535,14 @@ box-shadow:0.15vmax 0.15vmax 0.4vmax 0.1vmax rgba(0,0,0,0.08);
 font-family: "Inter";
 font-size:1.1vmax;}
 input[type="date"]  {padding-right: 5%;}
-input[type="date"]::-webkit-calendar-picker-indicator {background: url("images/Polygon1.png") no-repeat;
+input[type="date"]::-webkit-calendar-picker-indicator {background: url("../images/Polygon1.png") no-repeat;
                               margin-top: 5%;}
-.selectHeaderPassenger {background: url("images/Polygon1.png") no-repeat;
+.selectHeaderPassenger {background: url("../images/Polygon1.png") no-repeat;
 appearance: none;
 background-color: white;
 background-size: 6.5%;
 background-position: 96.5%;}
-.selectHeader {background: url("images/Polygon1.png") no-repeat;
+.selectHeader {background: url("../images/Polygon1.png") no-repeat;
 appearance: none;
 background-size: 8.5%;
 background-position: 95%;
@@ -607,15 +607,15 @@ grid-row:4;
 grid-column:2;}
 .slideA a:hover {color:#2D4EFF;}
 
-#slide1 {background-image: url("images/ca40bf3ffe3dc71fdc78f0060416a9cd1.png");
+#slide1 {background-image: url("../images/ca40bf3ffe3dc71fdc78f0060416a9cd1.png");
 position:relative;
 left:0%;
 top:0%; }
-#slide2 {background-image: url("images/tak-vyglyadit-obed-pri-perelete-dlitelnostyu-bolee-3-h-chasov1.png");
+#slide2 {background-image: url("../images/tak-vyglyadit-obed-pri-perelete-dlitelnostyu-bolee-3-h-chasov1.png");
 position:relative;
 left:100%;
 top:-100%;}
-#slide3 {background-image: url("images/33969_1000.jpg");
+#slide3 {background-image: url("../images/33969_1000.jpg");
 position: relative;
 left:-100%;
 top:-200%;}
