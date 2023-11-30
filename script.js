@@ -84,3 +84,4 @@ buttonSliderLeft.addEventListener("click", function () {if ((getTheStyle(slide1)
                                                                                                                             slide2.style.left="0%";
                                                                                                                             slide1.style.transition="none";
                                                                                                                             slide1.style.left="-100%";} }  );
+                                                                                                                            

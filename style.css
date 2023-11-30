@@ -739,3 +739,90 @@ top:-200%;}
                 .backGrid {height:3vmax;}
                 .backToSearchA svg {width:1.2vmax;
                                     height:1.2vmax;}
+
+
+                                    .flightNoTick {grid-row:2;
+                                        grid-column:2;}
+                            .flightClassTick {grid-row:3;
+                                        grid-column:2;}
+                            .flightNoName {grid-row:2;
+                                        grid-column:3;}
+                                        .flightClassName {grid-row:3;
+                                        grid-column:3;}
+                            .flightNoName, .flightClassName {color:#6c6c6c;
+                                                            justify-self: end;}
+                            .flightClassTick, .flightNoTick {font-weight: 600;}
+                            .flightPrice {grid-column:2/4;
+                                         grid-row:4;
+                                         width:70%;
+                                         height:140%;
+                                         font-weight: 600;
+                                         font-size: 140%;
+                                         border-radius: 1vmax;
+                                         background-color: white;
+                                         display:grid;
+                                         align-items: center;
+                                         justify-self: center;
+                                         justify-items: center;}
+                            .detailedInfoGrid {height:35vmax;}
+                            .detailedInfo {grid-column:2;
+                                           background-color: white;
+                                           box-shadow:0.15vmax 0.15vmax 0.4vmax 0.1vmax rgba(0,0,0,0.08);
+                                           border-radius: 1vmax;
+                                           display:grid;
+                                           grid-template-columns: 5% 45% 5% auto 5%;
+                                           grid-template-rows: 6% 50% 3% auto 5%;}
+                            .conditionsGrid {display:grid;
+                                           grid-template-columns: 100%;
+                                           grid-template-rows: repeat(3,1fr);
+                                           row-gap:10%;
+                                           align-items: center;}
+                            .conditionsGrid > div {display:grid;
+                                           grid-template-columns: 8% auto;
+                                           column-gap:3%;
+                                           grid-template-rows: 100%;
+                                           align-items: center;}
+                            .conditionsGrid > div > svg, .conditionsGrid > div > img:not(#heightWidthBusiness) {height:2.5vmax;
+                                                         width:2.5vmax;}
+                            .conditionsGrid div {font-family: "Inter";}
+                            .conditionsBlue {color:#2D4EFF;}
+                            .conditionsDisabled {color:#6c6c6c;}
+                            .conditionsFontSize1 {font-size:1.8vmax;}
+                            .baggageReturnBlock {grid-row:2;
+                                                 grid-column:2;
+                                                 height:70%;}
+                            .blueConditionsBlock {grid-row:4;
+                                                 grid-column:2;
+                                                 height:90%;}
+                             .airplaneConditionsBlock {grid-row:4;
+                                                 grid-column:4;
+                                                 height:80%;
+                                                 align-self: center;}
+                              #heightWidthBusiness {height:3.2vmax;
+                                                   width:3.2vmax;}
+                            .airplaneBlock {display:grid;
+                                           grid-row:2;
+                                           grid-column:4;
+                                           grid-template-columns: 100%;
+                                           grid-template-rows: 12% auto;
+                                           row-gap:10%;}
+                            .airplaneBlock img {width:100%;
+                                                height:auto;}
+                            .airplaneBlock div {color:#2D4EFF;
+                                               font-family: "Inter";
+                                               font-size:1.9vmax;}
+                            .gridForABack {grid-column:2;
+                                           display:grid;
+                                           grid-template-columns: 1fr 1.3fr 1fr 1fr;
+                                           column-gap:5%; 
+                                           grid-template-rows: 100%;}
+                            .gridForABack a {display:grid;
+                                             grid-template-columns: 8% auto;
+                                            column-gap:8%;
+                                            grid-template-rows: 100%;}
+                            .gridForABack a div {align-self:center;}
+                            .gridForABack svg {height:50%;
+                                               align-self: center;
+                                               width:auto;}
+                            .continueCol4 {grid-column: 4;
+                                          height:110%;}
