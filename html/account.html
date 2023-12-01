@@ -56,6 +56,24 @@
         .imgBackgroundAccount {grid-column:3;
                               width:100%;
                               height:100%;}
+        .accHeaderBlock {grid-column:2;
+                         display:grid;
+                         grid-template-columns: 20% auto;
+                         column-gap: 8%;
+                         grid-template-rows: 100%;}
+        .imgAccHeader {border-radius: 1000vmax;
+                       height:14vmax;
+                       width:14vmax;
+                       align-self: center;
+                       border: 0.1vmax solid #2D4EFF;
+                       grid-row:1/span all;}
+        .accNumberActiveOrders {grid-row:;
+                                font-size:1.5vmax;
+                                color:#6c6c6c;
+                                font-family: "Inter";}
+        .accName {grid-row:;
+                  font-size: 5.8vmax;
+                  font-family: "Mariupol";}
         </style>
     </head>
     <body>
@@ -88,9 +106,14 @@
                <img src="../images/menu.png" id="menuMobile" alt="меню навигации">
         </nav>
         <div class="voidCatalogue"></div>
-       <div class="gridAccount">
+       <header class="gridAccount">
+             <div class="accHeaderBlock">
+                <img src="../images/Pug-puppy-standing-in-profile-on-a-white-background(1)1-round2.png" alt="фото аккаунта" class="imgAccHeader">
+                <div class="accName">Puppy</div>
+                <div class="accNumberActiveOrders">0 активных заказов</div>
+             </div>
              <img src="../images/foncrug1.png" alt="небо сбоку" class="imgBackgroundAccount">
-       </div>
+       </header>
        <div id="modalShadow"></div>
        <div id="modalEnter" class="modalRegEnter">
         <img src="../images/plus2.png" id="closeEnter" class="closeEnterReg" alt="крестик">     
