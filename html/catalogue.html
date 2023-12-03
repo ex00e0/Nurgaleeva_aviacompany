@@ -92,9 +92,9 @@
                     <div class="flightClassMinimum">Минимум</div>
                     <div class="flightClassEconom">Эконом</div>
                     <div class="flightClassBusiness">Бизнес</div>
-                    <button class="blueButton buttonMinimum">6000 ₽</button>
-                    <button class="blueButton buttonEconom">8000 ₽</button>
-                    <button class="blueButton buttonBusiness">16000 ₽</button>
+                    <button class="blueButton buttonMinimum buttonClass">6000 ₽</button>
+                    <button class="blueButton buttonEconom buttonClass">8000 ₽</button>
+                    <button class="blueButton buttonBusiness buttonClass">16000 ₽</button>
                 </div>
             </div>
         </div>
@@ -127,8 +127,8 @@
                     <div class="flightClassMinimum">Минимум</div>
                     <div class="flightClassEconom">Эконом</div>
                     <div class="flightClassBusiness">Бизнес</div>
-                    <button class="blueButton buttonMinimum">6000 ₽</button>
-                    <button class="blueButton buttonEconom">8000 ₽</button>
+                    <button class="blueButton buttonMinimum buttonClass">6000 ₽</button>
+                    <button class="blueButton buttonEconom buttonClass">8000 ₽</button>
                     <button class="disabledButton buttonBusiness">Нет мест</button>
                 </div>
             </div>
@@ -162,26 +162,29 @@
                     <div class="flightClassMinimum">Минимум</div>
                     <div class="flightClassEconom">Эконом</div>
                     <div class="flightClassBusiness">Бизнес</div>
-                    <button class="blueButton buttonMinimum">6000 ₽</button>
-                    <button class="blueButton buttonEconom">8000 ₽</button>
-                    <button class="blueButton buttonBusiness">16000 ₽</button>
+                    <button class="blueButton buttonMinimum buttonClass">6000 ₽</button>
+                    <button class="blueButton buttonEconom buttonClass">8000 ₽</button>
+                    <button class="blueButton buttonBusiness buttonClass">16000 ₽</button>
                 </div>
             </div>
         </div>
         <div class="voidCatalogueHalf"></div>
         <div class="grid backGrid">
-            <a href="index.html" class="backToSearchA">
-                <svg viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 13L1 7L7 1" stroke="#6C6C6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div class="backToSearch">Вернуться к поиску</div>
-            </a>
+            <div class="gridForABack">
+                <a href="index.html" id="specialCat">
+                    <svg viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 13L1 7L7 1" stroke="#6C6C6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <div class="backToSearch">Вернуться к поиску</div>
+                </a>
+            </div>
         </div>
     </main>
-         <div class="void"></div>
+         <div class="void"  id="specialVoidCat"></div>
+         <div class="voidCatalogueHalf" id="specialVoidCatMobile"></div>
             <footer>
                 <div id="footerCol1">
-                    <div class="headlineFooter headline">Свяжитесь с нами</div>
+                    <div class="headlineFooter headline">Связь с нами</div>
                     <a class="buttonFooter" id="buttonF1" href="help.html">
                            <img src="../images/speech-bubble1.png" alt="сообщение" class="imgButtonFooter">                        
                     </a>
