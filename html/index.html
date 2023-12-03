@@ -5,123 +5,155 @@
         <link rel="stylesheet" href="../css/style.css">
         <title>Главная</title>
         <style>
-               #wrapper23 {height:20%;
-                           width:100%;}
-                
-               #wrapper3 {display:grid;
-                         height: 110%;
-                         width:100%;
-                         grid-template-columns: 3.5% auto 5% 3.5%;
-                         grid-template-rows: 5% 13% auto;}
-               #c1 {grid-row:1;
-                   grid-column:2;
-                   font-size:5.7vh;
-                    font-family:"Mariupol";}
-               #c2 {display:grid;
-                    grid-row:1;
-                    grid-column:2;
-                    width: 17%;
-                    justify-self: end;}
-               #c21 {justify-self: left;
-                    font-size:2.5vh;
+            
+            .headlineBigger {font-family: "Mariupol";
+                             font-size:3.1vmax;}
+            .headlineMainServBlock div {align-self: center;}
+            .headlineMainServ {grid-row:1;}
+            .headlineMainServA {justify-self: end;
+                                display:grid;
+                                width:19vmax;
+                                grid-template-columns: 85% auto;
+                                grid-template-rows: 100%;}
+            .fullListServ1 {font-size:1.4vmax;
                     color: #6c6c6c;
-                    grid-row:1;
-                    align-self:center;
                     font-family:"Inter";}
-               #c22 {justify-self: right;
-                    grid-row:1;
-                    height:45%;
-                    width:45%;
-                    align-self:center;}
-               #c3 {grid-row:3;
-                   grid-column:2;
-                   display:grid;
-                   column-gap:3%;
-                   grid-template-columns:repeat(3,1fr);
-                   grid-template-rows:100%;}
-               .c31 {display:grid;
-                    height:80%;
-                    box-shadow:0.2vh 0.2vh 0.6vh 0.1vh rgba(0,0,0,0.1); 
-                    border-radius: 1.2vh;
+            .fullListServ2 {width:1.2vmax;
+                           height:1.2vmax;
+                           align-self: center;}
+            
+            @media (max-width:480px) {.headlineMainServBlock {grid-column:2;
+                                                                display:grid;
+                                                                grid-template-columns: 50% 50%;
+                                                                grid-template-rows: 50% 50%;}
+                                        .headlineMainServ {grid-row:1/span all;
+                                                        grid-column: 1/span all;
+                                                        width:80%;}
+                                        .headlineMainServA {grid-row:2;
+                                                        grid-column:2;}
+                                        .gridThreeColServ {height:140vmax;}
+                                        .servBlockMain {grid-column:2;
+                                                        display:grid;
+                                                        row-gap:5%;
+                                                        grid-template-rows:repeat(3,1fr);
+                                                        grid-template-columns:100%;}
+                                        .servBlockMain > div {width:75%;
+                                                            justify-self: center;}
+                                        .gridMainServ {height:10vmax;} }
+            @media (min-width:481px) and (max-width:1199px) and (orientation:portrait) {.headlineMainServBlock {grid-column:2;
+                                    display:grid;
+                                    grid-template-columns: 70% auto;
+                                    grid-template-rows: 100%;}   
+                                         .headlineMainServA {grid-row:1;}
+                                        .gridThreeColServ {height:90vmax;}
+                                        .servBlockMain {grid-column:2;
+                                                        display:grid;
+                                                        row-gap:5%;
+                                                        grid-template-rows:repeat(2,1fr);
+                                                        column-gap:3%;
+                                                        grid-template-columns:repeat(2,1fr);}
+                                        .servBlockMain > div {width:100%;
+                                                            justify-self: center;}
+                                        .gridMainServ {height:6vmax;}}
+            @media (min-width:1200px) {.servBlockMain {grid-column:2;
+                            display:grid;
+                            column-gap:3%;
+                            grid-template-columns:repeat(3,1fr);
+                            grid-template-rows:100%;}
+                            .gridMainServ {height:5vmax;}
+            .gridThreeColServ {height:40vmax;}
+            .headlineMainServA {grid-row:1;}
+            .headlineMainServBlock {grid-column:2;
+                                    display:grid;
+                                    grid-template-columns: 50% 50%;
+                                    grid-template-rows: 100%;}   }
+            @media (min-width:481px) and (max-width:1199px) and (orientation:landscape) {.servBlockMain {grid-column:2;
+                            display:grid;
+                            column-gap:3%;
+                            grid-template-columns:repeat(3,1fr);
+                            grid-template-rows:100%;}
+                            .gridMainServ {height:5vmax;}
+            .gridThreeColServ {height:40vmax;}
+            .headlineMainServA {grid-row:1;}
+            .headlineMainServBlock {grid-column:2;
+                                    display:grid;
+                                    grid-template-columns: 50% 50%;
+                                    grid-template-rows: 100%;}   }
+            .servCol {display:grid;
                     grid-template-columns: 5% auto;
-                    grid-template-rows: 65% 3% 3% 3% 5% 4% 3% 4% 7% auto;
-                     background-color: white;}
-               .c311 {grid-row:1;
-                      width:100%;
+                    grid-template-rows: 60% 3% 4.5% 3% 5% 4% 3% 4% 8.5% auto;
+                    background-color: white;
+                    box-shadow:0.15vmax 0.15vmax 0.4vmax 0.1vmax rgba(0,0,0,0.08); 
+                    border-radius: 0.75vmax;}
+               .servBlockRow1 {width:100%;
                       height:100%;
                       grid-column:1/span all;}
-               .c312 {grid-row:3;
-                      grid-column:2;
-                      font-size:3vh;
-                      font-family:"Mariupol";}
-               .c313 {grid-row:5;
+                .servBlockRow2 {grid-row:3;
+                                grid-column:2;
+                                font-size:1.9vmax;
+                                font-family:"Mariupol";}
+               .servBlockRow3 {grid-row:5;
                     grid-column:2/4;
-                    font-size:1.9vh;
+                    font-size:1.1vmax;
                     font-family:"Inter";
                     color:#6c6c6c;}
-               .c314 {grid-row:7;
+               .servBlockRow4 {grid-row:7;
                     grid-column:2;
-                    font-size:2.2vh;
+                    font-size:1.4vmax;
                     font-family:"Inter";}
-               .c315 {grid-row:9;
+               .buttonLearnMore {grid-row:9;
                     grid-column:1/span all;
                     justify-self:center;
-                    width:60%;
-                    background-color: #2D4EFF;
-                    border-radius: 1vh;
-                    color:white;
-                    font-family:"Inter";
-                    font-size:2vh;
-                    border:none;}
-               #wrapper4 {display:grid;
-                         height: 40%;
-                         width:100%;
-                         grid-template-columns: 1fr 5% 1fr 5% 1fr 5% 1fr;
-                         grid-template-rows: 100%;}
-               #d2, #d4, #d6 {width:100%;
-                                 height:100%;}
+                    width:60%;}
+                #blockForSelectHeaderPassenger {grid-row:9/11;
+                                                grid-column:1/4;
+                                                width:75%;
+                                                height:155%;
+                                                background-color: white;
+                                                border-radius: 0.75vmax;
+                                                box-shadow:0.15vmax 0.15vmax 0.4vmax 0.1vmax rgba(0,0,0,0.08);
+                                               row-gap:5%;
+                                               grid-template-columns: 8% auto 8%;
+                                              grid-template-rows: 8% 1fr 2% 1fr 8%;
+                                              display: none;}
+                #adultBlock {grid-row:2;}
+                #childrenBlock {grid-row:4;}
+                #adultBlock, #childrenBlock {grid-column:2;
+                               display:grid;
+                               grid-template-rows: 1fr 0.8fr;
+                               grid-template-columns: auto 12% 8% 5% 8% 12%;
+                               font-family: "Inter";}
+                .passengerCategory {grid-row:1;
+                                   font-size:1.3vmax;}
+                .passengerDescription {grid-row:2;
+                                       font-size:1vmax;
+                                       color:#6c6c6c;}
+                .passengerNumber {grid-row:1/span all;
+                                 align-self: center;
+                                 justify-self: center;
+                                 font-size:1.5vmax;
+                                 grid-column:4;}
+                .buttonPlusMinus {border-radius:1000vmax;
+                                  width:2.3vmax;
+                                  height:2.3vmax;
+                                  align-self: center;
+                                  justify-self: center;
+                                  grid-row:1/span all;
+                                 display: grid;}
+                .activeButton {background-color: #2D4EFF;}
+                .disabledButton {background-color: #6c6c6c;}
+                .buttonPlusMinus img {align-self: center; 
+                                      justify-self: center;}
+                .buttonPlus img {width:45%;
+                             height:45%;}
+                .buttonMinus img {width:40%;
+                                height:8%;}
+                .buttonMinus {grid-column:2;}
+                .buttonPlus {grid-column:6;}
+                @media (min-width:500px) and (max-width:1199px) and (orientation:portrait) {#longText {letter-spacing: -0.01vmax;} }
                </style>
     </head>
     <body>
-     <div id="navMobileShadow"></div>
-     <div id="navMobile">
-        <img src="../images/plus4.png" id="close" alt="крестик">
-             <div id="navMobileText">
-                 <div><a href="index.html">Главная</a></div>
-                 <div>
-                     <a href="board.html">Табло</a>
-                 </div>
-                 <div><a href="info.html">Информация</a></div>
-                 <div><a href="help.html">Помощь</a></div>
-             </div>
-     </div>
-     
-     <div id="modalShadow"></div>
-     <div id="modalEnter" class="modalRegEnter">
-         <img src="../images/plus2.png" id="closeEnter" class="closeEnterReg" alt="крестик">     
-         <div class="modal1">Вход</div>
-         <form id="formEnter">
-             <input type="text" placeholder="Email или номер телефона" id="enterEmailTel" class="inputModal">
-             <label class="labelModal" id="labelEnterEmailTel">Email или номер телефона</label>
-             <input type="password" placeholder="Пароль" id="enterPass" class="inputModal">
-             <label class="labelModal" id="labelEnterPass">Пароль</label>
-             <button class="blueButton buttonEnterReg" id="buttonEnter">Войти</button>
-         </form>
-     </div>
-     <div id="modalReg" class="modalRegEnter">
-         <img src="../images/plus2.png" id="closeReg" class="closeEnterReg" alt="крестик">     
-         <div class="modal1">Регистрация</div>
-         <form id="formReg">
-             <input type="text" placeholder="Имя" id="regName" class="inputModal">
-             <label class="labelModal" id="labelRegName">Имя</label>
-             <input type="text" placeholder="Email или номер телефона" id="regEmailTel" class="inputModal">
-             <label class="labelModal" id="labelRegEmailTel">Email или номер телефона</label>
-             <input type="text" placeholder="Придумайте пароль" id="regPass" class="inputModal">
-             <label class="labelModal" id="labelRegPass">Пароль</label>
-             <button class="blueButton buttonEnterReg">Зарегистрироваться</button>
-         </form>
-     </div>
-
          <header id="headerMain">
             <img src="../images/a4.png" id="imgSky" alt="картинка неба">
             <img src="../images/samolet1.png" id="imgAirplane" alt="самолет">
@@ -161,10 +193,35 @@
                         <option class="optionHeader">Москва</option>
                     </select>
                     <label id="labelPassenger" class="labelHeader">Количество пассажиров</label>
-                    <select class="selectHeaderPassenger">
-                        <option class="optionHeader">1 пассажир</option>
-                    </select>
+                    <div class="selectHeaderPassenger">
+                        <div id="countPassengers">1 пассажир</div>
+                        <img src="../images/Polygon1.png" alt="треугольник" id="buttonTriangle">
+                    </div>
                     <button id="buttonHeader" class="blueButton">Отправиться в путешествие</button>
+                    <div id="blockForSelectHeaderPassenger">
+                        <div id="adultBlock">
+                            <div class="passengerCategory">Взрослые</div>
+                            <div class="passengerDescription">старше 14 лет</div>
+                            <div class="buttonMinus buttonPlusMinus activeButton" id="buttonMinusAdult">
+                                <img src="../images/minusPassenger.png" alt="минус">
+                            </div>
+                            <div class="passengerNumber" id="adultNum">1</div>
+                            <div class="buttonPlus buttonPlusMinus activeButton" id="buttonPlusAdult">
+                                <img src="../images/plusPassenger.png" alt="плюс">
+                            </div>
+                        </div>
+                        <div id="childrenBlock">
+                            <div class="passengerCategory">Дети</div>
+                            <div class="passengerDescription">от 0 до 14 лет</div>
+                            <div class="buttonMinus buttonPlusMinus disabledButton" id="buttonMinusChildren">
+                                <img src="../images/minusPassenger.png" alt="минус">
+                            </div>
+                            <div class="passengerNumber" id="childrenNum">0</div>
+                            <div class="buttonPlus buttonPlusMinus activeButton" id="buttonPlusChildren">
+                                <img src="../images/plusPassenger.png" alt="плюс">
+                            </div>
+                        </div>
+                    </div>
                 </form>
              </div>
          </header>
@@ -195,45 +252,86 @@
                     </svg>
              </div>
          </div>
-         <!--
-         <div id="wrapper23"></div>
-         
-         <div id="wrapper3">
-             <div id="c1">Наши дополнительные услуги</div>
-             <a href="" id="c2">
-                 <div id="c21">Полный список услуг</div>
-                 <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg" id="c22">
-                    <path d="M1 13L7 7L1 1" stroke="#6C6C6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                 </svg>
-             </a>
-             <div id="c3">
-                 <div class="c31">
-                    <img src="../images/surgery1(1).png" class="c311" alt="Питомец">
-                    <div class="c312">Перевозка питомца</div>
-                    <div class="c313">Путешествуйте вместе со своим питомцем</div>
-                    <div class="c314">от 2500 руб.</div>
-                    <button class="c315">Узнать больше...</button>
+         <div class="void2X"></div>
+        <div class="grid gridMainServ">
+            <div class="headlineMainServBlock">
+                <div class="headlineBigger headlineMainServ">Наши дополнительные услуги</div>
+                <a href="" class="headlineMainServA">
+                    <div class="fullListServ1">Полный список услуг</div>
+                    <svg class="fullListServ2" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg" id="c22">
+                       <path d="M1 13L7 7L1 1" stroke="#6C6C6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="voidCatalogue"></div>
+        <div class="grid gridThreeColServ">
+            <div class="servBlockMain">
+                <div class="servCol">
+                    <img src="../images/surgery1(1).png" class="servBlockRow1" alt="Питомец">
+                    <div class="servBlockRow2">Перевозка питомца</div>
+                    <div class="servBlockRow3">Путешествуйте вместе со своим питомцем</div>
+                    <div class="servBlockRow4">от 2500 руб.</div>
+                    <button class="buttonLearnMore blueButton">Узнать больше...</button>
                  </div>
-                 <div class="c31">
-                    <img src="../images/business-class-air-astana1(2).png" class="c311" alt="Питание">
-                    <div class="c312">Дополнительное питание</div>
-                    <div class="c313">Не забудьте заказать питание на борт</div>
-                    <div class="c314">от 500 руб.</div>
-                    <button class="c315">Узнать больше...</button>
+                 <div class="servCol">
+                    <img src="../images/business-class-air-astana1(2).png" class="servBlockRow1" alt="Питание">
+                    <div class="servBlockRow2">Питание на выбор</div>
+                    <div class="servBlockRow3">Не забудьте заказать питание на борт</div>
+                    <div class="servBlockRow4">от 500 руб.</div>
+                    <button class="buttonLearnMore blueButton">Узнать больше...</button>
                  </div>
-                 <div class="c31">
-                    <img src="../images/Baggage_Allowance1(2).png" class="c311" alt="Багаж">
-                    <div class="c312">Дополнительный багаж</div>
-                    <div class="c313">Добавьте дополнительные кг к вашему багажу</div>
-                    <div class="c314">от 4000 руб.</div>
-                    <button class="c315">Узнать больше...</button>
+                 <div class="servCol">
+                    <img src="../images/Baggage_Allowance1(2).png" class="servBlockRow1" alt="Багаж">
+                    <div class="servBlockRow2" id="longText">Дополнительный багаж</div>
+                    <div class="servBlockRow3">Добавьте дополнительные кг к вашему багажу</div>
+                    <div class="servBlockRow4">от 4000 руб.</div>
+                    <button class="buttonLearnMore blueButton">Узнать больше...</button>
                  </div>
+            </div>
+        </div>
+        <div id="navMobileShadow"></div>
+     <div id="navMobile">
+        <img src="../images/plus4.png" id="close" alt="крестик">
+             <div id="navMobileText">
+                 <div><a href="index.html">Главная</a></div>
+                 <div>
+                     <a href="board.html">Табло</a>
+                 </div>
+                 <div><a href="info.html">Информация</a></div>
+                 <div><a href="help.html">Помощь</a></div>
              </div>
-         </div>-->
+     </div>
+     
+     <div id="modalShadow"></div>
+     <div id="modalEnter" class="modalRegEnter">
+         <img src="../images/plus2.png" id="closeEnter" class="closeEnterReg" alt="крестик">     
+         <div class="modal1">Вход</div>
+         <form id="formEnter">
+             <input type="text" placeholder="Email или номер телефона" id="enterEmailTel" class="inputModal">
+             <label class="labelModal" id="labelEnterEmailTel">Email или номер телефона</label>
+             <input type="password" placeholder="Пароль" id="enterPass" class="inputModal">
+             <label class="labelModal" id="labelEnterPass">Пароль</label>
+             <button class="blueButton buttonEnterReg" id="buttonEnter">Войти</button>
+         </form>
+     </div>
+     <div id="modalReg" class="modalRegEnter">
+         <img src="../images/plus2.png" id="closeReg" class="closeEnterReg" alt="крестик">     
+         <div class="modal1">Регистрация</div>
+         <form id="formReg">
+             <input type="text" placeholder="Имя" id="regName" class="inputModal">
+             <label class="labelModal" id="labelRegName">Имя</label>
+             <input type="text" placeholder="Email или номер телефона" id="regEmailTel" class="inputModal">
+             <label class="labelModal" id="labelRegEmailTel">Email или номер телефона</label>
+             <input type="text" placeholder="Придумайте пароль" id="regPass" class="inputModal">
+             <label class="labelModal" id="labelRegPass">Пароль</label>
+             <button class="blueButton buttonEnterReg">Зарегистрироваться</button>
+         </form>
+     </div>
          <div class="void"></div>
             <footer>
                 <div id="footerCol1">
-                    <div class="headlineFooter headline">Свяжитесь с нами</div>
+                    <div class="headlineFooter headline">Связь с нами</div>
                     <a class="buttonFooter" id="buttonF1" href="help.html">
                            <img src="../images/speech-bubble1.png" alt="сообщение" class="imgButtonFooter">                        
                     </a>

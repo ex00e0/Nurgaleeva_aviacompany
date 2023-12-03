@@ -67,13 +67,24 @@
                        align-self: center;
                        border: 0.1vmax solid #2D4EFF;
                        grid-row:1/span all;}
-        .accNumberActiveOrders {grid-row:;
-                                font-size:1.5vmax;
+        .nameAndNumberActiveOrders {align-self:center;
+                                    height:50%;
+                                    display:grid;
+                                    grid-template-columns: 100%;
+                                    grid-template-rows: auto;}
+        .accNumberActiveOrders {font-size:1.5vmax;
                                 color:#6c6c6c;
                                 font-family: "Inter";}
-        .accName {grid-row:;
-                  font-size: 5.8vmax;
+        .accName {font-size: 5.8vmax;
                   font-family: "Mariupol";}
+        .accNavGrid {height:7vmax;}
+       .navigationAcc{display:flex;
+                     align-items: center;
+                     grid-column:2;
+                    justify-content: space-between;
+                    font-family: "Inter";
+                    font-size: 1.7vmax;
+                    width:75%;}
         </style>
     </head>
     <body>
@@ -109,11 +120,26 @@
        <header class="gridAccount">
              <div class="accHeaderBlock">
                 <img src="../images/Pug-puppy-standing-in-profile-on-a-white-background(1)1-round2.png" alt="фото аккаунта" class="imgAccHeader">
-                <div class="accName">Puppy</div>
-                <div class="accNumberActiveOrders">0 активных заказов</div>
+                <div class="nameAndNumberActiveOrders">
+                    <div class="accName">Puppy</div>
+                    <div class="accNumberActiveOrders">0 активных заказов</div>
+                </div>
              </div>
              <img src="../images/foncrug1.png" alt="небо сбоку" class="imgBackgroundAccount">
        </header>
+       <main>
+           <div class="grid accNavGrid">
+                <div class="navigationAcc">
+                    <div id="curPage">
+                        <div class="blueLine"></div>
+                        <a id="curHover">Профиль</a>
+                    </div>
+                    <div><a class="navBlue">Все заказы</a></div>
+                    <div><a class="navBlue">Активные заказы</a></div>
+                    <div><a class="navBlue">Сохраненные пассажиры</a></div>
+                </div>
+           </div>
+       </main>
        <div id="modalShadow"></div>
        <div id="modalEnter" class="modalRegEnter">
         <img src="../images/plus2.png" id="closeEnter" class="closeEnterReg" alt="крестик">     
