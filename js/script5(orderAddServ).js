@@ -1,22 +1,42 @@
+
+
+function isOverflownHeight(element) {return element.clientHeight; }
+
+let descriptionServ = document.getElementsByClassName ("descriptionServ");
+let servGrid = document.getElementsByClassName("servGrid");
+
+const mediaSmall = window.matchMedia("(max-width: 480px) and (orientation:portrait)");
+if (mediaSmall.matches) {alert((isOverflownHeight(descriptionServ[1])));
+    for (let counter1=0; counter1<descriptionServ.length; counter1++) {if (isOverflownHeight(descriptionServ[counter1]) > "10") {servGrid[counter1].style.height="11vmax";} }
+  } else {
+    alert("nothing");
+  }
+
+
+
+
 let buttonCont=document.getElementById("buttonToFormPassengers");
 buttonCont.addEventListener("click", function () {document.location='orderFormPassengers.html';} );
+let blockFood = document.getElementById("blockFood");
 
 let switchers = document.getElementsByClassName("switcher");
 let circles = document.getElementsByClassName("switcherCircle");
 let selections = document.getElementsByClassName("selection");
 let select = document.getElementsByClassName("select");
 let imgSelect = document.getElementsByClassName("imgSelect");
-let servGrid = document.getElementsByClassName("servGrid");
+
 let servWrap = document.getElementsByClassName("servWrap");
 let check0 = 0;
 let checkSelect = 0;
-let blockFood = document.getElementById("blockFood");
+
+
 for (let j=0;j<selections.length;j++) {
 selections[j].addEventListener("click", function () {if (checkSelect == 0) {select[j].innerHTML="Скрыть";
                                                                             imgSelect[j].style.transform = "rotate(180deg)";
                                                                             servGrid[j].style.height="38vmax";
                                                                             servWrap[j].style.height="20%";
-                                                                            if (j==0) {blockFood.style.display = "grid";}
+                                                                            if (j==0) {blockFood.style.display = "grid";
+                                                                            mediaSmall.addEventListener("change", screenTest);}
                                                                            checkSelect++;} 
                                                             
                                                     else {if (checkSelect==1) {select[j].innerHTML="Показать";
@@ -78,6 +98,9 @@ for (let z=0; z<switchers2.length; z++) {switchers2[z].addEventListener("click",
                                         circles2[z].style.backgroundColor = "rgb(45, 78, 255)";
                                         switchers2[z].style.borderColor  = "rgb(45, 78, 255)";
                                         check0++;}} );}
+
+
+
 
 
 
