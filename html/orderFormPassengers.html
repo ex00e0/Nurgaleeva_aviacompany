@@ -6,15 +6,17 @@
         <title>Заполнение данных</title>
         <style>
             .personGrid {height:40vmax;}
-           .personBlock {display: grid;
+            .contactGrid {height:12vmax;}
+           .personBlock, .contactBlock {display: grid;
                          background-color: white;
                          border-radius: 1.5vmax;
                          box-shadow:0.15vmax 0.15vmax 0.4vmax 0.1vmax rgba(0,0,0,0.08); 
                          font-family: "Inter";
                          grid-template-columns: 5% 45% 7% 1fr;
-                         grid-template-rows: 0.1% repeat(6,1fr) 4%;
                          row-gap:5%;
                          grid-column: 2;}
+            .personBlock {grid-template-rows: 0.1% repeat(6,1fr) 4%;}
+            .contactBlock {grid-template-rows: 0.1% repeat(2,1fr) 4%;}
             .personBlockCol1 {grid-column:2;}
             .personBlockCol2 {grid-column:4;}
             .personType {font-size:2.5vmax;
@@ -82,13 +84,13 @@
             .inputSpecialPaddin {padding-left: 15%;}
             .inputSpecialPaddin2 {padding-left: 10%;}
             .personBlock input {color:#6c6c6c;}
-            .labelJs, .labelDocument {margin-top: 1%;
-                        margin-left: 5.1%;
+            .labelJs, .labelDocument, .labelContact { margin-left: 5.1%;
                         font-family: "Inter";
                         font-size: 1vmax;
                         color:#6c6c6c;
                         height:10%;
                         width:100%;}
+            .labelJs, .labelDocument {margin-top: 1%;}
             .labelJs {display:none;}
             .passNoBlock {grid-row:4;
                      display: grid;
@@ -110,6 +112,8 @@
                       grid-template-rows: 100%;
                       align-items: center;
                       column-gap:4%;}
+            .contactWho {height: 70%}
+            .labelContact {margin-top: 2%;}
         </style> 
     </head>
     <body>
@@ -245,7 +249,14 @@
                <label class="labelJs tenthLabel personBlockCol2">Место государственной регистрации</label>
            </form>
        </div>
-
+       <div class="voidCatalogueHalf"></div>
+        <div class="grid contactGrid">
+            <form class="contactBlock">
+                <div class="personBlockCol1 personType">Контакты</div>
+                <div class="personBlockCol1 documentType contactWho">Взрослый 1</div>
+               <label class="fifthLabel personBlockCol1 labelContact">Контактное лицо</label>
+            </form>
+        </div>
         <div class="voidCatalogueHalf"></div>
         <div class="grid backGrid">
             <div class="gridForABack">
