@@ -5,9 +5,8 @@
         <title>Помощь</title>
         <link rel="stylesheet" href="../css/style.css">
         <style>
-            #mainSpecial {max-height: max-content;
-                          min-height: 0vmax;}
-            .chatBlock {overflow:scroll;
+            #mainSpecial, .infoGrid {height:auto;}
+            .chatBlock {overflow-y:scroll;
                         max-height:70vmax;
                         min-height: 0vmax;
                         height:max-content;
@@ -34,6 +33,24 @@
             .textMessage {grid-column:2;
                           line-height: 170%;}
             #addVoid1, #addVoid2 {display:none;}
+            .enterMessageGrid {height:5vmax;}
+            .blockEnterMessage {grid-column:2;
+                                display:grid;
+                                grid-template-columns: 95% 5%;
+                                grid-template-rows: 100%;}
+            .blockEnterMessage input {grid-column:1/span all;
+                                     grid-row:1;
+                                     border-radius: 1vmax;
+                                     color: #6c6c6c;
+                                     font-size:1.3vmax;
+                                     font-family: "Inter";
+                                     padding-left: 3%;
+                                     padding-right: 7%;}
+            .blockEnterMessage img {grid-column:2;
+                                    grid-row:1;
+                                    align-self: center;
+                                    width:2vmax;
+                                    height:auto;}
         </style>
     </head>
     <body>
@@ -152,10 +169,13 @@
                         <div class="voidBetweenMessage"></div>
                     </div>
                 </div>
-                <div class=""></div>
             </main>   
-            <div class="void" id="addVoid1"></div>
-            <div class="voidCatalogue" id="addVoid2"></div> 
+            <div class="enterMessageGrid gridNew">
+                <div class="blockEnterMessage">
+                    <input type="text" placeholder="Введите свое сообщение.." id="inputMessage">
+                    <img src="../images/paper-clip1.png" alt="прикрепить фото">
+                </div>
+            </div>
             <div class="void"></div>
             <footer>
                 <div id="footerCol1">
