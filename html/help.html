@@ -4,54 +4,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Помощь</title>
         <link rel="stylesheet" href="../css/style.css">
-        <style>
-            #mainSpecial, .infoGrid {height:auto;}
-            .chatBlock {overflow-y:scroll;
-                        max-height:70vmax;
-                        min-height: 0vmax;
-                        height:max-content;
-                        grid-column:2;
-                        display:flex;
-                        font-family: "Inter";
-                        font-size:1.3vmax;
-                        flex-direction: column;}
-            .messageSupport {background-color: white;
-                            border-radius: 1.2vmax 1.2vmax 1.2vmax 0vmax;}
-            .messageCustomer {align-self: flex-end;
-                              background-color: rgba(45,78,255,0.05);
-                              border-radius: 1.2vmax 1.2vmax 0vmax 1.2vmax;}
-            .messageCustomer, .messageSupport {height:max-content;
-                                                width:70%;
-                                                box-shadow: 0.15vmax 0.15vmax 0.4vmax 0.1vmax rgba(0,0,0,0.08);
-                                                display:grid;
-                                                grid-template-columns: 5% 1fr 5%;}
-            .voidMessage {height:2vmax;
-                          width:100%;
-                          grid-column: 2;}
-            .voidBetweenMessage {min-height:3vmax;
-                                width:100%;}
-            .textMessage {grid-column:2;
-                          line-height: 170%;}
-            #addVoid1, #addVoid2 {display:none;}
-            .enterMessageGrid {height:5vmax;}
-            .blockEnterMessage {grid-column:2;
-                                display:grid;
-                                grid-template-columns: 95% 5%;
-                                grid-template-rows: 100%;}
-            .blockEnterMessage input {grid-column:1/span all;
-                                     grid-row:1;
-                                     border-radius: 1vmax;
-                                     color: #6c6c6c;
-                                     font-size:1.3vmax;
-                                     font-family: "Inter";
-                                     padding-left: 3%;
-                                     padding-right: 7%;}
-            .blockEnterMessage img {grid-column:2;
-                                    grid-row:1;
-                                    align-self: center;
-                                    width:2vmax;
-                                    height:auto;}
-        </style>
     </head>
     <body>
             <nav>
@@ -170,10 +122,13 @@
                     </div>
                 </div>
             </main>   
+            <div class="voidCatalogueHalf"></div>
             <div class="enterMessageGrid gridNew">
                 <div class="blockEnterMessage">
                     <input type="text" placeholder="Введите свое сообщение.." id="inputMessage">
-                    <img src="../images/paper-clip1.png" alt="прикрепить фото">
+                    <input type="file" id="inputTypeFile">
+                    <img src="../images/paper-clip1.png" alt="прикрепить фото" id="paperclip">
+                    <img src="../images/paper-plane.png" alt="отправить" id="sendMessage">
                 </div>
             </div>
             <div class="void"></div>

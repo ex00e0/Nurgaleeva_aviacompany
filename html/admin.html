@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Табло рейсов</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <style>
+          .navEnteredUser {grid-template-columns: 3% 5% 1% 10% 1fr 0.15fr 2% 0.2fr 5% 3%;;
+                           height:8vmax;}
+         #exit {grid-column:6;
+                grid-row:1;
+                 height:4vmax;
+                 align-self:center;}
+        .navNameUser {grid-column:8;
+                     grid-row:1;
+                    align-self:center;
+                    font-family:"Inter";
+                     font-size:1.3vmax;}
+        .imgAccHeadergjvsmjkds {border-radius: 1000vmax;
+                        height:14vmax;
+                        width:14vmax;
+                        align-self: center;
+                        border: 0.1vmax solid #2D4EFF;
+                        grid-row:1;
+                        grid-column:9;
+                       background-image: url("../images/free-icon-settings-19545201.png");}
+        </style>
+    </head>
+    <body>
+            <nav class="navEnteredUser">
+                <img src="../images/a11.png" id="logo" alt="логотип">
+                <div id="logoText">Мягкие <br> Авиалинии</div>
+                <div id="navigation">
+                    <div><a href="index.html" class="navBlue">Рейсы</a></div>
+                    <div id="curPage">
+                        <div id="blueLine"></div>
+                        <a href="board.html" class="curHover">Табло рейсов</a>
+                    </div>
+                    <div><a href="info.html"  class="navBlue">Услуги</a></div>
+                    <div><a href="help.html"  class="navBlue">Клиенты</a></div>
+                </div>
+                <button id="exit" class="blueButton">Выйти</button>
+                <div class="navNameUser">Администратор</div>
+                <div class="im"></div>
+                <img src="../images/menu.png" id="menuMobile" alt="меню навигации">
+            </nav>
+            <main>
+            </main>
+        <script src="../js/script.js"> </script>
+        <script src="../js/script2(board).js"> </script>
+    </body>
+</html>

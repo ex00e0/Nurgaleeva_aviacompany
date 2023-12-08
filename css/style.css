@@ -164,20 +164,20 @@ color:inherit;}
                                        footer {grid-template-columns: 1.2fr 5% 1fr 5% 1fr 5% 1fr;
                                                         grid-template-rows: 100%;
                                                         height:23vmax;}      }
-@media (min-width:481px) and (max-width:850px) and (orientation: landscape){nav {height:14vh;
+@media (min-width:481px) and (max-width:850px) and (orientation: landscape){nav:not(.navEnteredUser) {height:14vh;
                                                         grid-template-columns:5% 5vw 1vw 10vw 1fr 0.2fr 2% 0.2fr 5%;}
                                                         #modalEnter {width:40%;
                                                                 height:65%;}    
                                                    #modalReg {width:40%;
                                                               height:85%;}  }
-@media (min-width:851px) and (max-width:1199px) and (orientation: landscape) {nav {height:12vh;
+@media (min-width:851px) and (max-width:1199px) and (orientation: landscape) {nav:not(.navEnteredUser) {height:12vh;
                                                                 grid-template-columns:5% 5vw 1vw 10vw 1fr 0.2fr 2% 0.2fr 5%;}
                                                                 #modalEnter {width:60%;
                                                                         height:50%;}    
                                                         #modalReg {width:60%;
                                                                         height:60%;}  }
 
-@media (max-width:1720px) and (min-width:1200px) {nav {height:12.5vh;
+@media (max-width:1720px) and (min-width:1200px) {nav:not(.navEnteredUser) {height:12.5vh;
                                                    grid-template-columns:5% 5vw 1vw 10vw 1fr 0.2fr 2% 0.2fr 5%;}   }
 @media (min-width:1200px) {#navigation {display: flex;}
                                 #menuMobile {display:none;} 
@@ -201,7 +201,7 @@ color:inherit;}
                                 footer {grid-template-columns: 1.2fr 5% 1fr 5% 1fr 5% 1fr;
                                         grid-template-rows: 100%;
                                         height:23vmax;} }
-@media (min-width:1721px) {nav {height:14vh;
+@media (min-width:1721px) {nav:not(.navEnteredUser) {height:14vh;
                            grid-template-columns:5% 5vw 1vw 10vw 1fr 0.2fr 2% 0.2fr 5%;}  }
 nav {width:100%; 
 display:grid;
@@ -1157,3 +1157,61 @@ width:60%;}
                                                              .col2 {grid-column:4;} }
                                    @media (min-width:501px) {.infoBlock {grid-template-columns: 5% 1fr 1fr 5%;} 
                                                                .col2 {grid-column: 3;}}
+
+
+                                                               #mainSpecial, .infoGrid {height:auto;}
+                                                               .chatBlock {overflow-y:scroll;
+                                                                           max-height:70vmax;
+                                                                           min-height: 0vmax;
+                                                                           height:max-content;
+                                                                           grid-column:2;
+                                                                           display:flex;
+                                                                           font-family: "Inter";
+                                                                           font-size:1.3vmax;
+                                                                           flex-direction: column;}
+                                                               .messageSupport {background-color: white;
+                                                                               border-radius: 1.2vmax 1.2vmax 1.2vmax 0vmax;}
+                                                               .messageCustomer {align-self: flex-end;
+                                                                                 background-color: rgba(45,78,255,0.05);
+                                                                                 border-radius: 1.2vmax 1.2vmax 0vmax 1.2vmax;}
+                                                               .messageCustomer, .messageSupport {height:max-content;
+                                                                                                   width:70%;
+                                                                                                   box-shadow: 0.15vmax 0.15vmax 0.4vmax 0.1vmax rgba(0,0,0,0.08);
+                                                                                                   display:grid;
+                                                                                                   grid-template-columns: 5% 1fr 5%;}
+                                                               .voidMessage {height:2vmax;
+                                                                             width:100%;
+                                                                             grid-column: 2;}
+                                                               .voidBetweenMessage {min-height:3vmax;
+                                                                                   width:100%;}
+                                                               .textMessage {grid-column:2;
+                                                                             line-height: 170%;}
+                                                               #addVoid1, #addVoid2 {display:none;}
+                                                               .enterMessageGrid {height:5vmax;}
+                                                               .blockEnterMessage {grid-column:2;
+                                                                                   display:grid;
+                                                                                   grid-template-rows: 100%;}
+                                                               #inputMessage {grid-column:1/span all;
+                                                                                        grid-row:1;
+                                                                                        border-radius: 1vmax;
+                                                                                        color: #6c6c6c;
+                                                                                        font-size:1.3vmax;
+                                                                                        font-family: "Inter";
+                                                                                        padding-left: 3%;}
+                                                               #inputTypeFile {display:none;
+                                                                               grid-column:2;
+                                                                               grid-row:1;}
+                                                               #paperclip {grid-column:2;
+                                                                                       grid-row:1;
+                                                                                       align-self: center;
+                                                                                       width:2vmax;
+                                                                                       height:auto;}
+                                                               #sendMessage {grid-column:3;
+                                                                       grid-row:1;
+                                                                       align-self: center;
+                                                                        width:2vmax;
+                                                                        height:auto;}
+                                                               @media (max-width:480px) {.blockEnterMessage { grid-template-columns: 1fr 8% 8%;} 
+                                                                                           #inputMessage {padding-right: 18%;} }
+                                                               @media (min-width:481px) {.blockEnterMessage { grid-template-columns: 90% 5% 5%;} 
+                                                                                           #inputMessage {padding-right: 12%;} }
