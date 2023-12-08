@@ -1,6 +1,9 @@
 let inputsFormPassenger = document.getElementsByClassName("jsInput");
 let labelsForInputsPassenger = document.getElementsByClassName("labelJs");
-for (let r = 0; r < inputsFormPassenger.length; r++) {inputsFormPassenger[r].addEventListener("input", function () {inputsFormPassenger[r].style.paddingTop = "3%";
+const mediaSmall = window.matchMedia("(max-width: 600px) and (orientation:portrait)");
+const mediaTablet = window.matchMedia("(max-width: 1199px) and (min-width:601px) and (orientation:portrait)");
+const mediaSmallAndTablet = window.matchMedia("(max-width: 1199px) and (orientation:portrait)");
+for (let r = 0; r < inputsFormPassenger.length; r++) {inputsFormPassenger[r].addEventListener("input", function () {if (r==(inputsFormPassenger.length-1) && mediaSmallAndTablet.matches) {inputsFormPassenger[r].style.paddingTop = "7%";} else {inputsFormPassenger[r].style.paddingTop = "3%";}
                                                                                                             labelsForInputsPassenger[r].style.display = "block";
                                                                                                             inputsFormPassenger[r].style.color = "black";} );        }
 

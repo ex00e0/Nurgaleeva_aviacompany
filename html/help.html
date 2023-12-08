@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Помощь</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <style>
+            #mainSpecial {max-height: max-content;
+                          min-height: 0vmax;}
+            .chatBlock {overflow:scroll;
+                        max-height:70vmax;
+                        min-height: 0vmax;
+                        height:max-content;
+                        grid-column:2;
+                        display:flex;
+                        font-family: "Inter";
+                        font-size:1.3vmax;
+                        flex-direction: column;}
+            .messageSupport {background-color: white;
+                            border-radius: 1.2vmax 1.2vmax 1.2vmax 0vmax;}
+            .messageCustomer {align-self: flex-end;
+                              background-color: rgba(45,78,255,0.05);
+                              border-radius: 1.2vmax 1.2vmax 0vmax 1.2vmax;}
+            .messageCustomer, .messageSupport {height:max-content;
+                                                width:70%;
+                                                box-shadow: 0.15vmax 0.15vmax 0.4vmax 0.1vmax rgba(0,0,0,0.08);
+                                                display:grid;
+                                                grid-template-columns: 5% 1fr 5%;}
+            .voidMessage {height:2vmax;
+                          width:100%;
+                          grid-column: 2;}
+            .voidBetweenMessage {min-height:3vmax;
+                                width:100%;}
+            .textMessage {grid-column:2;
+                          line-height: 170%;}
+            #addVoid1, #addVoid2 {display:none;}
+        </style>
+    </head>
+    <body>
+            <nav>
+                <img src="../images/a11.png" id="logo" alt="логотип">
+                <div id="logoText">Мягкие <br> Авиалинии</div>
+                <div id="navigation">
+                    <div><a href="index.html" class="navBlue">Главная</a></div>
+                    <div> <a href="board.html" class="navBlue">Табло</a></div>
+                    <div><a href="help.html"  class="navBlue">Информация</a></div>
+                    <div id="curPage">
+                        <div id="blueLine"></div>
+                        <a href="info.html"  class="curHover">Помощь</a>
+                    </div>
+                </div>
+                <button id="enter" class="blueButton">Вход</button>
+                <button id="reg" class="blueButton">Регистрация</button>
+                <img src="../images/menu.png" id="menuMobile" alt="меню навигации">
+            </nav>
+            
+            <div id="navMobileShadow"></div>
+            <div id="navMobile">
+                    <img src="../images/plus4.png" id="close" alt="крестик">
+                    <div id="navMobileText">
+                        <div><a href="index.html">Главная</a></div>
+                        <div>
+                            <a href="board.html" class="curHover">Табло</a>
+                        </div>
+                        <div><a href="info.html">Информация</a></div>
+                        <div><a href="help.html">Помощь</a></div>
+                    </div>
+            </div>
+            
+            <div id="modalShadow"></div>
+            <div id="modalEnter" class="modalRegEnter">
+                <img src="../images/plus2.png" id="closeEnter" class="closeEnterReg" alt="крестик">     
+                <div class="modal1">Вход</div>
+                <form id="formEnter">
+                    <input type="text" placeholder="Email или номер телефона" id="enterEmailTel" class="inputModal">
+                    <label class="labelModal" id="labelEnterEmailTel">Email или номер телефона</label>
+                    <input type="password" placeholder="Пароль" id="enterPass" class="inputModal">
+                    <label class="labelModal" id="labelEnterPass">Пароль</label>
+                    <button class="blueButton buttonEnterReg" id="buttonEnter">Войти</button>
+                </form>
+            </div>
+            <div id="modalReg" class="modalRegEnter">
+                <img src="../images/plus2.png" id="closeReg" class="closeEnterReg" alt="крестик">     
+                <div class="modal1">Регистрация</div>
+                <form id="formReg">
+                    <input type="text" placeholder="Имя" id="regName" class="inputModal">
+                    <label class="labelModal" id="labelRegName">Имя</label>
+                    <input type="text" placeholder="Email или номер телефона" id="regEmailTel" class="inputModal">
+                    <label class="labelModal" id="labelRegEmailTel">Email или номер телефона</label>
+                    <input type="text" placeholder="Придумайте пароль" id="regPass" class="inputModal">
+                    <label class="labelModal" id="labelRegPass">Пароль</label>
+                    <button class="blueButton buttonEnterReg">Зарегистрироваться</button>
+                </form>
+            </div>
+            <main>
+                <div class="voidCatalogueHalf"></div>
+                <div class="gridNew headlineGrid">
+                    <div class="headline headlineCol2">Чат со службой поддержки</div>
+                </div>
+                <div class="gridNew infoGrid">
+                    <div class="chatBlock" id="chat">
+                        <div class="messageSupport">
+                            <div class="voidMessage"></div>
+                            <div class="textMessage">Здравствуйте, чем я могу Вам помочь?</div>
+                            <div class="voidMessage"></div>
+                        </div>
+                        <div class="voidBetweenMessage"></div>
+                        <div class="messageCustomer">
+                            <div class="voidMessage"></div>
+                            <div class="textMessage">Здравствуйте, у нас есть проблема с возвратом билетов... Помогите нам оформить возврат.</div>
+                            <div class="voidMessage"></div>
+                        </div>
+                        <div class="voidBetweenMessage"></div>
+                        
+                        <div class="messageSupport">
+                            <div class="voidMessage"></div>
+                            <div class="textMessage">Здравствуйте, чем я могу Вам помочь?</div>
+                            <div class="voidMessage"></div>
+                        </div>
+                        <div class="voidBetweenMessage"></div>
+                        <div class="messageCustomer">
+                            <div class="voidMessage"></div>
+                            <div class="textMessage">Здравствуйте, у нас есть проблема с возвратом билетов... Помогите нам оформить возврат.</div>
+                            <div class="voidMessage"></div>
+                        </div>
+                        <div class="voidBetweenMessage"></div>
+
+                        <div class="messageSupport">
+                            <div class="voidMessage"></div>
+                            <div class="textMessage">Здравствуйте, чем я могу Вам помочь?</div>
+                            <div class="voidMessage"></div>
+                        </div>
+                        <div class="voidBetweenMessage"></div>
+                        <div class="messageCustomer">
+                            <div class="voidMessage"></div>
+                            <div class="textMessage">Здравствуйте, у нас есть проблема с возвратом билетов... Помогите нам оформить возврат.</div>
+                            <div class="voidMessage"></div>
+                        </div>
+                        <div class="voidBetweenMessage"></div>
+
+                        <div class="messageSupport">
+                            <div class="voidMessage"></div>
+                            <div class="textMessage">Здравствуйте, чем я могу Вам помочь?</div>
+                            <div class="voidMessage"></div>
+                        </div>
+                        <div class="voidBetweenMessage"></div>
+                        <div class="messageCustomer">
+                            <div class="voidMessage"></div>
+                            <div class="textMessage">Здравствуйте, у нас есть проблема с возвратом билетов... Помогите нам оформить возврат.</div>
+                            <div class="voidMessage"></div>
+                        </div>
+                        <div class="voidBetweenMessage"></div>
+                    </div>
+                </div>
+                <div class=""></div>
+            </main>   
+            <div class="void" id="addVoid1"></div>
+            <div class="voidCatalogue" id="addVoid2"></div> 
+            <div class="void"></div>
+            <footer>
+                <div id="footerCol1">
+                    <div class="headlineFooter headline">Связь с нами</div>
+                    <a class="buttonFooter" id="buttonF1"  href="help.html">
+                           <img src="../images/speech-bubble1.png" alt="сообщение" class="imgButtonFooter">                        
+                    </a>
+                    <a class="buttonFooter" id="buttonF2" href="tel:+79528123641">
+                        <img src="../images/phone-call1.png" alt="звонок" class="imgButtonFooter">              
+                    </a>
+                    <a class="buttonFooter" id="buttonF3" href="https://t.me/trapbed">
+                        <img src="../images/telegram1.png" alt="телеграм" class="imgButtonFooter">                        
+                    </a>
+                    <div id="buttonFooterText1">Служба поддержки</div>
+                    <div id="buttonFooterText2">Звонок</div>
+                    <div id="buttonFooterText3">Телеграм</div>
+                </div>
+                <img src="../images/Group2.png" alt="градиент">
+                <div class="footerPart" id="footerCol2">
+                    <div class="headline headlineFooter">О компании</div>
+                    <div class="footerPartRow4"><a href="">Общая информация</a></div>
+                    <div class="footerPartRow5"><a href="">Лицензии</a></div>
+                    <div class="footerPartRow6"><a href="">Правила</a></div>
+                </div>
+                <img src="../images/Group2.png" alt="градиент" id="gradMobileNone">
+                <div class="footerPart" id="footerCol3">
+                    <div class="headline headlineFooter">О рейсах</div>
+                    <div class="footerPartRow4"><a href="">Табло с рейсами</a></div>
+                    <div class="footerPartRow5"><a href="">Классы</a></div>
+                    <div class="footerPartRow6"><a href="">Дополнительные услуги</a></div>
+                    <div class="footerPartRow7"><a href="">Направления</a></div>
+                </div>
+                <img src="../images/Group2.png" alt="градиент">
+                <div class="footerPart" id="footerCol4">
+                    <div class="headline headlineFooter">Офисы</div>
+                    <div class="footerPartRow4"><a href="">Главный офис</a></div>
+                    <div class="footerPartRow5"><a href="">Офис в Уфе</a></div>
+                    <div class="footerPartRow6"><a href="">Офис в Екатеринбурге</a></div>
+                    <div class="footerPartRow7"><a href="">Офис в Нижнем Новгороде</a></div>
+                </div>
+
+            </footer>
+        <script src="../js/script.js"> </script>
+        <script src="../js/script8(help).js"></script>
+    </body>
+</html>
