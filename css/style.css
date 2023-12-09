@@ -314,7 +314,7 @@ display:none;}
 #tableHead div {color:#6c6c6c;
            font-size: 1.4vmax;
            font-family: "Inter";}
-.timetable, .flightInfo, .servBlock {grid-column:2;
+.timetable, .flightInfo, .servBlock, .resultSearch {grid-column:2;
         background-color: white;
         border-radius:1.5vmax;
         border: 0.15vmax solid #2D4EFF;}
@@ -1215,3 +1215,83 @@ width:60%;}
                                                                                            #inputMessage {padding-right: 18%;} }
                                                                @media (min-width:481px) {.blockEnterMessage { grid-template-columns: 90% 5% 5%;} 
                                                                                            #inputMessage {padding-right: 12%;} }
+
+
+/*НЕ АДАПТИРОВАНО*/
+                                                                                           .navEnteredUser {grid-template-columns: 3% 5% 1% 10% 1fr 0.2fr 2% 0.25fr 5% 3%;;
+                                                                                                height:8vmax;}
+                                                                              #exit {grid-column:6;
+                                                                                     grid-row:1;
+                                                                                      height:4vmax;
+                                                                                      align-self:center;}
+                                                                             .navNameUser {grid-column:8;
+                                                                                          grid-row:1;
+                                                                                         align-self:center;
+                                                                                         font-family:"Inter";
+                                                                                          font-size:1.3vmax;}
+                                                                             .navImgUser {border-radius: 1000vmax;
+                                                                                             height: 4.2vmax;
+                                                                                             width: 4.2vmax;
+                                                                                             align-self: center;
+                                                                                             border: 0.1vmax solid #2D4EFF;
+                                                                                             grid-row:1;
+                                                                                             grid-column:9;
+                                                                                             background-repeat: no-repeat;
+                                                                                             background-size: cover;
+                                                                                            background-image: url("../images/free-icon-settings-19545201.png");}
+                                                                             .navigationEnteredUser {grid-column:5;
+                                                                                                     grid-row:1;
+                                                                                                     width:60%;
+                                                                                                     display:flex;
+                                                                                                     justify-self: center;
+                                                                                                     align-items: center;
+                                                                                                     justify-content: space-between;
+                                                                                                     font-family: "Inter";
+                                                                                                     font-size: 1.4vmax;}
+                                                                             .searchAndAddGrid {height:10vmax;
+                                                                                                width:100%;
+                                                                                                display:grid;
+                                                                                                grid-template-columns: 8% 1fr 8%;
+                                                                                                grid-template-rows: 100%;}
+                                                                             .searchAndAdd {grid-column:2;
+                                                                                            display:grid; 
+                                                                                            grid-template-columns: 8% 1fr 15% 20% 8%;
+                                                                                            grid-template-rows: 100%;
+                                                                                            align-items: center;}
+                                                                             .admIcon {height:auto;
+                                                                                       width:2.8vmax;}
+                                                                             .searchAndAdd div {font-family:"Mariupol";
+                                                                                                font-size:2vmax;
+                                                                                                grid-column:4;}
+                                                                             #admAddFlightButton {grid-column:5;}
+                                                                             #admSearchFlight {border: 0.1vmax solid #6c6c6c;
+                                                                                               height:4vmax;
+                                                                                               padding-right: 3%;}
+                                                                             .searchHeadGrid {height:3vmax;}
+                                                                             .searchHead {grid-template-columns: repeat(8,1fr);
+                                                                                                 grid-template-rows: 100%; 
+                                                                                         display:grid;
+                                                                                         font-family: "Inter";
+                                                                                         font-size:1.3vmax;
+                                                                                         color:#6c6c6c;
+                                                                                         grid-column:2;} 
+                                                                             .resultSearchGrid {height:10vmax;}
+                                                                             .resultSearch {display:grid;}
+                                                                             .wrapResultSearch {width:96%;
+                                                                                 height:80%;
+                                                                                 align-self: end;
+                                                                                 justify-self: center;
+                                                                                 display:grid;
+                                                                                 grid-template-columns: repeat(8,1fr);
+                                                                                     grid-template-rows: 60% auto; 
+                                                                                 font-family:"Inter"; }   
+                                                                             .wrapResultSearch div:not(.code1, .code2) {font-size:1.4vmax;}  
+                                                                             .wrapResultSearch img {grid-row:1;
+                                                                                                   grid-column:8;
+                                                                                                   align-self:center;
+                                                                                                   justify-self:center;
+                                                                                                   width:2.5vmax;
+                                                                                                   height:auto;}
+                                                                             .voidSmall {height:2vmax;}
+                                                                             .admIconSearch {height:auto;
+                                                                                            width:3.5vmax;}

@@ -2,58 +2,10 @@
 <html lang="ru">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Табло рейсов</title>
+        <title>Рейсы</title>
         <link rel="stylesheet" href="../css/style.css">
         <style>
-          .navEnteredUser {grid-template-columns: 3% 5% 1% 10% 1fr 0.2fr 2% 0.25fr 5% 3%;;
-                           height:8vmax;}
-         #exit {grid-column:6;
-                grid-row:1;
-                 height:4vmax;
-                 align-self:center;}
-        .navNameUser {grid-column:8;
-                     grid-row:1;
-                    align-self:center;
-                    font-family:"Inter";
-                     font-size:1.3vmax;}
-        .navImgUser {border-radius: 1000vmax;
-                        height: 4.2vmax;
-                        width: 4.2vmax;
-                        align-self: center;
-                        border: 0.1vmax solid #2D4EFF;
-                        grid-row:1;
-                        grid-column:9;
-                        background-repeat: no-repeat;
-                        background-size: cover;
-                       background-image: url("../images/free-icon-settings-19545201.png");}
-        .navigationEnteredUser {grid-column:5;
-                                grid-row:1;
-                                width:60%;
-                                display:flex;
-                                justify-self: center;
-                                align-items: center;
-                                justify-content: space-between;
-                                font-family: "Inter";
-                                font-size: 1.4vmax;}
-        .searchAndAddGrid {height:10vmax;
-                           width:100%;
-                           display:grid;
-                           grid-template-columns: 8% 1fr 8%;
-                           grid-template-rows: 100%;}
-        .searchAndAdd {grid-column:2;
-                       display:grid; 
-                       grid-template-columns: 8% 1fr 15% 20% 8%;
-                       grid-template-rows: 100%;
-                       align-items: center;}
-        .admIcon {height:auto;
-                  width:3.2vmax;}
-        .searchAndAdd div {font-family:"Mariupol";
-                           font-size:2vmax;
-                           grid-column:4;}
-        #admAddFlightButton {grid-column:5;}
-        #admSearchFlight {border: 0.1vmax solid #6c6c6c;
-                          height:4vmax;
-                          padding-right: 3%;}
+          
         </style>
     </head>
     <body>
@@ -77,14 +29,75 @@
             <main>
                 <div class="searchAndAddGrid">
                     <div class="searchAndAdd">
-                        <img src="../images/magnifier1.png" alt="поиск" class="admIcon">
+                        <img src="../images/magnifier1.png" alt="поиск" class="admIconSearch">
                         <input type="text" id="admSearchFlight" placeholder="Поиск рейса по номеру/дате/направлению..">
                         <div>Добавить рейс</div>
                         <img src="../images/pluss.png" alt="плюс" class="admIcon" id="admAddFlightButton">
                     </div>
                 </div>
+                <div class="grid searchHeadGrid">
+                    <div class="searchHead">
+                        <div>Рейс</div>
+                        <div>Откуда</div>
+                        <div>Вылет</div>
+                        <div>Куда</div>
+                        <div>Посадка</div>
+                        <div>Мест</div>
+                        <div>Продано</div>
+                    </div>
+                </div>
+                <div class="gridNew resultSearchGrid">
+                     <div class="resultSearch">
+                        <div class="wrapResultSearch">
+                            <div class="tableText1">MA710000</div>
+                            <div class="tableText4">Уфа</div>
+                            <div class="tableText3">30.10.23 <br> 03:35</div>
+                            <div class="tableText6">Нижний Новгород</div>
+                            <div class="tableText5">30.10.23 <br> 05:25</div>
+                            <div class="tableText2">176</div>
+                            <div class="tableText7" >140</div>
+                            <img src="../images/edit.png" alt="редактировать">
+                            <div class="code1 tableText9">(UFA)</div>
+                            <div class="code2 tableText10">(GOJ)</div>
+                        </div>
+                     </div>
+                </div>
+                <div class="voidSmall"></div>
+                <div class="gridNew resultSearchGrid">
+                    <div class="resultSearch">
+                       <div class="wrapResultSearch">
+                           <div class="tableText1">MA710001</div>
+                           <div class="tableText4">Уфа</div>
+                           <div class="tableText3">30.10.23 <br> 05:00</div>
+                           <div class="tableText6">Нижний Новгород</div>
+                           <div class="tableText5">30.10.23 <br> 06:50</div>
+                           <div class="tableText2">176</div>
+                           <div class="tableText7" >170</div>
+                           <img src="../images/edit.png" alt="редактировать">
+                           <div class="code1 tableText9">(UFA)</div>
+                           <div class="code2 tableText10">(GOJ)</div>
+                       </div>
+                    </div>
+               </div>
+               <div class="voidSmall"></div>
+               <div class="gridNew resultSearchGrid">
+                <div class="resultSearch">
+                   <div class="wrapResultSearch">
+                       <div class="tableText1">MA710002</div>
+                       <div class="tableText4">Уфа</div>
+                       <div class="tableText3">30.10.23 <br> 20:00</div>
+                       <div class="tableText6">Нижний Новгород</div>
+                       <div class="tableText5">30.10.23 <br> 21:50</div>
+                       <div class="tableText2">176</div>
+                       <div class="tableText7" >175</div>
+                       <img src="../images/edit.png" alt="редактировать">
+                       <div class="code1 tableText9">(UFA)</div>
+                       <div class="code2 tableText10">(GOJ)</div>
+                   </div>
+                </div>
+           </div>
+           <div class="voidCatalogueHalf"></div>
             </main>
         <script src="../js/script.js"> </script>
-        <script src="../js/script2(board).js"> </script>
     </body>
 </html>
