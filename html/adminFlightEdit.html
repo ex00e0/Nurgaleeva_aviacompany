@@ -5,7 +5,40 @@
         <title>Редатирование рейса</title>
         <link rel="stylesheet" href="../css/style.css">
         <style>
-         
+            .backAndDelete {grid-column:2;
+                            display:grid; 
+                            grid-template-columns: 1fr 1fr 15% 17% 8%;
+                            grid-template-rows: 100%;
+                            align-items: center;}
+            .formEditFlight input {border-radius:0.5vmax;
+                color: #6c6c6c;
+                padding-left: 7%;
+                border: 0.1vmax solid #6c6c6c;
+                font-family: "Inter";
+                font-size:1.1vmax;}
+            .backAndDeleteGrid {height:7vmax;}
+            .backEdit {display:grid;
+                       align-items: center;
+                       grid-template-rows: 100%;
+                       grid-template-columns: 12% 1fr;}
+            .backEdit div {color: #6c6c6c;
+                           grid-column:2;
+                        font-size:1.5vmax;
+                          font-family:"Inter";}
+            .backEdit svg {width:1.7vmax;
+                          height:1.7vmax;}
+            .gridEdit {display:grid;
+                      grid-template-columns: 5% 1fr 5%;
+                      grid-template-rows: 100%;}
+            .headlineEditGrid {height:3vmax;}
+            .headlineEditGrid > div {grid-column:2;
+                                      font-family: "Inter";
+                                     font-size:1.5vmax;}
+            .input2Cols {display:grid;
+                         grid-template-columns: 35% 10% 35% auto;
+                         grid-template-rows:100%;}
+            
+            .inputOnCol2 {grid-column:3;}
         </style>
     </head>
     <body>
@@ -13,13 +46,12 @@
                 <img src="../images/a11.png" id="logo" alt="логотип">
                 <div id="logoText">Мягкие <br> Авиалинии</div>
                 <div class="navigationEnteredUser">
-                    <div id="curPage">
-                        <div id="blueLine"></div>
-                        <a href="board.html" class="curHover">Рейсы</a>
+                    <div>
+                        <a href="board.html" class="noNavPage">Рейсы</a>
                     </div>
-                    <div><a href="index.html" class="navBlue">Табло рейсов</a></div>
-                    <div><a href="info.html"  class="navBlue">Услуги</a></div>
-                    <div><a href="help.html"  class="navBlue">Клиенты</a></div>
+                    <div><a href="index.html" class="noNavPage">Табло рейсов</a></div>
+                    <div><a href="info.html"  class="noNavPage">Услуги</a></div>
+                    <div><a href="help.html"  class="noNavPage">Клиенты</a></div>
                 </div>
                 <button id="exit" class="blueButton">Выйти</button>
                 <div class="navNameUser">Администратор</div>
@@ -27,19 +59,45 @@
                 <img src="../images/menu.png" id="menuMobile" alt="меню навигации">
             </nav>
             <main>
-                <div class="searchAndAddGrid">
-                    <div class="searchAndAdd">
-                        <a href="admin.html" id="specialCat">
+                <div class="grid backAndDeleteGrid">
+                    <div class="backAndDelete">
+                        <a href="admin.html" class="backEdit">
                             <svg viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7 13L1 7L7 1" stroke="#6C6C6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <div class="backToSearch">Вернуться к поиску</div>
+                            <div>Вернуться к поиску</div>
                         </a>
                         <div>Удалить рейс</div>
                         <img src="../images/xred.png" alt="плюс" class="admIcon" id="admAddFlightButton">
                     </div>
                 </div>
-                
+                <div class="voidSmall"></div>
+                <form class="formEditFlight">
+                    <div class="gridEdit headlineEditGrid">
+                        <div>Общая информация</div>
+                    </div>
+                    <div class="gridEdit headlineEditGrid">
+                        <div class="input2Cols">
+                            <input type="text">
+                            <input type="text" class="inputOnCol2">
+                        </div>
+                    </div>
+                    <div class="gridEdit headlineEditGrid">
+                        <div>Места</div>
+                    </div>
+                    <div class="gridEdit headlineEditGrid">
+                        <div>Дополнительные услуги</div>
+                    </div>
+                    <div class="gridEdit headlineEditGrid">
+                        <div>Условия: бизнес-класс</div>
+                    </div>
+                    <div class="gridEdit headlineEditGrid">
+                        <div>Условия: эконом-класс</div>
+                    </div>
+                    <div class="gridEdit headlineEditGrid">
+                        <div>Условия: минимум-класс</div>
+                    </div>
+                </form>
            <div class="voidCatalogueHalf"></div>
             </main>
         <script src="../js/script.js"> </script>

@@ -1260,7 +1260,7 @@ width:60%;}
                                                                                             align-items: center;}
                                                                              .admIcon {height:auto;
                                                                                        width:2.8vmax;}
-                                                                             .searchAndAdd div {font-family:"Mariupol";
+                                                                             .searchAndAdd div, .backAndDelete div {font-family:"Mariupol";
                                                                                                 font-size:2vmax;
                                                                                                 grid-column:4;}
                                                                              #admAddFlightButton {grid-column:5;}
@@ -1295,3 +1295,8 @@ width:60%;}
                                                                              .voidSmall {height:2vmax;}
                                                                              .admIconSearch {height:auto;
                                                                                             width:3.5vmax;}
+
+
+
+
+                                                                                            h2 {font-weight:100;}
