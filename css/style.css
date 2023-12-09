@@ -1192,12 +1192,12 @@ width:60%;}
                                                                                    display:grid;
                                                                                    grid-template-rows: 100%;}
                                                                #inputMessage {grid-column:1/span all;
-                                                                                        grid-row:1;
-                                                                                        border-radius: 1vmax;
-                                                                                        color: #6c6c6c;
-                                                                                        font-size:1.3vmax;
-                                                                                        font-family: "Inter";
-                                                                                        padding-left: 3%;}
+                                                                             grid-row:1;}
+                                                                #inputMessage, #admSearchFlight {border-radius: 1vmax;
+                                                                                                color: #6c6c6c;
+                                                                                                font-size:1.3vmax;
+                                                                                                font-family: "Inter";
+                                                                                                padding-left: 3%;}
                                                                #inputTypeFile {display:none;
                                                                                grid-column:2;
                                                                                grid-row:1;}
