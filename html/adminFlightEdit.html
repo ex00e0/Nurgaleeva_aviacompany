@@ -7,9 +7,11 @@
         <style>
             .backAndDelete {grid-column:2;
                             display:grid; 
-                            grid-template-columns: 1fr 1fr 15% 17% 8%;
+                            grid-template-columns: 25% 1fr 2% 5%;
                             grid-template-rows: 100%;
                             align-items: center;}
+            .backAndDelete img {grid-column:4;}
+            .deleteFlightText {justify-self: end;}
             .formEditFlight input {border-radius:0.5vmax;
                 color: #6c6c6c;
                 padding-left: 7%;
@@ -37,26 +39,25 @@
             .input2Cols {display:grid;
                          grid-template-columns: 35% 10% 35% auto;
                          grid-template-rows:100%;}
-            
             .inputOnCol2 {grid-column:3;}
         </style>
     </head>
     <body>
             <nav class="navEnteredUser">
-                <img src="../images/a11.png" id="logo" alt="логотип">
+                <img src="../images/a11.png" class="logoEnteredUser" alt="логотип">
                 <div id="logoText">Мягкие <br> Авиалинии</div>
                 <div class="navigationEnteredUser">
                     <div>
-                        <a href="board.html" class="noNavPage">Рейсы</a>
+                        <a href="admin.html" class="noNavPage">Рейсы</a>
                     </div>
-                    <div><a href="index.html" class="noNavPage">Табло рейсов</a></div>
-                    <div><a href="info.html"  class="noNavPage">Услуги</a></div>
-                    <div><a href="help.html"  class="noNavPage">Клиенты</a></div>
+                    <div><a href="" class="noNavPage">Табло рейсов</a></div>
+                    <div><a href=""  class="noNavPage">Услуги</a></div>
+                    <div><a href=""  class="noNavPage">Клиенты</a></div>
                 </div>
                 <button id="exit" class="blueButton">Выйти</button>
                 <div class="navNameUser">Администратор</div>
                 <div class="navImgUser"></div>
-                <img src="../images/menu.png" id="menuMobile" alt="меню навигации">
+                <img src="../images/menu.png" id="menuMobileEnteredUser" alt="меню навигации">
             </nav>
             <main>
                 <div class="grid backAndDeleteGrid">
@@ -67,8 +68,8 @@
                             </svg>
                             <div>Вернуться к поиску</div>
                         </a>
-                        <div>Удалить рейс</div>
-                        <img src="../images/xred.png" alt="плюс" class="admIcon" id="admAddFlightButton">
+                        <div class="deleteFlightText">Удалить рейс</div>
+                        <img src="../images/xred.png" alt="плюс" class="admIcon">
                     </div>
                 </div>
                 <div class="voidSmall"></div>

@@ -11,3 +11,5 @@ let close=document.getElementById("close");
                                                                   document.getElementById("navMobileText").style.display="none";   
                                                              document.body.style.overflow="auto"; 
                                                              document.body.style.height="auto";  } ); 
+let editButtons = document.getElementsByClassName("editButtons");
+for (let ed=0;ed<editButtons.length;ed++) {editButtons[ed].addEventListener("click", function () {document.location='adminFlightEdit.html';} );}
