@@ -70,6 +70,7 @@ font-size: 100%;}
 html, body {background-color: #f9f9f9;}
 a {text-decoration: none;
 color:inherit;}
+h1 {font-weight: 100;}
 @font-face { font-family: "Inter";
    src: url("../fonts/Inter-Regular.woff"); 
   font-weight: normal;
@@ -96,7 +97,8 @@ color:inherit;}
                      #headline2 {width:85%;}  
                      #timetableBlock {height:70vmax;
                                      grid-template-rows: 5% 3% 4% 3% 4% 10% 1fr 3% 1fr 3% 1fr;}
-                    #footerCol3 {padding-left: 10%;}  }
+                    #footerCol3 {width:90%;
+                                 justify-self: end;}  }
 @media (max-width:1199px) and (orientation: portrait) {nav {height:8vh;
                                                                 grid-template-columns:5% 10vw 1.5vw 15vw 1fr 0.9fr 2% 0.9fr 2% 5% 5%;} 
                                                         #navigation {display: none;}
@@ -144,7 +146,8 @@ color:inherit;}
                                                                                 #headline2 {width:60%;} 
                                                                                 #timetableBlock {height:70vmax;
                                                                                         grid-template-rows: 5% 3% 3% 3% 5% 10% 1fr 3% 1fr 3% 1fr;}
-                                                                                #footerCol3, #footerCol4, #footerCol2 {padding-left: 10%;}    }
+                                                                                #footerCol3, #footerCol4, #footerCol2 {width:90%;
+                                                                                                                         justify-self: end;}    }
                                
 @media (min-width:481px) and (max-width:1199px) and (orientation: landscape) {
                                            #navigation {display: flex;}
@@ -1159,7 +1162,7 @@ width:60%;}
                                                                .col2 {grid-column: 3;}}
 
 
-                                                               #mainSpecial, .infoGrid {height:auto;}
+                                                               #mainSpecial, .infoGrid:not(.infoInfo) {height:auto;}
                                                                .chatBlock {overflow-y:scroll;
                                                                            max-height:70vmax;
                                                                            min-height: 0vmax;
@@ -1325,3 +1328,174 @@ width:60%;}
                                                                                                         #admAddFlightButton {grid-column:5;}
                                                                                                         .searchAndAdd div {grid-column:4;} 
                                                                                                         #menuMobileEnteredUser {display: none;} }
+
+
+
+/*стили для orderFormPassengers*/
+                                                                                                        .contactGrid {height:12vmax;}
+           .personBlock, .contactBlock {display: grid;
+                         background-color: white;
+                         border-radius: 1.5vmax;
+                         box-shadow:0.15vmax 0.15vmax 0.4vmax 0.1vmax rgba(0,0,0,0.08); 
+                         font-family: "Inter";
+                         grid-column: 2;}
+           
+            .personBlockCol1 {grid-column:2;}
+            .personType {font-size:2.5vmax;
+                         align-self:center;
+                         grid-row:2;}
+
+            .autoFillAndSaveBlock {color:#6c6c6c;
+                                   grid-column: 2/span all;
+                                   width:60%;
+                                   justify-self: end;
+                                   font-size: 1.3vmax;}
+            .radioBlock {grid-row:3;
+                         display:grid;
+                         grid-template-columns: 5% 20% 5% 1fr;
+                         grid-template-rows: 100%;
+                         column-gap:2%;}
+            .radioBlock * {grid-row:1;
+                           align-self:center;}
+            .radioBlock label {color: #6c6c6c;
+                               font-size:1.3vmax;}
+            .radioBlock > div {border-radius: 1000vmax;
+                             width:1.8vmax;
+                             height:1.8vmax;
+                             border:0.15vmax solid #6c6c6c;
+                             display:grid;
+                             align-items: center;
+                             justify-items: center;}
+            .radioBlock > div > div {border-radius: 1000vmax;
+                                     background-color: #6c6c6c;
+                                        width:1.3vmax;
+                                        height:1.3vmax;}
+            .documentType {width:50%;
+                         color:black;}
+            .contactWho {grid-row:3;
+                        width:100%;
+                        color:black;
+                        padding-left:8%;}
+                        
+                         
+            .contactTel, .labelTelContact {grid-row:3;}
+            .headlineSpecial {grid-column:2;}
+            .personName, .firstLabel {grid-row:4;}
+            .personSecondName, .secondLabel {grid-row:5;}
+            .personLastName, .thirdLabel  {grid-row:6;}
+            .dateOfBirth, .fourthLabel  {grid-row:7;}
+            .dateOfPass {width:50%;}
+            .codeDepartment {width:50%;}
+            .whoIssue { width:85%;}
+            .personBlock input, .documentType, .contactWho, .contactTel {border-radius:0.75vmax;
+                                font-weight: 500;
+                                background: transparent;
+                                font-family: "Inter";
+                                font-size:1.1vmax;
+                                box-sizing: border-box;
+                                border:0.1vmax solid #6c6c6c;
+                                height:85%;
+                               align-self: center;}
+            .personBlock input:not(.inputSpecialPaddin, .inputSpecialPaddin2), .documentType {padding-left: 5%;}
+            .inputSpecialPaddin, .sixthLabel {padding-left: 15%;}
+            .inputSpecialPaddin2, .seventhLabel {padding-left: 10%;}
+            .personBlock input {color:#6c6c6c;}
+            .labelJs, .labelDocument, .labelContact {font-family: "Inter";
+                                                    font-size: 1vmax;
+                                                    color:#6c6c6c;
+                                                    height:10%;
+                                                    width:100%;}
+            .labelJs:not(.sixthLabel, .seventhLabel, .labelTelContact), .labelDocument {margin-top: 1%;
+                                        margin-left: 5.1%;}
+            .sixthLabel, .seventhLabel {margin-top:1%;}
+            .labelJs {display:none;}
+            .passNoBlock {display: grid;
+                     column-gap: 5%;
+                     grid-template-columns: 30% 50%;
+                     grid-template-rows: 100%;}
+            .sixthLabel, .passS {grid-column:1;
+                                 grid-row:1;}
+            .seventhLabel, .passNo {grid-column:2;
+                                    grid-row:1;}
+            .circleRadio2 {display: none;}
+            .autoSave {display:grid;
+                      grid-template-columns: 1fr 28% 5%;
+                      grid-template-rows: 100%;}
+            .autoSave > div {grid-row:1;
+                             align-self: center;}
+            .autoSave > .switcher2 {grid-column:2;}
+            .autoFill {display: grid;
+                      grid-template-rows: 100%;
+                      align-items: center;
+                      column-gap:4%;}
+            .contactWho, .contactTel {height: 70%;}
+            .contactBlock {grid-template-rows: 0.1% repeat(2,1fr) 4%;}
+
+            @media (max-width:480px) {.personGrid {height:70vmax;} 
+                                        .documentType {padding-top: 4%;}}
+            @media (max-width:1199px) and (min-width:481px) and (orientation:portrait) {.personGrid {height:78vmax;}  
+                                                                                        .documentType {padding-top: 3.2%;} 
+                                                                                       .radioBlock {width:70%;} }
+            @media (max-width:1199px) and (orientation:portrait) {.specialMediaHeadlineGrid {height:9vmax;}
+                                                                    .personBlock {grid-template-rows: 0.1% repeat(11,1fr) 4%;
+                                                                        grid-template-columns: 5% 45% 1fr 5%;} 
+                                                                        .personBlock, .contactBlock {row-gap:2.5%;}
+                                                                       .autoFillAndSaveBlock {display: grid;
+                                                                                            grid-template-columns: 1fr;
+                                                                                            grid-row:2/4;
+                                                                                            width:42%;
+                                                                                            grid-template-rows: repeat(2,1fr);
+                                                                                            row-gap:8%;}     
+                                                                        .autoFill {grid-template-columns: 1fr 17%;}
+                                                                        .personBlockCol2,  .personBlockCol1 {grid-column:2/4;}
+                                                                        .documentType, .labelDocument {grid-row:8;} 
+                                                                        .passNoBlock {grid-row:9;}
+                                                                       .codeDepartment, .ninthLabel {grid-row:11;}
+                                                                       .dateOfPass, .eighthLabel {grid-row:10;}
+                                                                       .whoIssue, .tenthLabel {grid-row:12;} 
+                                                                       .personBlockCol2Contact {grid-column:5;}
+                                                                       .contactBlock {grid-template-columns: 5% 30% 7% 7% 1fr;}
+                                                                       .contactTel {padding-left: 5%;
+                                                                                    width:90%;}
+                                                                        .labelContact {grid-column:2;
+                                                                                       grid-row:3;}
+                                                                        .contactWho {padding-top: 12%;} 
+                                                                        .labelContact {margin-top: 9%;
+                                                                                         margin-left: 11%;}                            
+                                                                        .labelTelContact {margin-top: 5.5%;
+                                                                                        margin-left:5%;} 
+                                                                        #forMobileNoVoid {display:none;}
+                                                                        #forMobileNoVoid2 {display:none;}
+                                                                        #forMobileVoid {display:block;}  }
+            @media (min-width:1200px) or ((max-width:1199px) and (orientation:landscape)) {.specialMediaHeadlineGrid {height:5vmax;} 
+                                                                                            .personBlock {grid-template-rows: 0.1% repeat(6,1fr) 4%;
+                                                                                                grid-template-columns: 5% 45% 7% 1fr;}
+                                                                                                .personGrid {height:40vmax;}
+                                                                                                .documentType {padding-top: 4%;}
+                                                                                                .personBlock, .contactBlock {row-gap:5%;} 
+                                                                                                .autoFillAndSaveBlock {display:grid;
+                                                                                                    grid-template-columns: repeat(2,1fr);
+                                                                                                    column-gap: 5%;
+                                                                                                    grid-template-rows: 100%;
+                                                                                                    grid-row:2;}
+                                                                                                .autoFill {grid-template-columns: 1fr 8%;}
+                                                                                                .documentType {grid-row:3;}
+                                                                                                .dateOfPass {grid-row:5;}
+                                                                                                .fifthLabel {grid-row:3;}
+                                                                                                .codeDepartment {grid-row:6;}
+                                                                                                .whoIssue {grid-row:7;}
+                                                                                                .eighthLabel {grid-row:5;}
+                                                                                                .ninthLabel {grid-row:6;}
+                                                                                                .tenthLabel {grid-row:7;}
+                                                                                                .personBlockCol2 {grid-column:4;}
+                                                                                                .passNoBlock {grid-row:4;} 
+                                                                                                .personBlockCol2Contact {grid-column:4;}
+                                                                                                .contactBlock {grid-template-columns: 5% 25% 7% 1fr;}
+                                                                                                .contactTel {padding-left: 5%;
+                                                                                                             width:40%;}
+                                                                                                .contactWho {padding-top: 8%;} 
+                                                                                                .labelContact {margin-top: 4%;
+                                                                                                                margin-left: 8%;}                                                                                      
+                                                                                                .labelTelContact {margin-top: 1.5%;
+                                                                                                                margin-left:5%;}
+                                                                                                #forMobileVoid {display:none;} }
