@@ -1209,83 +1209,79 @@ top:-200%;}
 @media (min-width:481px) {.blockEnterMessage { grid-template-columns: 90% 5% 5%;} 
                          #inputMessage {padding-right: 12%;} }
 
-
-/*НЕ АДАПТИРОВАНО*/
-                                                                                           
-                                                                              #exit {grid-column:6;
-                                                                                     grid-row:1;
-                                                                                      height:4vmax;
-                                                                                      align-self:center;}
-                                                                             .navNameUser {grid-column:8;
-                                                                                          grid-row:1;
-                                                                                         align-self:center;
-                                                                                         font-family:"Inter";
-                                                                                          font-size:1.3vmax;}
-                                                                             .navImgUser {border-radius: 1000vmax;
-                                                                                             height: 4.2vmax;
-                                                                                             width: 4.2vmax;
-                                                                                             align-self: center;
-                                                                                             border: 0.1vmax solid #2D4EFF;
-                                                                                             grid-row:1;
-                                                                                             grid-column:10;
-                                                                                             background-repeat: no-repeat;
-                                                                                             background-size: cover;
-                                                                                            background-image: url("../images/free-icon-settings-19545201.png");}
-                                                                             .navigationEnteredUser {grid-column:5;
-                                                                                                     grid-row:1;
-                                                                                                     width:60%;
-                                                                                                     justify-self: center;
-                                                                                                     align-items: center;
-                                                                                                     justify-content: space-between;
-                                                                                                     font-family: "Inter";
-                                                                                                     font-size: 1.4vmax;}
-                                                                             .searchAndAddGrid {width:100%;
-                                                                                                display:grid;
-                                                                                                grid-template-columns: 8% 1fr 8%;
-                                                                                                grid-template-rows: 100%;}
-                                                                             .admIcon {height:auto;
-                                                                                       width:2.8vmax;}
-                                                                             .searchAndAdd div, .backAndDelete div {font-family:"Mariupol";
-                                                                                                font-size:2vmax;}
-                                                                             #admSearchFlight {border: 0.1vmax solid #6c6c6c;
-                                                                                               height:4vmax;
-                                                                                               padding-right: 3%;}
-                                                                             .searchHeadGrid {height:3vmax;}
-                                                                             .searchHead {grid-template-columns: repeat(8,1fr);
-                                                                                                 grid-template-rows: 100%; 
-                                                                                         display:grid;
-                                                                                         font-family: "Inter";
-                                                                                         font-size:1.3vmax;
-                                                                                         color:#6c6c6c;
-                                                                                         grid-column:2;} 
-                                                                             .resultSearchGrid {height:10vmax;}
-                                                                             .resultSearch {display:grid;}
-                                                                             .wrapResultSearch {width:96%;
-                                                                                 height:80%;
-                                                                                 align-self: end;
-                                                                                 justify-self: center;
-                                                                                 display:grid;
-                                                                                 grid-template-columns: repeat(8,1fr);
-                                                                                     grid-template-rows: 60% auto; 
-                                                                                 font-family:"Inter"; }   
-                                                                             .wrapResultSearch div:not(.code1, .code2) {font-size:1.4vmax;}  
-                                                                             .wrapResultSearch img {grid-row:1;
-                                                                                                   grid-column:8;
-                                                                                                   align-self:center;
-                                                                                                   justify-self:center;
-                                                                                                   width:2.5vmax;
-                                                                                                   height:auto;}
-                                                                             .voidSmall {height:2vmax;}
-                                                                             .admIconSearch {height:auto;
-                                                                                            width:3.5vmax;}
+/*навигация для загеристрированного пользователя*/                                                                            
+#exit {grid-column:6;
+        grid-row:1;
+        height:4vmax;
+        align-self:center;}
+.navNameUser {grid-column:8;
+              grid-row:1;
+              align-self:center;
+              font-family:"Inter";
+              font-size:1.3vmax;}
+.navImgUser {border-radius: 1000vmax;
+             height: 4.2vmax;
+             width: 4.2vmax;
+             align-self: center;
+             border: 0.1vmax solid #2D4EFF;
+             grid-row:1;
+             grid-column:10;
+             background-repeat: no-repeat;
+             background-size: cover;
+             background-image: url("../images/free-icon-settings-19545201.png");}
+.navigationEnteredUser {grid-column:5;
+                        grid-row:1;
+                        width:60%;
+                        justify-self: center;
+                        align-items: center;
+                        justify-content: space-between;
+                        font-family: "Inter";
+                        font-size: 1.4vmax;}
 .logoEnteredUser {height:5vmax;
-                  width:5vmax;
-                  align-self:center;
-                  grid-column:2;
-                  grid-row:1;}
+                width:5vmax;
+                align-self:center;
+                grid-column:2;
+                grid-row:1;}
 #menuMobileEnteredUser {grid-column:12;
                         width:100%;
                         align-self:center;} 
+
+/*стили для admin*/
+.searchAndAddGrid {width:100%;
+                  display:grid;
+                  grid-template-columns: 8% 1fr 8%;
+                  grid-template-rows: 100%;}
+.admIcon {height:auto;
+        width:2.8vmax;}
+.searchAndAdd div, .backAndDelete div {font-family:"Mariupol";
+                                        font-size:2vmax;}
+#admSearchFlight {border: 0.1vmax solid #6c6c6c;
+                height:4vmax;
+                padding-right: 3%;}
+.searchHeadGrid {height:3vmax;}
+.searchHead {grid-template-rows: 100%; 
+            display:grid;
+            font-family: "Inter";
+            font-size:1.3vmax;
+            color:#6c6c6c;
+            grid-column:2;} 
+.resultSearch {display:grid;}
+.wrapResultSearch {width:96%;
+                  align-self: end;
+                  justify-self: center;
+                  display:grid; 
+                  font-family:"Inter"; }   
+.wrapResultSearch div:not(.code1, .code2) {font-size:1.4vmax;}  
+.wrapResultSearch img {grid-row:1;
+                      align-self:center;
+                      justify-self:center;
+                      width:2.5vmax;
+                      height:auto;}
+.voidSmall {height:2vmax;}
+.admIconSearch {height:auto;
+                width:3.5vmax;}
+
+/*медиа-запросы для навигации зарегистрированного пользователя и для admin*/
 @media (max-width:1199px) and (orientation:portrait) { .navigationEnteredUser {display:none;} 
                                                         .navEnteredUser {grid-template-columns: 3% auto 1% 10% 1fr 17% 2% auto 2% auto 2% 4.5% 3%;
                                                                          height:8vmax;}
@@ -1305,24 +1301,37 @@ top:-200%;}
                                                         .searchAndAdd div {grid-column:3;
                                                                            grid-row:2;
                                                                           justify-self: end;} 
-                                                        #menuMobileEnteredUser {display: block;} }
+                                                        #menuMobileEnteredUser {display: block;}
+                                                        .resultSearchGrid {height:15vmax;}
+                                                        .wrapResultSearch {height:92%;
+                                                                        grid-template-columns: 20% 20% 20% 15% 15% auto 10%;
+                                                                        grid-template-rows: auto;}
+                                                        .wrapResultSearch img {grid-column:6;}
+                                                        .searchHead {grid-template-columns: 20% 20% 20% 15% 15% auto 10%;}
+                                                        .searchHeadMobileNone {display:none;} } 
 @media (min-width:1200px) or ( (max-width:1199px) and (orientation:landscape) ) {.navigationEnteredUser {display:flex;} 
                                                                                 .navEnteredUser {grid-template-columns: 3% 5% 1% 10% 1fr 0.2fr 2% auto 2% 5% 3%;;
                                                                                                  height:8vmax;} 
-                                                                                                 .searchAndAdd {grid-column:2;
+                                                                                .searchAndAdd {grid-column:2;
                                                                                                         display:grid; 
                                                                                                         grid-template-columns: 8% 1fr 15% 20% 8%;
                                                                                                         grid-template-rows: 100%;
                                                                                                         align-items: center;}
-                                                                                                        .searchAndAddGrid {height:10vmax;}
-                                                                                                        #admAddFlightButton {grid-column:5;}
-                                                                                                        .searchAndAdd div {grid-column:4;} 
-                                                                                                        #menuMobileEnteredUser {display: none;} }
+                                                                                .searchAndAddGrid {height:10vmax;}
+                                                                                #admAddFlightButton {grid-column:5;}
+                                                                                .searchAndAdd div {grid-column:4;} 
+                                                                                #menuMobileEnteredUser {display: none;} 
+                                                                                .resultSearchGrid {height:10vmax;} 
+                                                                                .wrapResultSearch {height:80%;
+                                                                                                grid-template-columns: repeat(8,1fr);
+                                                                                                grid-template-rows: 60% auto;}
+                                                                                .wrapResultSearch img {grid-column:8;} 
+                                                                                .searchHead {grid-template-columns: repeat(8,1fr);} }
 
 
 
 /*стили для orderFormPassengers*/
-                                                                                                        .contactGrid {height:12vmax;}
+           .contactGrid {height:12vmax;}
            .personBlock, .contactBlock {display: grid;
                          background-color: white;
                          border-radius: 1.5vmax;
