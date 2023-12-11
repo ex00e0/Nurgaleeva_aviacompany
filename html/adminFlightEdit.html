@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">        <!--мета-тег для распределения контента по ширине устройства и соответствия пикселей--> 
         <title>Редатирование рейса</title>
-        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/style.css">                            <!--подключение css-->
     </head>
     <body>
-            <nav class="navEnteredUser">
+            <nav class="navEnteredUser">                                                       <!--навигация зарегистрированного пользователя-->
                 <img src="../images/a11.png" class="logoEnteredUser" alt="логотип">
                 <div id="logoText">Мягкие <br> Авиалинии</div>
                 <div class="navigationEnteredUser">
@@ -22,8 +22,20 @@
                 <div class="navImgUser navImgUserAdmin"></div>
                 <img src="../images/menu.png" id="menuMobileEnteredUser" alt="меню навигации">
             </nav>
+            <div id="navMobileShadow"></div>                                            <!--тень для боковой навигации для мобильной версии-->
+            <div id="navMobile">                                                          <!--меню боковой навигации для мобильной версии-->
+                    <img src="../images/plus4.png" id="close" alt="крестик">
+                    <div id="navMobileText">
+                        <div><a href="admin.html">Рейсы</a></div>
+                        <div>
+                            <a href="" class="curHover">Табло</a>
+                        </div>
+                        <div><a href="">Услуги</a></div>
+                        <div><a href="">Клиенты</a></div>
+                    </div>
+            </div>
             <main>
-                <div class="grid backAndDeleteGrid">
+                <div class="grid backAndDeleteGrid">                                                   <!--блок возвращения назад и удаления рейса-->
                     <div class="backAndDelete">
                         <a href="admin.html" class="backEdit">
                             <svg viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -36,7 +48,7 @@
                     </div>
                 </div>
                 <div class="voidSmall"></div>
-                <form class="formEditFlight">
+                <form class="formEditFlight">                                                                      <!--форма изменения данных о рейсе-->
                     <div class="gridEdit headlineEditGrid">
                         <div>Общая информация</div>
                     </div>
@@ -94,7 +106,7 @@
                 </form>
            <div class="voidCatalogueHalf"></div>
             </main>
-        <script src="../js/script9(admin).js"> </script>
+        <script src="../js/script9(admin).js"> </script>                                 <!--подключение javascript-->
         <script src="../js/scriptForInputWithValue.js"></script>
     </body>
 </html>

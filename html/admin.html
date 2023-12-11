@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">     <!--мета-тег для распределения контента по ширине устройства и соответствия пикселей-->   
         <title>Рейсы</title>
-        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/style.css">                                   <!--подключение css-->
     </head>
     <body>
-            <nav class="navEnteredUser">
+            <nav class="navEnteredUser">                                                         <!--навигация зарегистрированного пользователя-->
                 <img src="../images/a11.png" class="logoEnteredUser" alt="логотип">
                 <div id="logoText">Мягкие <br> Авиалинии</div>
                 <div class="navigationEnteredUser">
@@ -23,8 +23,8 @@
                 <div class="navImgUser navImgUserAdmin"></div>
                 <img src="../images/menu.png" id="menuMobileEnteredUser" alt="меню навигации">
             </nav>
-            <div id="navMobileShadow"></div>
-            <div id="navMobile">
+            <div id="navMobileShadow"></div>                                            <!--тень для боковой навигации для мобильной версии-->
+            <div id="navMobile">                                                          <!--меню боковой навигации для мобильной версии-->
                     <img src="../images/plus4.png" id="close" alt="крестик">
                     <div id="navMobileText">
                         <div><a href="admin.html">Рейсы</a></div>
@@ -36,7 +36,7 @@
                     </div>
             </div>
             <main>
-                <div class="searchAndAddGrid">
+                <div class="searchAndAddGrid">                                                                      <!--блок поиска рейсов-->
                     <div class="searchAndAdd">
                         <img src="../images/magnifier1.png" alt="поиск" class="admIconSearch">
                         <input type="text" id="admSearchFlight" placeholder="Поиск рейса по номеру/дате/направлению..">
@@ -44,7 +44,7 @@
                         <img src="../images/pluss.png" alt="плюс" class="admIcon" id="admAddFlightButton">
                     </div>
                 </div>
-                <div class="grid searchHeadGrid">
+                <div class="grid searchHeadGrid">                                                                <!--заголовок таблицы-->
                     <div class="searchHead">
                         <div>Рейс</div>
                         <div class="searchHeadMobileNone">Откуда</div>
@@ -55,7 +55,7 @@
                         <div>Продано</div>
                     </div>
                 </div>
-                <div class="gridNew resultSearchGrid">
+                <div class="gridNew resultSearchGrid">                                                         <!--блоки результатов поиска-->
                      <div class="resultSearch">
                         <div class="wrapResultSearch">
                             <div class="tableText1">MA710000</div>
@@ -107,6 +107,6 @@
            </div>
            <div class="voidCatalogueHalf"></div>
             </main>
-        <script src="../js/script9(admin).js"> </script>
+        <script src="../js/script9(admin).js"> </script>                                    <!--подключение javascript-->
     </body>
 </html>

@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">        <!--мета-тег для распределения контента по ширине устройства и соответствия пикселей-->      
+        <link rel="stylesheet" href="../css/style.css">                                  <!--подключение css-->
         <title>Аккаунт</title>
-        <style>
-        
-        
-        </style>
     </head>
     <body>
-     <div id="navMobileShadow"></div>
-     <div id="navMobile">
+     <div id="navMobileShadow"></div>                                <!--тень для боковой навигации для мобильной версии-->
+     <div id="navMobile">                                             <!--меню боковой навигации для мобильной версии-->
         <img src="../images/plus4.png" id="close" alt="крестик">
              <div id="navMobileText">
                  <div><a href="index.html">Главная</a></div>
@@ -23,7 +19,7 @@
              </div>
      </div>
 
-        <nav class="navEnteredUser">
+        <nav class="navEnteredUser">                                                       <!--навигация-->
             <img src="../images/a11.png" class="logoEnteredUser" alt="логотип">
             <div id="logoText">Мягкие <br> Авиалинии</div>
             <div class="navigationEnteredUser">
@@ -40,7 +36,7 @@
             <img src="../images/menu.png" id="menuMobileEnteredUser" alt="меню навигации">
         </nav>
         <div class="voidCatalogue noForMobileAcc"></div>
-       <header class="gridAccount">
+       <header class="gridAccount">                                                                                 <!--шапка с именем, фото профиля и количеством активных заказов-->
              <div class="accHeaderBlock">
                 <img src="../images/Pug-puppy-standing-in-profile-on-a-white-background(1)1-round2.png" alt="фото аккаунта" class="imgAccHeader">
                 <div class="nameAndNumberActiveOrders">
@@ -51,7 +47,7 @@
              <img src="../images/foncrug1.png" alt="небо сбоку" class="imgBackgroundAccount">
        </header>
        <main>
-           <div class="grid accNavGrid">
+           <div class="grid accNavGrid">                                                                      <!--навигация между вкладками аккаунта-->
                 <div class="navigationAcc">
                     <div id="curPage">
                         <div class="blueLine"></div>
@@ -62,7 +58,7 @@
                     <div id="savedPassengersBlock"><a class="navBlue" id="savedPassengers">Сохраненные пассажиры</a></div>
                 </div>
            </div>
-           <div class="grid basicInfoGrid" id="profile1">
+           <div class="grid basicInfoGrid" id="profile1">                                          <!--блок с изменением основной информации профиля-->
                <form class="basicInfoBlock">
                    <div class="basicCol1">
                        <div class="accGrayText">Изменить фото профиля</div>
@@ -88,12 +84,12 @@
                     <button class="blueButton buttonSave1">Сохранить</button>
                 </form>
            </div>
-           <div class="emptyGrid grid" id="emptyBlock">
+           <div class="emptyGrid grid" id="emptyBlock">                     <!--блок "Пока пусто.." для вкладок, где информации нет-->
               <div class="empty">Пока пусто..</div>
             </div>
        </main>
-       <div id="modalShadow"></div>
-       <div id="modalEnter" class="modalRegEnter">
+       <div id="modalShadow"></div>                                                                    <!--тень для модального окна-->
+       <div id="modalEnter" class="modalRegEnter">                                                       <!--модальное окно входа-->
         <img src="../images/plus2.png" id="closeEnter" class="closeEnterReg" alt="крестик">     
         <div class="modal1">Вход</div>
         <form id="formEnter">
@@ -104,7 +100,7 @@
             <button class="blueButton buttonEnterReg" id="buttonEnter">Войти</button>
         </form>
     </div>
-    <div id="modalReg" class="modalRegEnter">
+    <div id="modalReg" class="modalRegEnter">                                                                 <!--модальное окно регистрации-->
         <img src="../images/plus2.png" id="closeReg" class="closeEnterReg" alt="крестик">     
         <div class="modal1">Регистрация</div>
         <form id="formReg">
@@ -118,7 +114,7 @@
         </form>
     </div>
          <div class="void"></div>
-            <footer>
+            <footer>                                                                                                <!--футер с ссылками-->
                 <div id="footerCol1">
                     <div class="headlineFooter headline">Связь с нами</div>
                     <a class="buttonFooter" id="buttonF1" href="help.html">
@@ -158,7 +154,7 @@
                     <div class="footerPartRow7"><a href="">Офис в Нижнем Новгороде</a></div>
                 </div>
             </footer>
-        <script src="../js/script7(account).js"></script>
+        <script src="../js/script7(account).js"></script>                                <!--подключение javascript-->
         <script src="../js/script9(admin).js"></script>
     </body>
 </html>
