@@ -3,7 +3,7 @@ let slide2 = document.getElementById('slide2');
 let slide3 = document.getElementById('slide3');
 
 function getTheStyle(element){let left = window.getComputedStyle(element).left;
-                            return left;}
+                            return left;}                                            //функция для получения стиля нужного элемента (конкретно свойства left)
 let buttonSliderRight = document.getElementById("slideButtonRight");
 buttonSliderRight.addEventListener("click", function () {if ((getTheStyle(slide1)=="0px") || (getTheStyle(slide1)=="0%")) {slide1.style.transition="all 1s linear";
                                                                                                                             slide2.style.transition="all 1s linear";
@@ -22,7 +22,7 @@ buttonSliderRight.addEventListener("click", function () {if ((getTheStyle(slide1
                                                                                                                             slide3.style.left="-100%";
                                                                                                                             slide1.style.left="0%";
                                                                                                                             slide2.style.transition="none";
-                                                                                                                            slide2.style.left="100%";} }  );
+                                                                                                                            slide2.style.left="100%";} }  );      //узнаем текущий слайд и применяем стили в соответствии с нажатой кнопкой (правой или левой)
 let buttonSliderLeft = document.getElementById("slideButtonLeft");
 buttonSliderLeft.addEventListener("click", function () {if ((getTheStyle(slide1)=="0px") || (getTheStyle(slide1)=="0%")) {slide1.style.transition="all 1s linear";
                                                                                                                             slide3.style.transition="all 1s linear";
@@ -43,13 +43,13 @@ buttonSliderLeft.addEventListener("click", function () {if ((getTheStyle(slide1)
                                                                                                                             slide1.style.transition="none";
                                                                                                                             slide1.style.left="-100%";} }  );
 let learnMore = document.getElementsByClassName("buttonLearnMore");
-for (let b=0; b<learnMore.length; b++) {learnMore[b].addEventListener("click", function () {document.location = "info.html"} );}
+for (let b=0; b<learnMore.length; b++) {learnMore[b].addEventListener("click", function () {document.location = "info.html"} );}    //переход на другую страницу по клику
 let buttonTriangle = document.getElementById("buttonTriangle");
 let checkTriangle = 0;
 buttonTriangle.addEventListener("click", function () {if (checkTriangle == 0) {document.getElementById("blockForSelectHeaderPassenger").style.display="grid";
                                                                                 checkTriangle++;}
                                                        else {document.getElementById("blockForSelectHeaderPassenger").style.display="none";
-                                                                                    checkTriangle--;} }  );
+                                                                                    checkTriangle--;} }  );                    //по клику раскрывается выпадающий список для выбора пассажиров
 let countAdults = 1;
 let countChildren = 0;
 let countAll = 1;
@@ -57,8 +57,8 @@ let buttonMinusAdult = document.getElementById("buttonMinusAdult");
 let buttonPlusAdult = document.getElementById("buttonPlusAdult");
 let buttonPlusChildren = document.getElementById("buttonPlusChildren");
 let buttonMinusChildren = document.getElementById("buttonMinusChildren");
-buttonMinusAdult.addEventListener("click", function () {if (buttonMinusAdult.classList.contains('activeButton')) {countAdults--;
-                                                                                                                  countAll--;
+buttonMinusAdult.addEventListener("click", function () {if (buttonMinusAdult.classList.contains('activeButton')) {countAdults--;                                             // если кнопка + или - имеет класс "active", то для нее возможно уменьшение или прибавление числа выбранных пассажиров
+                                                                                                                  countAll--;                                                 // пассажиры разделены на детей и взрослых, имеется ограничение на каждый тип до 5 человек
                                                                                                                   buttonPlusAdult.classList.remove("disabledButton");
                                                                                                                   buttonPlusAdult.classList.add("activeButton");
                                                                                                              document.getElementById("adultNum").innerHTML=`${countAdults}`;
@@ -66,7 +66,7 @@ buttonMinusAdult.addEventListener("click", function () {if (buttonMinusAdult.cla
                                                                                                                 else if (countAll==1) { document.getElementById("countPassengers").innerHTML=`${countAll} пассажир`;}
                                                                                                                    else { document.getElementById("countPassengers").innerHTML=`${countAll} пассажира`;}
                                                                                                              if (countAdults==0) {buttonMinusAdult.classList.add("disabledButton");
-                                                                                                                                  buttonMinusAdult.classList.remove("activeButton");} } } );
+                                                                                                                                  buttonMinusAdult.classList.remove("activeButton");} } } );     
 buttonPlusAdult.addEventListener("click", function () {if (buttonPlusAdult.classList.contains('activeButton')) {countAdults++;
                                                                                                                 countAll++;
                                                                                                                 buttonMinusAdult.classList.remove("disabledButton");

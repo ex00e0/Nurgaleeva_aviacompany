@@ -12,7 +12,7 @@ let circleRadio = document.getElementsByClassName ("circleRadio");
 for (let m=0; m<radioButtons.length; m++) {radioButtons[m].addEventListener("click", function () {if (radioButtons[m].classList.contains("firstRadioButton")) {circleRadio[m+1].style.display="none";
                                                         circleRadio[m].style.display="block";}
                                                         else {circleRadio[m-1].style.display="none";
-                                                        circleRadio[m].style.display="block";} } ); }
+                                                        circleRadio[m].style.display="block";} } ); }    //имитация работы input[type="radio"] для обычных кнопок
 
 
 let switchers2 = document.getElementsByClassName("switcher2");
@@ -30,11 +30,11 @@ let autoFillJs = document.getElementsByClassName("autoFillJs");
 let blockFill = document.getElementsByClassName("blockFill");
 let checkFillDisplay = 0;
 for(let fi1=0;fi1<autoFillJs.length;fi1++) {autoFillJs[fi1].addEventListener("click", function () {if (checkFillDisplay==0){ for (let fi=0;fi<blockFill.length; fi++) {blockFill[fi].style.display = "grid";} 
-                                                                                                   if (mediaSmallAndTablet.matches) {circles2[fi1].style.display = "none"; }                                                                             
+                                                                                                   if (mediaSmallAndTablet.matches) {circles2[fi1].style.display = "none"; }            //изменение стиля с медиа-запросом                                                                   
                                                                                                    checkFillDisplay++;}
                                                                                                    else {for (let fi=0;fi<blockFill.length; fi++) {blockFill[fi].style.display = "none";} 
                                                                                                    circles2[fi1].style.display = "block"; 
-                                                                                                   checkFillDisplay--;} } );}
+                                                                                                   checkFillDisplay--;} } );}                //появление раскрывающегося списка сохраненных пассажиров по нажатию на "Автозаполнение"
 /*let contact = document.getElementById("");
 let checkContactDisplay = 0;
 contact.addEventListener("click", function () {if (checkContactDisplay==0){ for (let fi=0;fi<blockFill.length; fi++) {blockFill[fi].style.display = "grid";} 

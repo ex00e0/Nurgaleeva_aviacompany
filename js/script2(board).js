@@ -1,10 +1,10 @@
-         let todayD = new Date();
+         let todayD = new Date(); 
                 let yesterdayD = new Date(Date.now()-86400000);
-                let tomorrowD = new Date(Date.now()+86400000);
+                let tomorrowD = new Date(Date.now()+86400000);           //получение вчерашней, сегодняшей и завтрашней дат
                 let todayMonth = todayD.getMonth();
                 let yesterdayMonth = yesterdayD.getMonth();
-                let tomorrowMonth = tomorrowD.getMonth();
-                function monthConvert (month) {switch (month) 
+                let tomorrowMonth = tomorrowD.getMonth();               //получение месяцов этих дат
+                function monthConvert (month) {switch (month)                                    //функция изменения цифры месяца на соответствующий текст
                                                 {case 0: return "января";   break;
                                                     case 1: return "февраля";  break;
                                                     case 2: return "марта";   break;
@@ -22,13 +22,13 @@
                 tomorrowMonth = monthConvert(tomorrowMonth);
                 today.innerHTML= `${todayD.getDate()} ` + todayMonth;
                 yesterday.innerHTML= `${yesterdayD.getDate() } ` + yesterdayMonth;
-                tomorrow.innerHTML= `${tomorrowD.getDate() } ` + tomorrowMonth;
+                tomorrow.innerHTML= `${tomorrowD.getDate() } ` + tomorrowMonth;         //запись вчерашней, сегодняшей и завтрашней дат на страницу
 
                 let tomorrowClick = document.getElementById("tomorrow");
                 let todayClick = document.getElementById("today");
                 let yesterdayClick = document.getElementById("yesterday");
 
-                tomorrowClick.addEventListener("click", function () {document.getElementById("timetable1").style.display="none";
+                tomorrowClick.addEventListener("click", function () {document.getElementById("timetable1").style.display="none";    //появление блоков с расписанием рейсов по нажатию на каждую из дат и скрытие лишних блоков
                 document.getElementById("timetable2").style.display="none";
                 document.getElementById("timetable3").style.display="none"; 
                 document.getElementById("timetable1T").style.display="grid";
