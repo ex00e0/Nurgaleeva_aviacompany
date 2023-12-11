@@ -1586,7 +1586,11 @@ background: none;}
 .conditions6ColumnsAdmin {display:grid;
                           grid-column:2;
                           width:100%;}
-.conditions6ColumnsAdmin input {width:100%;}
+.conditions6ColumnsAdmin input {width:100%;
+                                padding-left: 10%;
+                                padding-top:8%}
+.conditions6ColumnsAdmin label {margin-left:10%;
+                               margin-top:3%;}
 @media (max-width:1199px) and (orientation:portrait) {.conditions6ColumnsAdmin {grid-template-columns: repeat(3,1fr); 
                                                                                 grid-template-rows: repeat(2,1fr);
                                                                                 row-gap:10%;                      
@@ -1602,7 +1606,7 @@ background: none;}
                                                                   grid-row:2;}}
 @media (min-width:1200px) or ( (max-width:1199px) and (orientation:landscape) ) {.conditions6ColumnsAdmin {grid-template-columns: repeat(5,1fr) 1.2fr; 
                                                                                                           grid-template-rows: 100%;                                                          
-                                                                                                          column-gap:2%;}
+                                                                                                          column-gap:3%;}
                                                                                 .editGridForConditions {height:3.4vmax;}
                                                                                 .adminCol2Cond {grid-column:2;}
                                                                                 .adminCol3 {grid-column:3;}
