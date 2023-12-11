@@ -1528,9 +1528,10 @@ top:-200%;}
 /*стил для adminFlightEdit*/
 .backAndDelete {grid-column:2;
         display:grid; 
-        grid-template-columns: 25% 1fr 2% 5%;
         grid-template-rows: 100%;
         align-items: center;}
+@media (max-width:1199px) and (orientation:portrait) {.backAndDelete {grid-template-columns: 45% 1fr 2% 5%;} }
+@media (min-width:1200px) or ( (max-width:1199px) and (orientation:landscape) ) {.backAndDelete {grid-template-columns: 25% 1fr 2% 5%;} }
 .backAndDelete img {grid-column:4;}
 .deleteFlightText {justify-self: end;}
 .formEditFlight input, .formEditFlight select {border-radius:0.5vmax;
@@ -1578,6 +1579,7 @@ background: none;}
     width:100%;}
 .adminCol1 {grid-column:1;}
 .adminCol2 {grid-column:3;}
+
 
 /*стили для account*/
 .gridAccount {display:grid;
