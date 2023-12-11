@@ -1,11 +1,10 @@
 
-
-function isOverflownHeight(element) {return element.clientHeight; }
+function isOverflownHeight(element) {return element.clientHeight; }        //функция для получения высоты элемента
 const mediaSmall = window.matchMedia("(max-width: 600px) and (orientation:portrait)");
-const mediaTablet = window.matchMedia("(max-width: 1199px) and (min-width:601px) and (orientation:portrait)");
+const mediaTablet = window.matchMedia("(max-width: 1199px) and (min-width:601px) and (orientation:portrait)");      //медиа-запросы для телефона и планшета
 
 let buttonCont=document.getElementById("buttonToFormPassengers");
-buttonCont.addEventListener("click", function () {document.location='orderFormPassengers.html';} );
+buttonCont.addEventListener("click", function () {document.location='orderFormPassengers.html';} );     //перемещение на другую страницу по кнопке "продолжить"
 let blockFood = document.getElementById("blockFood");
 
 let switchers = document.getElementsByClassName("switcher");
