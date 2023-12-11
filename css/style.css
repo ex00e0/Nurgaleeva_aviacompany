@@ -1339,7 +1339,7 @@ top:-200%;}
                          font-family: "Inter";
                          grid-column: 2;}
            
-            .personBlockCol1 {grid-column:2;}
+            .personBlockCol1 {grid-column:2/4;}
             .personType {font-size:2.5vmax;
                          align-self:center;
                          grid-row:2;}
@@ -1452,7 +1452,7 @@ top:-200%;}
                                                                        .codeDepartment, .ninthLabel {grid-row:11;}
                                                                        .dateOfPass, .eighthLabel {grid-row:10;}
                                                                        .whoIssue, .tenthLabel {grid-row:12;} 
-                                                                       .personBlockCol2Contact {grid-column:5;}
+                                                                       .personBlockCol2Contact {grid-column:6;}
                                                                        .contactBlock {grid-template-columns: 5% 30% 7% 7% 1fr;}
                                                                        .contactTel {padding-left: 5%;
                                                                                     width:90%;}
@@ -1465,10 +1465,12 @@ top:-200%;}
                                                                                         margin-left:5%;} 
                                                                         #forMobileNoVoid {display:none;}
                                                                         #forMobileNoVoid2 {display:none;}
-                                                                        #forMobileVoid {display:block;}  }
+                                                                        #forMobileVoid {display:block;} 
+                                                                        .blockFill {width:95%;
+                                                                                    justify-self: end;} }
             @media (min-width:1200px) or ((max-width:1199px) and (orientation:landscape)) {.specialMediaHeadlineGrid {height:5vmax;} 
                                                                                             .personBlock {grid-template-rows: 0.1% repeat(6,1fr) 4%;
-                                                                                                grid-template-columns: 5% 45% 7% 1fr;}
+                                                                                                grid-template-columns: 5% 38% 7% 7% 1fr;}
                                                                                                 .personGrid {height:40vmax;}
                                                                                                 .documentType {padding-top: 4%;}
                                                                                                 .personBlock, .contactBlock {row-gap:5%;} 
@@ -1486,10 +1488,10 @@ top:-200%;}
                                                                                                 .eighthLabel {grid-row:5;}
                                                                                                 .ninthLabel {grid-row:6;}
                                                                                                 .tenthLabel {grid-row:7;}
-                                                                                                .personBlockCol2 {grid-column:4;}
+                                                                                                .personBlockCol2 {grid-column:5;}
                                                                                                 .passNoBlock {grid-row:4;} 
-                                                                                                .personBlockCol2Contact {grid-column:4;}
-                                                                                                .contactBlock {grid-template-columns: 5% 25% 7% 1fr;}
+                                                                                                .personBlockCol2Contact {grid-column:5/6;}
+                                                                                                .contactBlock {grid-template-columns: 5% 20% 5% 7% 1fr;}
                                                                                                 .contactTel {padding-left: 5%;
                                                                                                              width:40%;}
                                                                                                 .contactWho {padding-top: 8%;} 
@@ -1497,4 +1499,27 @@ top:-200%;}
                                                                                                                 margin-left: 8%;}                                                                                      
                                                                                                 .labelTelContact {margin-top: 1.5%;
                                                                                                                 margin-left:5%;}
-                                                                                                #forMobileVoid {display:none;} }
+                                                                                                #forMobileVoid {display:none;}
+                                                                                                .blockFill {width:45%;} }
+.blockFill {display:none;}
+.blockFill {height:120%;
+            align-self:center;
+            border-radius: 0.5vmax;
+            background-color: #ffffff;
+            border:0.2vmax solid #2D4EFF;
+            grid-template-columns: 5% auto;
+            grid-template-rows: 100%;
+            align-items:center;}
+.blockFill > div {font-family: "Inter";
+                font-size:1.4vmax;
+                grid-column:2;}
+.firstAutoFill {grid-column:3/6;
+                 grid-row:3;}
+.secondAutoFill {grid-column:3/6;
+                grid-row:4;}
+#selectContact {grid-column:3;
+                grid-row:3;
+                height:0.8vmax;
+                justify-self: center;
+                align-self: center;
+                width: auto;}

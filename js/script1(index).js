@@ -75,7 +75,7 @@ buttonPlusAdult.addEventListener("click", function () {if (buttonPlusAdult.class
                                                                                                            if (countAll==0 || countAll>4) { document.getElementById("countPassengers").innerHTML=`${countAll} пассажиров`;}
                                                                                                               else if (countAll==1) { document.getElementById("countPassengers").innerHTML=`${countAll} пассажир`;}
                                                                                                                  else { document.getElementById("countPassengers").innerHTML=`${countAll} пассажира`;}
-                                                                                                           if (countAdults==19) {buttonPlusAdult.classList.add("disabledButton");
+                                                                                                           if (countAdults==5) {buttonPlusAdult.classList.add("disabledButton");
                                                                                                                                 buttonPlusAdult.classList.remove("activeButton");} } } );
 buttonMinusChildren.addEventListener("click", function () {if (buttonMinusChildren.classList.contains('activeButton')) {countChildren--;
                                                                                                                                     countAll--;
@@ -95,6 +95,6 @@ buttonPlusChildren.addEventListener("click", function () {if (buttonPlusChildren
                                                                                                                              if (countAll==0 || countAll>4) { document.getElementById("countPassengers").innerHTML=`${countAll} пассажиров`;}
                                                                                                                                 else if (countAll==1) { document.getElementById("countPassengers").innerHTML=`${countAll} пассажир`;}
                                                                                                                                    else { document.getElementById("countPassengers").innerHTML=`${countAll} пассажира`;}
-                                                                                                                             if (countChildren==19) {buttonPlusChildren.classList.add("disabledButton");
+                                                                                                                             if (countChildren==5) {buttonPlusChildren.classList.add("disabledButton");
                                                                                                                                                   buttonPlusChildren.classList.remove("activeButton");} } } );
                         

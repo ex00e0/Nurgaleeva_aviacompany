@@ -26,3 +26,18 @@ for (let z=0; z<switchers2.length; z++) {switchers2[z].addEventListener("click",
                                                                                                 circles2[z].style.backgroundColor = "rgb(45, 78, 255)";
                                                                                                 switchers2[z].style.borderColor  = "rgb(45, 78, 255)";
                                                                                                 check0++;}} );}
+let autoFillJs = document.getElementsByClassName("autoFillJs");
+let blockFill = document.getElementsByClassName("blockFill");
+let checkFillDisplay = 0;
+for(let fi1=0;fi1<autoFillJs.length;fi1++) {autoFillJs[fi1].addEventListener("click", function () {if (checkFillDisplay==0){ for (let fi=0;fi<blockFill.length; fi++) {blockFill[fi].style.display = "grid";} 
+                                                                                                   if (mediaSmallAndTablet.matches) {circles2[fi1].style.display = "none"; }                                                                             
+                                                                                                   checkFillDisplay++;}
+                                                                                                   else {for (let fi=0;fi<blockFill.length; fi++) {blockFill[fi].style.display = "none";} 
+                                                                                                   circles2[fi1].style.display = "block"; 
+                                                                                                   checkFillDisplay--;} } );}
+/*let contact = document.getElementById("");
+let checkContactDisplay = 0;
+contact.addEventListener("click", function () {if (checkContactDisplay==0){ for (let fi=0;fi<blockFill.length; fi++) {blockFill[fi].style.display = "grid";} 
+                                                                           checkContactDisplay++;}
+else {for (let fi=0;fi<blockFill.length; fi++) {blockFill[fi].style.display = "none";} 
+      checkContactDisplay--;} } );*/

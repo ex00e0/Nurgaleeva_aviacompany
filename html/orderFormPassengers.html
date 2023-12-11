@@ -33,7 +33,7 @@
              <form class="personBlock">
                 <div class="personBlockCol1 personType">Взрослый №1</div>
                 <div class="autoFillAndSaveBlock">
-                    <div class="autoFill">
+                    <div class="autoFill autoFillJs">
                         <div>Автозаполнение из сохраненных</div>
                         <img src="../images/auto.png" alt="раскрытие">
                     </div>
@@ -76,7 +76,12 @@
                 <label class="labelJs ninthLabel personBlockCol2">Код подразделения</label>
                 <input class="personBlockCol2 whoIssue jsInput" placeholder="Кем выдан">
                 <label class="labelJs tenthLabel personBlockCol2">Кем выдан</label>
-                
+                <div class="blockFill firstAutoFill">
+                    <div>Иван</div>
+                </div>
+                <div class="blockFill secondAutoFill">
+                    <div>Алина</div>
+                </div>
             </form>
         </div>
         <div class="voidCatalogueHalf"></div>
@@ -84,7 +89,7 @@
             <form class="personBlock">
                <div class="personBlockCol1 personType">Ребенок №1</div>
                <div class="autoFillAndSaveBlock">
-                   <div class="autoFill">
+                   <div class="autoFill autoFillJs">
                        <div>Автозаполнение из сохраненных</div>
                        <img src="../images/auto.png" alt="раскрытие">
                    </div>
@@ -127,16 +132,24 @@
                <label class="labelJs ninthLabel personBlockCol2">№ записи акта</label>
                <input class="personBlockCol2 whoIssue jsInput" placeholder="Место государственной регистрации">
                <label class="labelJs tenthLabel personBlockCol2">Место государственной регистрации</label>
+               <div class="blockFill firstAutoFill">
+                <div>Иван</div>
+            </div>
+            <div class="blockFill secondAutoFill">
+                <div>Алина</div>
+            </div>
            </form>
         </div>
        <div class="voidCatalogueHalf"></div>
         <div class="grid contactGrid">
             <form class="contactBlock">
-                <div class="personBlockCol1 personType">Контакты</div>
-                <div class="personBlockCol1 contactWho">Взрослый 1</div>
+                <div class="personBlockCol1 personType contactSpecial">Контакты</div>
+                <div class="personBlockCol1 contactWho contactSpecial">Взрослый 1</div>
                <label class="fifthLabel personBlockCol1 labelContact">Контактное лицо</label>
+               <img src="../images/selection.png" alt="раскрыть" id="selectContact">
                <input class="personBlockCol2Contact jsInput contactTel" type="text" placeholder="Номер телефона">
                 <label class="labelJs labelTelContact personBlockCol2Contact">Номер телефона</label>
+                
             </form>
         </div>
         <div class="voidCatalogueHalf"></div>
