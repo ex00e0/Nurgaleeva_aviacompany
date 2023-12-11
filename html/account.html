@@ -5,50 +5,7 @@
         <link rel="stylesheet" href="../css/style.css">
         <title>Аккаунт</title>
         <style>
-        .servGrid {height:8vmax;}
-        .headlineServ {grid-row:2;
-                       grid-column:2/4;
-                       font-size:1.5vmax;}
-        .descriptionServ {grid-column:3;
-                          grid-row:3;}
-        .switcher {grid-row:2;
-                  grid-column:5;
-                   border-radius: 1.5vmax;
-                   border:0.15vmax solid #D9D9D9;
-                   height:115%;
-                   align-self: center;}
-        .selection {grid-row:3;
-                   grid-column:4/6;
-                   display:grid;
-                   width:100%;
-                   grid-template-columns: 12% auto;
-                   column-gap:15%;
-                   align-items: center;
-                   justify-self: end;
-                   grid-template-rows: 100%;} 
-        .switcherCircle {border-radius: 1000vmax;
-                         width:2vmax;
-                         height:2vmax;
-                         background-color: #D9D9D9;
-                         position:relative;
-                         top:10%;
-                         left:5%;}
-        .selection img {width:100%;
-                        height:auto;}
-        .selection, .descriptionServ {color: #6c6c6c;
-                                      font-size: 1.3vmax;}
-        .servWrap {width:100%;
-                   height:100%;
-                   display:grid;
-                   grid-template-columns: 3% 2% auto 2% 7% 5%;
-                   row-gap:10%;
-                   grid-template-rows: 12% 1.2fr 1fr 12%;
-                   font-family:"Inter";}
-        .servPrice {grid-row:3;
-            grid-column:4/6;
-            align-self: center;
-            justify-self: end;
-            font-size: 1.6vmax;}
+        
         .gridAccount {display:grid;
                      height:23vmax;
                      grid-template-rows:100%;
@@ -58,7 +15,6 @@
                               height:100%;}
         .accHeaderBlock {grid-column:2;
                          display:grid;
-                         grid-template-columns: 20% auto;
                          column-gap: 8%;
                          grid-template-rows: 100%;}
         .imgAccHeader {border-radius: 1000vmax;
@@ -77,14 +33,37 @@
                                 font-family: "Inter";}
         .accName {font-size: 5.8vmax;
                   font-family: "Mariupol";}
-        .accNavGrid {height:7vmax;}
-       .navigationAcc{display:flex;
-                     align-items: center;
-                     grid-column:2;
-                    justify-content: space-between;
+       .navigationAcc{grid-column:2;
                     font-family: "Inter";
-                    font-size: 1.7vmax;
-                    width:75%;}
+                    font-size: 1.7vmax;}
+        @media (max-width:900px) and (orientation:portrait) {.navigationAcc {width:100%;
+                                                                            display:grid;
+                                                                            grid-template-columns: repeat(2,1fr);
+                                                                            column-gap: 8%;
+                                                                            grid-template-rows: repeat(2,1fr);
+                                                                            row-gap:5%;
+                                                                            align-items: center;}
+                                                             .navigationAcc > div {width:max-content;} 
+                                                             #savedPassengersBlock {grid-row:1;
+                                                                                grid-column:2;}
+                                                              .imgBackgroundAccount {display:none;} 
+                                                              .accHeaderBlock {grid-template-columns: 50% auto;}
+                                                              .accNavGrid {height:10vmax;}
+                                                              .noForMobileAcc {display:none;}
+                                                              .basicInfoBlock > div:not(.specialMobileBasicBlock) { width:95%;
+                                                                                                                height:65%;}
+                                                               .buttonSave1 {width:50%;}
+                                                               .specialMobileBasicBlock {width:105%;
+                                                                                        height:65%;} }
+        @media (min-width:900px) or ((max-width:900px) and (orientation:landscape)) {.navigationAcc {width:75%;
+                                                                                                    justify-content: space-between;
+                                                                                                    display:flex;
+                                                                                                    align-items: center;}
+                                                                                    .accHeaderBlock {grid-template-columns: 20% auto;} 
+                                                                                    .accNavGrid {height:7vmax;}
+                                                                                  .basicInfoBlock > div { width:60%;
+                                                                                                         height:65%;}
+                                                                                    .buttonSave1 {width:35%;} }
         .basicInfoGrid {height:27vmax;}
         .basicInfoBlock {grid-column:2;
                          display:grid;
@@ -98,9 +77,7 @@
                                grid-template-columns: 12% 1fr;
                                column-gap:8%;
                                grid-template-rows: repeat(2,1fr);
-                               row-gap:15%;
-                               width:60%;
-                               height:65%;}
+                               row-gap:15%;}
         .basicCol1 {grid-column:2;}
         .basicCol2 {grid-column:3;}
         .basicInfoBlock input, .basicInfoBlock button:not(.buttonSave1) {border-radius:0.5vmax;
@@ -126,7 +103,6 @@
         .buttonSave1 {grid-row:3;
                       grid-column:3;
                       justify-self: end;
-                     width:35%;
                       height:50%;}
         .emptyGrid {height:8vmax;
                              display:none;}
@@ -168,7 +144,7 @@
             <div class="navImgUser navImgUserPuppy"></div>
             <img src="../images/menu.png" id="menuMobileEnteredUser" alt="меню навигации">
         </nav>
-        <div class="voidCatalogue"></div>
+        <div class="voidCatalogue noForMobileAcc"></div>
        <header class="gridAccount">
              <div class="accHeaderBlock">
                 <img src="../images/Pug-puppy-standing-in-profile-on-a-white-background(1)1-round2.png" alt="фото аккаунта" class="imgAccHeader">
@@ -188,7 +164,7 @@
                     </div>
                     <div id="allOrders"><a class="navBlue">Все заказы</a></div>
                     <div><a class="navBlue" id="activeOrders">Активные заказы</a></div>
-                    <div><a class="navBlue" id="savedPassengers">Сохраненные пассажиры</a></div>
+                    <div id="savedPassengersBlock"><a class="navBlue" id="savedPassengers">Сохраненные пассажиры</a></div>
                 </div>
            </div>
            <div class="grid basicInfoGrid" id="profile1">
@@ -209,7 +185,7 @@
                         <img src="../images/email.png" alt="email" class="imgBasicCol1">
                         <input type="email"  placeholder="Введите email..">
                     </div>
-                    <div class="basicCol2">
+                    <div class="basicCol2 specialMobileBasicBlock">
                         <div class="accGrayText">Изменить номер телефона</div>
                         <img src="../images/phone-call3.png" alt="телефон" class="imgBasicCol2">
                         <input type="tel" placeholder="Введите номер телефона..">
@@ -287,7 +263,7 @@
                     <div class="footerPartRow7"><a href="">Офис в Нижнем Новгороде</a></div>
                 </div>
             </footer>
-        <script src="../js/script.js"> </script>
         <script src="../js/script7(account).js"></script>
+        <script src="../js/script9(admin).js"></script>
     </body>
 </html>

@@ -2,6 +2,9 @@ let profile = document.getElementById("curPage");
 let allOrders = document.getElementById("allOrders");
 let activeOrders = document.getElementById("activeOrders");
 let savedPassengers = document.getElementById("savedPassengers");
+let navBlue = document.getElementsByClassName("navBlue");
+                for(let i=0; i<navBlue.length;i++) {navBlue[i].addEventListener("mouseover", function () {document.getElementById("curPage").style.color="black";}   );
+                                                    navBlue[i].addEventListener("mouseout", function () {document.getElementById("curPage").style.color="#2D4EFF";}  );}
 profile.addEventListener("click", function () {allOrders.style.color = "black";
                                                 profile.style.color= "#2D4EFF";
                                                 activeOrders.style.color= "black";
