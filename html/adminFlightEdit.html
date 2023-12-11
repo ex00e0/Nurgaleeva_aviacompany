@@ -13,13 +13,13 @@
             .backAndDelete img {grid-column:4;}
             .deleteFlightText {justify-self: end;}
             .formEditFlight input, .formEditFlight select {border-radius:0.5vmax;
-                color: #6c6c6c;
-                padding-left: 7%;
+                color: black;
+                padding-left: 4%;
                 border: 0.1vmax solid #6c6c6c;
                 font-family: "Inter";
                 font-size:1.1vmax;
                 background: none;}
-                .formEditFlight select {appearance: none;
+            .formEditFlight select {appearance: none;
                                         background-image: url("../images/selection.png");
                                         background-size: 1.3vmax;
                                         background-position: 95%;
@@ -38,14 +38,25 @@
             .gridEdit {display:grid;
                       grid-template-columns: 5% 1fr 5%;
                       grid-template-rows: 100%;}
-            .headlineEditGrid {height:3vmax;}
+            .headlineEditGrid {height:3.4vmax;}
             .headlineEditGrid > div {grid-column:2;
                                       font-family: "Inter";
                                      font-size:1.5vmax;}
             .inputSelect2Cols {display:grid;
                          grid-template-columns: 35% 10% 35% auto;
                          grid-template-rows:100%;}
-            .inputSelectOnCol2 {grid-column:3;}
+            .inputAdmin {padding-top:5%;
+                        grid-row:1;}
+            .labelAdmin {grid-row:1;
+                        margin-top: 1%;
+                        margin-left: 4%;
+                        font-family: "Inter";
+                        font-size: 0.9vmax;
+                        color:#6c6c6c;
+                        height:10%;
+                        width:100%;}
+            .adminCol1 {grid-column:1;}
+            .adminCol2 {grid-column:3;}
         </style>
     </head>
     <body>
@@ -85,17 +96,44 @@
                     </div>
                     <div class="gridEdit headlineEditGrid">
                         <div class="inputSelect2Cols">
-                            <input type="text" value="MA710000">
-                            <select class="inputSelectOnCol2">
-                                <option>Boeing 737-700</option>
-                                <option>Boeing 737-800</option>
-                             </select>
+                            <input type="text" value="MA710000" class="inputAdmin adminCol1">
+                            <label class="labelAdmin adminCol1">Номер рейса</label>
+                            <input type="text" value="Boeing 737-700" class="inputAdmin adminCol2">
+                            <label class="labelAdmin adminCol2">Воздушное судно</label>
                         </div>
                     </div>
+                    <div class="voidSmall"></div>
+                    <div class="gridEdit headlineEditGrid">
+                        <div class="inputSelect2Cols">
+                            <input type="text" value="Уфа" class="inputAdmin adminCol1">
+                            <label class="labelAdmin adminCol1">Откуда</label>
+                            <input type="text" value="30.10.2023 03:35" class="inputAdmin adminCol2">
+                            <label class="labelAdmin adminCol2">Дата вылета</label>
+                        </div>
+                    </div>
+                    <div class="voidSmall"></div>
+                    <div class="gridEdit headlineEditGrid">
+                        <div class="inputSelect2Cols">
+                            <input type="text" value="Нижний Новгород" class="inputAdmin adminCol1">
+                            <label class="labelAdmin adminCol1">Куда</label>
+                            <input type="text" value="30.10.2023 05:25" class="inputAdmin adminCol2">
+                            <label class="labelAdmin adminCol2">Дата посадки</label>
+                        </div>
+                    </div>
+                    <div class="voidSmall"></div>
                     <div class="gridEdit headlineEditGrid">
                         <div>Места</div>
                     </div>
                     <div class="gridEdit headlineEditGrid">
+                        <div class="inputSelect2Cols">
+                            <input type="text" value="176" class="inputAdmin adminCol1">
+                            <label class="labelAdmin adminCol1">Количество мест</label>
+                            <input type="text" value="8" class="inputAdmin adminCol2">
+                            <label class="labelAdmin adminCol2">Бизнес-класс</label>
+                        </div>
+                    </div>
+                    <div class="voidSmall"></div>
+                    <!--<div class="gridEdit headlineEditGrid">
                         <div>Дополнительные услуги</div>
                     </div>
                     <div class="gridEdit headlineEditGrid">
@@ -106,10 +144,11 @@
                     </div>
                     <div class="gridEdit headlineEditGrid">
                         <div>Условия: минимум-класс</div>
-                    </div>
+                    </div> -->
                 </form>
            <div class="voidCatalogueHalf"></div>
             </main>
-        <script src="../js/script.js"> </script>
+        <script src="../js/script9(admin).js"> </script>
+        <script src="../js/scriptForInputWithValue.js"></script>
     </body>
 </html>
